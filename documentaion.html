@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Stream Black — Documentation</title>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://rohit0072.github.io/study-stream-site/documentaion.html">
+  <link rel="icon" type="image/png" href="ads/logo.png">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Study Stream Black — Documentation">
+  <meta name="description"
+    content="Complete user guide for Study Stream Black. Learn how to install, set up AI with Gemini, add courses, use the video player, take timestamped notes, and join the Hall of Fame leaderboard.">
+  <meta name="keywords"
+    content="Study Stream Black, Documentation, User Guide, Setup, AI Setup, Gemini, Course Library, Hall of Fame, Keyboard Shortcuts">
+  <meta name="author" content="Rohit0072">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <!-- Open Graph / Facebook / WhatsApp / Telegram -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Study Stream Black">
+  <meta property="og:url" content="https://rohit0072.github.io/study-stream-site/documentaion.html">
+  <meta property="og:title" content="Study Stream Black — Documentation">
+  <meta property="og:description"
+    content="Complete user guide for Study Stream Black. Learn setup, AI configuration, course management, Hall of Fame, and more.">
+  <meta property="og:image" content="https://rohit0072.github.io/study-stream-site/ads/Main_banner.jpeg">
+  <meta property="og:image:alt" content="Study Stream Black Dashboard Preview">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://rohit0072.github.io/study-stream-site/documentaion.html">
+  <meta name="twitter:title" content="Study Stream Black — Documentation">
+  <meta name="twitter:description"
+    content="Complete user guide for Study Stream Black. Learn setup, AI configuration, course management, Hall of Fame, and more.">
+  <meta name="twitter:image" content="https://rohit0072.github.io/study-stream-site/ads/Main_banner.jpeg">
+
+  <!-- Schema.org -->
+  <meta itemprop="name" content="Study Stream Black — Documentation">
+  <meta itemprop="description"
+    content="Complete user guide for Study Stream Black. Learn setup, AI configuration, course management, Hall of Fame, and more.">
+  <meta itemprop="image" content="https://rohit0072.github.io/study-stream-site/ads/Main_banner.jpeg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-elevated: #111111;
+      --fg: #fafafa;
+      --muted: #666666;
+      --accent: #ffffff;
+      --card: #151515;
+      --border: #222222;
+      --icon-blue: #4a9eff;
+      --zoro-green: #2ecc71;
+      --naruto-orange: #e67e22;
+      --code-bg: #0d0d0d;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--muted);
+    }
+
+    .font-display {
+      font-family: 'Syne', sans-serif;
+    }
+
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Custom Cursor */
+    .cursor {
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--fg);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.15s ease, background 0.15s ease;
+      mix-blend-mode: difference;
+    }
+
+    .cursor-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--fg);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode: difference;
+    }
+
+    .cursor.hover {
+      transform: scale(2.5);
+      background: var(--fg);
+    }
+
+    .cursor.code-hover {
+      transform: scale(1.5);
+      background: transparent;
+      border-color: var(--icon-blue);
+    }
+
+    /* Noise overlay */
+    .noise {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    /* Reading Progress Bar */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--zoro-green), var(--icon-blue));
+      width: 0%;
+      z-index: 2000;
+      transition: width 0.1s linear;
+    }
+
+    /* Layout */
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      background: var(--bg-elevated);
+      border-right: 1px solid var(--border);
+      padding: 32px 24px;
+      overflow-y: auto;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .sidebar-header {
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--fg);
+      margin-bottom: 16px;
+    }
+
+    .sidebar-logo img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .sidebar-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      color: var(--fg);
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .search-input:focus {
+      border-color: var(--muted);
+    }
+
+    .search-input::placeholder {
+      color: var(--muted);
+    }
+
+    /* Navigation */
+    .nav-section {
+      margin-bottom: 24px;
+    }
+
+    .nav-category {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .nav-list {
+      list-style: none;
+    }
+
+    .nav-item {
+      margin-bottom: 2px;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 6px 12px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-left: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--fg);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .nav-link.active {
+      color: var(--fg);
+      border-left-color: var(--zoro-green);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: 280px;
+      flex: 1;
+      min-width: 0;
+      /* Prevent flex overflow */
+    }
+
+    .doc-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 64px 48px 120px;
+    }
+
+    /* Hero Section */
+    .doc-hero {
+      text-align: center;
+      padding: 80px 0 60px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .doc-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(74, 158, 255, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .doc-badge {
+      display: inline-block;
+      padding: 6px 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .doc-main-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 20px;
+    }
+
+    .doc-main-title span {
+      color: var(--muted);
+    }
+
+    .doc-quote {
+      font-style: italic;
+      color: var(--muted);
+      border-left: 2px solid var(--border);
+      padding-left: 20px;
+      margin-top: 32px;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Sections */
+    .doc-section {
+      margin-bottom: 100px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .doc-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .doc-section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+
+    .doc-section-number {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--zoro-green);
+      letter-spacing: 0.05em;
+    }
+
+    .doc-section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .doc-subsection {
+      margin-top: 48px;
+    }
+
+    .doc-subsection-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .doc-subsection-title::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--border);
+      border-radius: 50%;
+    }
+
+    /* Typography */
+    p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    strong {
+      color: var(--fg);
+      font-weight: 500;
+    }
+
+    a {
+      color: var(--icon-blue);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: opacity 0.2s;
+    }
+
+    a:hover {
+      opacity: 0.8;
+    }
+
+    /* Lists */
+    ul,
+    ol {
+      margin-bottom: 24px;
+      padding-left: 24px;
+      color: var(--muted);
+    }
+
+    li {
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* Code Blocks */
+    .code-block {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      padding: 24px;
+      margin-bottom: 24px;
+      overflow-x: auto;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+
+    .code-block:hover {
+      border-color: var(--muted);
+    }
+
+    pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: var(--fg);
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 4px 8px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .copy-btn:hover {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    /* Inline Code */
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2px 6px;
+      border-radius: 2px;
+      font-size: 0.9em;
+      color: var(--naruto-orange);
+    }
+
+    /* Tables */
+    .table-wrapper {
+      overflow-x: auto;
+      margin-bottom: 32px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      padding: 16px 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: var(--bg-elevated);
+      color: var(--fg);
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    td {
+      color: var(--muted);
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Callouts */
+    .callout {
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      border-left: 3px solid var(--icon-blue);
+      background: rgba(74, 158, 255, 0.05);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .callout-title {
+      font-weight: 600;
+      color: var(--fg);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .callout p:last-child {
+      margin-bottom: 0;
+    }
+
+    .callout.warning {
+      border-color: var(--naruto-orange);
+      background: rgba(230, 126, 34, 0.05);
+    }
+
+    .callout.success {
+      border-color: var(--zoro-green);
+      background: rgba(46, 204, 113, 0.05);
+    }
+
+    /* Folder Structure Visual */
+    .folder-structure {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      line-height: 1.8;
+      background: var(--code-bg);
+      padding: 24px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .folder {
+      color: var(--icon-blue);
+    }
+
+    .file {
+      color: var(--fg);
+    }
+
+    /* Mobile Nav Toggle */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 101;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .doc-container {
+        padding: 32px 24px 80px;
+      }
+
+      .cursor,
+      .cursor-dot {
+        display: none;
+      }
+
+      body {
+        cursor: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Noise overlay -->
+  <div class="noise"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle hover-target" id="menuToggle" aria-label="Toggle Menu">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </button>
+
+  <div class="layout">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-logo hover-target">
+          <img src="ads/logo.png" alt="Study Stream Logo">
+          <span class="sidebar-title">Study Stream</span>
+        </a>
+        <div class="search-box">
+          <input type="text" class="search-input hover-target" placeholder="Search documentation...">
+        </div>
+      </div>
+
+      <nav id="doc-nav">
+        <div class="nav-section">
+          <div class="nav-category">Getting Started</div>
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#intro" class="nav-link hover-target">What is Study Stream?</a></li>
+            <li class="nav-item"><a href="#installation" class="nav-link hover-target">Installation</a></li>
+            <li class="nav-item"><a href="#first-launch" class="nav-link hover-target">First Launch</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-category">Core Features</div>
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#ai-setup" class="nav-link hover-target">Setting Up AI</a></li>
+            <li class="nav-item"><a href="#dashboard" class="nav-link hover-target">Dashboard</a></li>
+            <li class="nav-item"><a href="#courses" class="nav-link hover-target">Course Management</a></li>
+            <li class="nav-item"><a href="#player" class="nav-link hover-target">Video Player</a></li>
+            <li class="nav-item"><a href="#notes" class="nav-link hover-target">Smart Notes</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-category">Productivity</div>
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#productivity" class="nav-link hover-target">Productivity Center</a></li>
+            <li class="nav-item"><a href="#gamification" class="nav-link hover-target">XP & Levels</a></li>
+            <li class="nav-item"><a href="#hall-of-fame" class="nav-link hover-target">Hall of Fame</a></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <div class="nav-category">Customization</div>
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#themes" class="nav-link hover-target">Themes Store</a></li>
+            <li class="nav-item"><a href="#settings" class="nav-link hover-target">Settings</a></li>
+            <li class="nav-item"><a href="#shortcuts" class="nav-link hover-target">Shortcuts</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="doc-container">
+
+        <!-- Hero -->
+        <header class="doc-hero">
+          <div class="doc-badge">Version 1.0.4</div>
+          <h1 class="doc-main-title">Study Stream <span>Black</span></h1>
+          <p style="font-size: 1.25rem; color: var(--fg); max-width: 600px; margin: 0 auto;">
+            The Complete User Guide for the Ultimate Desktop Learning Environment.
+          </p>
+          <blockquote class="doc-quote">
+            "We are what we repeatedly do. Excellence, then, is not an act, but a habit." — Aristotle
+          </blockquote>
+        </header>
+
+        <!-- Section 1: Intro -->
+        <section id="intro" class="doc-section">
+          <div class="doc-section-header">
+            <span class="doc-section-number">01</span>
+            <h2 class="doc-section-title">What is Study Stream Black?</h2>
+          </div>
+
+          <div class="doc-content">
+            <p>
+              <strong>Study Stream Black</strong> is a free, offline-first desktop application built for serious
+              learners. It transforms your downloaded courses into a Netflix-style library, gives you a custom video
+              player built for learning (not entertainment), lets your AI tutor read your course subtitles and answer
+              your questions in real time, and connects you with a leaderboard of scholars grinding alongside you.
+            </p>
+
+            <div class="callout">
+              <div class="callout-title">Core Philosophy</div>
+              <p>Your focus environment should be as powerful as your courses. No browser tabs, no notifications, no
+                excuses.</p>
+            </div>
+
+            <div class="table-wrapper hover-target">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Pillar</th>
+                    <th>What it means</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Offline-First</strong></td>
+                    <td>Your courses live on your disk. No internet required to study.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>AI-Powered</strong></td>
+                    <td>Your AI reads your course subtitles and answers contextual questions.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Time-Synced Notes</strong></td>
+                    <td>Notes are anchored to the exact second in the video.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Gamified</strong></td>
+                    <td>XP, levels, streaks, and a live leaderboard keep you accountable.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 2: Installation -->
+        <section id="installation" class="doc-section">
+          <div class="doc-section-header">
+            <span class="doc-section-number">02</span>
+            <h2 class="doc-section-title">Installation</h2>
+          </div>
+
+          <div class="doc-subsection">
+            <h3 class="doc-subsection-title">Downloading the App</h3>
+            <p>Head to the official release page on GitHub. Download the latest <code>.exe</code> installer file.</p>
+            <div class="code-block hover-target">
+              <button class="copy-btn hover-target">Copy</button>
+              <pre>https://github.com/Rohit0072/study-stream-black/releases</pre>
+            </div>
+          </div>
+
+          <div class="doc-subsection">
+            <h3 class="doc-subsection-title">Windows Security Warning</h3>
+            <div class="callout warning">
+              <div class="callout-title">Don't Panic!</div>
+              <p>Windows may show a "Windows protected your PC" warning. This is normal because the app is not
+                code-signed (certificates cost hundreds of dollars). The app is 100% open-source.</p>
+            </div>
+            <p><strong>How to bypass:</strong></p>
+            <ol>
+              <li>Click <strong>"More info"</strong> below the warning text.</li>
+              <li>Click the <strong>"Run anyway"</strong> button that appears.</li>
+              <li>The installer will proceed normally.</li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- Section 3: First Launch -->
+        <section id="first-launch" class="doc-section">
+          <div class="doc-section-header">
+            <span class="doc-section-number">03</span>
+            <h2 class="doc-section-title">First Launch</h2>
+          </div>
+          <p>On first launch, you'll see the <strong>Welcome Screen</strong>. This is a quick onboarding flow:</p>
+          <ul>
+            <li><strong>Choose Your Name</strong> — Becomes your Scholar Handle.</li>
+            <li><strong>Tour the UI</strong> — Brief walkthrough of sections.</li>
+            <li><strong>Set Library Folder</strong> — Point to where your courses live.</li>
+          </ul>
+        </section>
+
+        <!-- Section 4: AI Setup -->
+        <section id="ai-setup" class="doc-section">
+          <div class="doc-section-header">
+            <span class="doc-section-number">04</span>
+            <h2 class="doc-section-title">Setting Up AI (Gemini)</h2>
+          </div>
+
+          <p>The AI assistant is the crown jewel of Study Stream. To use it, you need to connect your own Google Gemini
+            API key.</p>
+
+          <div class="doc-subsection">
+            <h3 class="doc-subsection-title">Getting Your API Key</h3>
+            <p>Google Gemini offers a generous free tier — no credit card needed.</p>
+            <ol>
+              <li>Go to Google AI Studio: <code>aistudio.google.com/app/apikey</code></li>
+              <li>Sign in with Google.</li>
+              <li>Click <strong>"Create API Key"</strong>.</li>
+              <li>Copy the key (starts with <code>AIzaSy...</code>).</li>
+            </ol>
+          </div>
+
+          <div class="doc-subsection">
+            <h3 class="doc-subsection-title">Choosing the Model</h3>
+            <p>Go to <strong>Settings → AI Settings</strong> in the app, paste your key, and select a model:</p>
+
+            <div class="table-wrapper hover-target">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tier</th>
+                    <th>Model</th>
+                    <th>Recommendation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Free</strong></td>
+                    <td><code>gemma-3-27b-it</code></td>
+                    <td>Best free choice. Excellent for Q&A.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Paid</strong></td>
+                    <td><code>gemini-2.0-flash</code></td>
+                    <td>Best balance of speed and quality.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 5: Dashboard -->
+        <section id="dashboard" class="doc-section">
+          <div class="doc-section-header">
+            <span class="doc-section-number">05</span>
+            <h2 class="doc-section-title">Dashboard Overview</h2>
+          </div>
+          <p>The dashboard is your home base. It provides a quick snapshot of your study life.</p>
+          <ul>
+            <li><strong>Continue Watching:</strong> Jumps straight back to where you left off.</li>
+            <li><strong>Motivational Quote:</strong> Changes daily.</li>
+            <li><strong>Streak Counter:</strong> Your consecutive days of study.</li>
+            <li><strong>Daily Goal:</strong> Progress bar for your daily target.</li>
+          </ul>
+        </section>
+
+        <!-- Section 6: Courses -->
+        <section id="courses" class="doc-section">
+          <div class="doc-section-header">
+            <span class="doc-section-number">06</span>
+            <h2 class="doc-section-title">Adding Your First Course</h2>
+          </div>
+
+          <div class="callout success">
+            <div class="callout-title">The Golden Rule</div>
+            <p>Study Stream reads your local filesystem. The structure <strong>must</strong> follow a specific hierarchy
+              to work correctly.</p>
+          </div>
+
+          <div class="doc-subsection">
+            <h3 class="doc-subsection-title">Folder Structure</h3>
+            <div class="folder-structure">
+              <div>📁 [Course Name] ← HEAD FOLDER</div>
+              <div>│</div>
+              <div>├── 📁 [Section 1 Name] ← NESTED FOLDER</div>
+              <div>│ ├── 🎬 01 - Intro.mp4</div>
+              <div>│ └── 📄 01 - Intro.srt ← Same name as video</div>
+              <div>│</div>
+              <div>└── 📁 [Section 2 Name]</div>
+              <div> └── 🎬 01 - Next.mp4</div>
+            </div>
+            <p style="margin-top: 16px;">Naming your subtitle files exactly the same as your video files (e.g.,
+              <code>Intro.mp4</code> and <code>Intro.srt</code>) allows the AI to "see" the course content.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 7: Player -->
+        <section id="player" class="doc-section">
+          <div class="doc-section-header">
+            <span class="doc-section-number">07</span>
+            <h2 class="doc-section-title">The Video Player</h2>
+          </div>
+          <p>The video player is purpose-built for learning. Every feature exists to help you study better.</p>
+
+          <div class="doc-subsection">
+            <h3 class="doc-subsection-title">Smart Notes & Bookmarks</h3>
+            <p>Notes in Study Stream aren't just text — they're <strong>timestamped anchors</strong>.</p>
+            <ul>
+              <li>Press <code>Ctrl + N</code> to take a note at the current time.</li>
+              <li>Press <code>B</code> to bookmark a moment.</li>
+              <li>Clicking a note later jumps the video to that exact second.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 8: Notes -->
+        <section id="notes" class="doc-section">
+          <div class="doc-section-header">
+            <span class="doc-section-number">08</span>
+            <h2 class="doc-section-title">AI Study Assistant</h2>
+          </div>
+
+          <p>The AI has multiple modes. The most powerful is <strong>Course Chat Mode</strong>.</p>
+
+          <div class="callout">
+            <div class="callout-title">How it works</div>
+            <p>When you open the chat while watching a video, the AI automatically reads the subtitle file. It knows the
+              full transcript of the lesson, allowing you to ask contextual questions like "Explain that last concept
+              differently" or "Quiz me on this section."</p>
+          </div>
+        </section>
+
+        <!-- Section 9: Productivity -->
+        <section id="productivity" class="doc-section">
+          <div class="doc-section-header">
+            <span class="doc-section-number">09</span>
+            <h2 class="doc-section-title">Productivity Center</h2>
+          </div>
+
+          <p>A full hub for managing your study life beyond just watching videos.</p>
+
+          <div class="table-wrapper hover-target">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Sessions</strong></td>
+                  <td>Start a focused study timer (Pomodoro style) to track active time and earn XP.</td>
+                </tr>
+                <tr>
+                  <td><strong>Analytics</strong></td>
+                  <td>Heatmaps, daily averages, and course completion rates.</td>
+                </tr>
+                <tr>
+                  <td><strong>Daily Planner</strong></td>
+                  <td>Schedule study sessions in advance.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Section 10: Gamification -->
+        <section id="gamification" class="doc-section">
+          <div class="doc-section-header">
+            <span class="doc-section-number">10</span>
+            <h2 class="doc-section-title">XP, Levels & Clearance</h2>
+          </div>
+
+          <p>Every meaningful action earns XP (Experience Points). Your XP fills a progress bar toward the next level.
+          </p>
+
+          <ul>
+            <li><strong>Watching video:</strong> ~5 XP/min</li>
+            <li><strong>Completing a course:</strong> +500 XP bonus</li>
+            <li><strong>Daily streak:</strong> +25 XP</li>
+          </ul>
+
+          <p>As you level up, your <strong>Clearance Level</strong> increases, unlocking premium themes in the store.
+          </p>
+        </section>
+
+        <!-- Section 11: Hall of Fame -->
+        <section id="hall-of-fame" class="doc-section">
+          <div class="doc-section-header">
+            <span class="doc-section-number">11</span>
+            <h2 class="doc-section-title">Hall of Fame</h2>
+          </div>
+
+          <p>A real-time global leaderboard where scholars compete based on total study hours and XP.</p>
+
+          <div class="callout warning">
+            <div class="callout-title">Privacy Note</div>
+            <p>To appear on the leaderboard, you must set a <strong>Scholar Handle</strong> in Settings. You can toggle
+              your visibility at any time.</p>
+          </div>
+        </section>
+
+        <!-- Section 12: Themes -->
+        <section id="themes" class="doc-section">
+          <div class="doc-section-header">
+            <span class="doc-section-number">12</span>
+            <h2 class="doc-section-title">Themes Store</h2>
+          </div>
+
+          <p>Customize your study environment. Themes are unlocked by leveling up, not by paying.</p>
+
+          <div class="table-wrapper hover-target">
+            <table>
+              <thead>
+                <tr>
+                  <th>Theme</th>
+                  <th>Style</th>
+                  <th>Unlock Level</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Standard Black</td>
+                  <td>Pure black, high contrast</td>
+                  <td>1 (Default)</td>
+                </tr>
+                <tr>
+                  <td>Naruto</td>
+                  <td>Orange fire energy</td>
+                  <td>Level 10</td>
+                </tr>
+                <tr>
+                  <td>Roronoa Zoro</td>
+                  <td>Forest green, sharp edges</td>
+                  <td>Level 15</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Section 13: Settings -->
+        <section id="settings" class="doc-section">
+          <div class="doc-section-header">
+            <span class="doc-section-number">13</span>
+            <h2 class="doc-section-title">Settings Reference</h2>
+          </div>
+
+          <p>The Settings panel is divided into key sections:</p>
+          <ul>
+            <li><strong>General:</strong> Startup behavior, daily goals.</li>
+            <li><strong>AI:</strong> API keys, model selection, persona.</li>
+            <li><strong>Player:</strong> Default speed, subtitle styling.</li>
+            <li><strong>Profile:</strong> Scholar handle, avatar, XP reset.</li>
+          </ul>
+        </section>
+
+        <!-- Section 14: Shortcuts -->
+        <section id="shortcuts" class="doc-section">
+          <div class="doc-section-header">
+            <span class="doc-section-number">14</span>
+            <h2 class="doc-section-title">Keyboard Shortcuts</h2>
+          </div>
+
+          <div class="table-wrapper hover-target">
+            <table>
+              <thead>
+                <tr>
+                  <th>Action</th>
+                  <th>Shortcut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Play / Pause</td>
+                  <td><code>Space</code></td>
+                </tr>
+                <tr>
+                  <td>Seek +10s / -10s</td>
+                  <td><code>→</code> / <code>←</code></td>
+                </tr>
+                <tr>
+                  <td>Volume Up / Down</td>
+                  <td><code>↑</code> / <code>↓</code></td>
+                </tr>
+                <tr>
+                  <td>Full Screen</td>
+                  <td><code>F</code></td>
+                </tr>
+                <tr>
+                  <td>Take Note</td>
+                  <td><code>Ctrl + N</code></td>
+                </tr>
+                <tr>
+                  <td>Bookmark</td>
+                  <td><code>B</code></td>
+                </tr>
+                <tr>
+                  <td>Toggle Subtitles</td>
+                  <td><code>C</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="margin-top: 100px; padding-top: 40px; border-top: 1px solid var(--border); text-align: center;">
+          <p style="color: var(--muted); font-size: 0.9rem;">
+            Built by Rohit · <a href="https://github.com/Rohit0072/study-stream-black" target="_blank"
+              class="hover-target">GitHub</a>
+          </p>
+        </footer>
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Cursor Logic
+    const cursor = document.querySelector('.cursor');
+    const cursorDot = document.querySelector('.cursor-dot');
+    let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function animateCursor() {
+      cursorX += (mouseX - cursorX) * 0.15;
+      cursorY += (mouseY - cursorY) * 0.15;
+
+      if (cursor && cursorDot) {
+        cursor.style.left = cursorX - 10 + 'px';
+        cursor.style.top = cursorY - 10 + 'px';
+        cursorDot.style.left = mouseX - 2 + 'px';
+        cursorDot.style.top = mouseY - 2 + 'px';
+      }
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover targets
+    document.querySelectorAll('.hover-target').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
+    // Mobile Menu
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('open');
+    });
+
+    // Close sidebar when clicking a link on mobile
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 1024) {
+          sidebar.classList.remove('open');
+        }
+      });
+    });
+
+    // Reading Progress Bar
+    const progressBar = document.getElementById('progressBar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      progressBar.style.width = scrollPercent + '%';
+    });
+
+    // Scroll Reveal Animation
+    const sections = document.querySelectorAll('.doc-section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Scroll Spy (Active Nav Link)
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const spyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { threshold: 0.3, rootMargin: '-100px 0px -50% 0px' });
+
+    sections.forEach(section => spyObserver.observe(section));
+
+    // Copy Code Blocks
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const code = btn.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code);
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 2000);
+      });
+    });
+
+    // Sidebar Search Filter (Basic)
+    const searchInput = document.querySelector('.search-input');
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      navLinks.forEach(link => {
+        const text = link.textContent.toLowerCase();
+        if (text.includes(term)) {
+          link.parentElement.style.display = 'block';
+        } else {
+          link.parentElement.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -1554,6 +1554,38 @@
                 animation: none;
             }
         }
+
+        /* Glowing Docs Nav Link */
+        .nav-docs-link {
+            color: #2ecc71 !important;
+            border: 1px solid rgba(46, 204, 113, 0.4);
+            padding: 4px 14px !important;
+            border-radius: 2px;
+            animation: docsGlow 2.5s ease-in-out infinite;
+            position: relative;
+        }
+
+        .nav-docs-link:hover {
+            color: #fff !important;
+            background: rgba(46, 204, 113, 0.15);
+            border-color: rgba(46, 204, 113, 0.9);
+            box-shadow: 0 0 18px rgba(46, 204, 113, 0.6), 0 0 40px rgba(46, 204, 113, 0.2);
+            animation: none;
+        }
+
+        @keyframes docsGlow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 6px rgba(46, 204, 113, 0.3);
+                border-color: rgba(46, 204, 113, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 16px rgba(46, 204, 113, 0.7), 0 0 32px rgba(46, 204, 113, 0.25);
+                border-color: rgba(46, 204, 113, 0.8);
+            }
+        }
     </style>
 </head>
 
@@ -1578,6 +1610,7 @@
             <a href="#download" class="nav-link hover-target">Download</a>
             <a href="https://github.com/Rohit0072/study-stream-black" class="nav-link hover-target"
                 target="_blank">GitHub</a>
+            <a href="documentaion.html" class="nav-link nav-docs-link hover-target">Docs</a>
         </div>
     </nav>
 
@@ -1893,7 +1926,7 @@
                                 d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                         </svg>
                     </a>
-                    <a href="mailto:rohitsingh0072@gmail.com" class="dev-link hover-target" aria-label="Email">
+                    <a href="mailto:rs3274357@gmail.com" class="dev-link hover-target" aria-label="Email">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -1963,7 +1996,7 @@
         <div class="footer-links">
             <a href="https://github.com/Rohit0072/study-stream-black" target="_blank"
                 class="footer-link hover-target">GitHub</a>
-            <a href="#" class="footer-link hover-target">Documentation</a>
+            <a href="documentaion.html" class="footer-link hover-target">Documentation</a>
             <a href="#" class="footer-link hover-target">Support</a>
         </div>
     </footer>
