@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Stream — Focus Without Distraction</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Study Stream — Focus Without Distraction">
+  <meta name="description"
+    content="A brutalist, distraction-free studying environment blending productivity with personality. Features Anime themes, Smart Notes, and a Netflix-style Course Library.">
+  <meta name="keywords" content="Study, Productivity, Flow State, Anime Themes, Distraction Free, Course Library">
+  <meta name="author" content="Rohit">
+  <meta name="theme-color" content="#0a0a0a">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://studystream.app/">
+  <meta property="og:title" content="Study Stream — Focus Without Distraction">
+  <meta property="og:description"
+    content="A brutalist, distraction-free studying environment blending productivity with personality. Features Anime themes, Smart Notes, and a Netflix-style Course Library.">
+  <meta property="og:image" content="https://studystream.app/study-stream-site/ads/course_card.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://studystream.app/">
+  <meta property="twitter:title" content="Study Stream — Focus Without Distraction">
+  <meta property="twitter:description"
+    content="A brutalist, distraction-free studying environment blending productivity with personality. Features Anime themes, Smart Notes, and a Netflix-style Course Library.">
+  <meta property="twitter:image" content="https://studystream.app/study-stream-site/ads/course_card.jpg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-elevated: #111111;
+      --fg: #fafafa;
+      --muted: #666666;
+      --accent: #ffffff;
+      --card: #151515;
+      --border: #222222;
+      --icon-blue: #4a9eff;
+      /* Anime theme accents */
+      --zoro-green: #2ecc71;
+      --naruto-orange: #e67e22;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    .font-display {
+      font-family: 'Syne', sans-serif;
+    }
+
+    /* Custom Cursor */
+    .cursor {
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--fg);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.15s ease, background 0.15s ease;
+      mix-blend-mode: difference;
+    }
+
+    .cursor-dot {
+      width: 4px;
+      height: 4px;
+      background: var(--fg);
+      border-radius: 50%;
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      mix-blend-mode: difference;
+    }
+
+    .cursor.hover {
+      transform: scale(2.5);
+      background: var(--fg);
+    }
+
+    /* Noise overlay */
+    .noise {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(40, 40, 40, 0.3) 0%, transparent 60%);
+    }
+
+    /* Animated lines */
+    .line-container {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .animated-line {
+      position: absolute;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1), transparent);
+      animation: lineMove 8s linear infinite;
+    }
+
+    @keyframes lineMove {
+      0% {
+        transform: translateY(-100%);
+      }
+
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    /* Hero Icon */
+    .hero-icon-container {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .hero-icon {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 40px rgba(74, 158, 255, 0.3));
+      animation: iconPulse 4s ease-in-out infinite, iconFloat 6s ease-in-out infinite;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-icon:hover {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    @keyframes iconPulse {
+
+      0%,
+      100% {
+        filter: drop-shadow(0 0 40px rgba(74, 158, 255, 0.3));
+      }
+
+      50% {
+        filter: drop-shadow(0 0 60px rgba(74, 158, 255, 0.5));
+      }
+    }
+
+    @keyframes iconFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .icon-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(74, 158, 255, 0.2);
+      border-radius: 50%;
+      animation: ringExpand 4s ease-out infinite;
+    }
+
+    .icon-ring:nth-child(2) {
+      animation-delay: 1.3s;
+    }
+
+    .icon-ring:nth-child(3) {
+      animation-delay: 2.6s;
+    }
+
+    @keyframes ringExpand {
+      0% {
+        width: 200px;
+        height: 200px;
+        opacity: 0.6;
+      }
+
+      100% {
+        width: 400px;
+        height: 400px;
+        opacity: 0;
+      }
+    }
+
+    .reveal-text {
+      overflow: hidden;
+    }
+
+    .reveal-text span {
+      display: inline-block;
+      transform: translateY(100%);
+      opacity: 0;
+      animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes revealUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .stagger-1 {
+      animation-delay: 0.1s;
+    }
+
+    .stagger-2 {
+      animation-delay: 0.2s;
+    }
+
+    .stagger-3 {
+      animation-delay: 0.3s;
+    }
+
+    .stagger-4 {
+      animation-delay: 0.4s;
+    }
+
+    .stagger-5 {
+      animation-delay: 0.5s;
+    }
+
+    .float-element {
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(5deg);
+      }
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      animation: fadeInUp 1s ease 1.5s forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, var(--fg), transparent);
+      animation: scrollPulse 2s ease infinite;
+    }
+
+    @keyframes scrollPulse {
+
+      0%,
+      100% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scaleY(0.5);
+        opacity: 0.5;
+      }
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 24px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--fg);
+    }
+
+    .nav-icon {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-logo:hover .nav-icon {
+      transform: rotate(-10deg) scale(1.1);
+    }
+
+    .nav-logo-text {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav-link {
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--fg);
+      transform: translateX(-101%);
+      transition: transform 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      transform: translateX(0);
+    }
+
+    /* Sections */
+    .section {
+      padding: 120px 48px;
+      position: relative;
+    }
+
+    /* Marquee */
+    .marquee-container {
+      overflow: hidden;
+      padding: 40px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .marquee {
+      display: flex;
+      animation: marquee 30s linear infinite;
+    }
+
+    .marquee-item {
+      flex-shrink: 0;
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 8vw, 8rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+      padding: 0 40px;
+      color: transparent;
+      -webkit-text-stroke: 1px var(--muted);
+      transition: all 0.3s ease;
+    }
+
+    .marquee-item:hover {
+      color: var(--fg);
+      -webkit-text-stroke: 1px var(--fg);
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Feature cards */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: var(--border);
+    }
+
+    .feature-card {
+      background: var(--bg);
+      padding: 60px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-number {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      margin-bottom: 40px;
+    }
+
+    .feature-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 600;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .feature-desc {
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 400px;
+    }
+
+    .feature-image {
+      margin-top: 40px;
+      aspect-ratio: 16/10;
+      background: var(--card);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .feature-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .feature-card:hover .feature-image img {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+
+    /* Showcase image section */
+    .showcase-section {
+      padding: 0;
+      position: relative;
+    }
+
+    .showcase-image-container {
+      width: 100%;
+      height: 80vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .showcase-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 10s linear;
+    }
+
+    .showcase-section:hover .showcase-image {
+      transform: scale(1.1);
+    }
+
+    /* Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--border);
+    }
+
+    .stat-item {
+      background: var(--bg);
+      padding: 60px 40px;
+      text-align: center;
+      transition: background 0.3s ease;
+    }
+
+    .stat-item:hover {
+      background: var(--bg-elevated);
+    }
+
+    .stat-number {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .stat-label {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* THEMES SECTION STYLES */
+    .themes-section {
+      padding: 150px 0;
+      position: relative;
+      background: var(--bg);
+      overflow: hidden;
+    }
+
+    .themes-accordion-wrapper {
+      width: 100%;
+      height: 80vh;
+      min-height: 500px;
+      margin-top: 60px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .themes-accordion {
+      display: flex;
+      width: 120vw;
+      /* Wider to overlap completely */
+      margin-left: -10vw;
+      height: 100%;
+      transform: skew(-15deg);
+    }
+
+    .theme-slice {
+      flex: 1;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      border-right: 4px solid var(--fg);
+      /* Thick white border like mockup */
+      transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      cursor: pointer;
+    }
+
+    .theme-slice:last-child {
+      border-right: none;
+    }
+
+    .theme-slice:hover {
+      flex: 3;
+    }
+
+    .theme-slice-inner {
+      position: absolute;
+      top: 0;
+      /* Exceed bounding box to never show gaps when skewed */
+      left: -200px;
+      right: -200px;
+      height: 100%;
+      transform: skew(15deg);
+      background-size: cover;
+      background-position: center;
+      transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      filter: brightness(0.6) grayscale(30%);
+    }
+
+    .theme-slice:hover .theme-slice-inner {
+      filter: brightness(1) grayscale(0%);
+      transform: skew(15deg) scale(1.05);
+    }
+
+    /* Assign Backgrounds */
+    .bg-naruto {
+      background-image: url('study-stream-site/ads/theme/theme_image_ (1).png');
+    }
+
+    .bg-light {
+      background-image: url('study-stream-site/ads/theme/theme_image_ (2).png');
+    }
+
+    .bg-roronoa {
+      background-image: url('study-stream-site/ads/theme/theme_image_ (3).png');
+    }
+
+    .bg-midnight {
+      background-image: url('study-stream-site/ads/theme/theme_image_ (4).png');
+    }
+
+    .theme-slice-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transform: skew(15deg) scale(0.9);
+      transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+      pointer-events: none;
+    }
+
+    .theme-slice:hover .theme-slice-content {
+      opacity: 1;
+      transform: skew(15deg) scale(1);
+    }
+
+    .theme-slice-content h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 4rem);
+      font-weight: 800;
+      color: var(--fg);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      text-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+      margin: 0;
+      transition: all 0.3s ease;
+    }
+
+    .theme-slice-content h3.theme-text-naruto {
+      color: var(--naruto-orange);
+      text-shadow: 0 0 20px rgba(230, 126, 34, 0.8);
+    }
+
+    .theme-slice-content h3.theme-text-light {
+      color: #ffffff;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+
+    .theme-slice-content h3.theme-text-roronoa {
+      color: var(--zoro-green);
+      text-shadow: 0 0 20px rgba(46, 204, 113, 0.8);
+    }
+
+    .theme-slice-content h3.theme-text-midnight {
+      color: var(--icon-blue);
+      text-shadow: 0 0 20px rgba(74, 158, 255, 0.8);
+    }
+
+    /* DEVELOPER SECTION STYLES */
+    .developer-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .developer-bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.3;
+      mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+    }
+
+    .developer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 100px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 350px;
+      height: 350px;
+      margin: 0 auto;
+    }
+
+    .avatar-border {
+      position: absolute;
+      inset: -20px;
+      border: 1px solid var(--border);
+      animation: borderRotate 10s linear infinite;
+    }
+
+    .avatar-border::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: 50%;
+      width: 20px;
+      height: 2px;
+      background: var(--fg);
+      transform: translateX(-50%);
+    }
+
+    @keyframes borderRotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .avatar-circle {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      background: var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 8rem;
+      font-weight: 800;
+      color: var(--fg);
+      transition: transform 0.5s ease;
+    }
+
+    .avatar-circle:hover {
+      transform: scale(1.05);
+    }
+
+    .floating-dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: var(--fg);
+      border-radius: 50%;
+      animation: dotFloat 4s ease-in-out infinite;
+    }
+
+    .floating-dot:nth-child(1) {
+      top: 10%;
+      left: 0;
+      animation-delay: 0s;
+    }
+
+    .floating-dot:nth-child(2) {
+      top: 0;
+      right: 20%;
+      animation-delay: 1s;
+    }
+
+    .floating-dot:nth-child(3) {
+      bottom: 20%;
+      right: 0;
+      animation-delay: 2s;
+    }
+
+    .floating-dot:nth-child(4) {
+      bottom: 0;
+      left: 20%;
+      animation-delay: 3s;
+    }
+
+    @keyframes dotFloat {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1.5);
+        opacity: 1;
+      }
+    }
+
+    .dev-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    .dev-name {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .glitch {
+      position: relative;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg);
+    }
+
+    .glitch::before {
+      left: 2px;
+      text-shadow: -2px 0 var(--icon-blue);
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+
+    .glitch::after {
+      left: -2px;
+      text-shadow: -2px 0 var(--muted);
+      clip: rect(44px, 450px, 56px, 0);
+      animation: glitch-anim2 5s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-anim {
+      0% {
+        clip: rect(31px, 9999px, 94px, 0);
+      }
+
+      20% {
+        clip: rect(82px, 9999px, 37px, 0);
+      }
+
+      40% {
+        clip: rect(90px, 9999px, 33px, 0);
+      }
+
+      60% {
+        clip: rect(29px, 9999px, 57px, 0);
+      }
+
+      80% {
+        clip: rect(84px, 9999px, 50px, 0);
+      }
+
+      100% {
+        clip: rect(79px, 9999px, 65px, 0);
+      }
+    }
+
+    @keyframes glitch-anim2 {
+      0% {
+        clip: rect(65px, 9999px, 100px, 0);
+      }
+
+      20% {
+        clip: rect(67px, 9999px, 61px, 0);
+      }
+
+      40% {
+        clip: rect(23px, 9999px, 98px, 0);
+      }
+
+      60% {
+        clip: rect(30px, 9999px, 16px, 0);
+      }
+
+      80% {
+        clip: rect(3px, 9999px, 27px, 0);
+      }
+
+      100% {
+        clip: rect(38px, 9999px, 91px, 0);
+      }
+    }
+
+    .dev-role {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .dev-role::before {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--muted);
+    }
+
+    .dev-bio {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 500px;
+      margin-bottom: 48px;
+    }
+
+    .dev-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .dev-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .dev-link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--fg);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .dev-link:hover::before {
+      transform: translateY(0);
+    }
+
+    .dev-link svg {
+      position: relative;
+      z-index: 2;
+      stroke: var(--fg);
+      transition: stroke 0.3s ease;
+    }
+
+    .dev-link:hover svg {
+      stroke: var(--bg);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(30, 30, 30, 0.5) 0%, transparent 70%);
+    }
+
+    .cta-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.5rem, 8vw, 7rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 40px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 48px;
+      background: var(--fg);
+      color: var(--bg);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--bg);
+      transform: translateX(-101%);
+      transition: transform 0.3s ease;
+    }
+
+    .cta-button:hover::before {
+      transform: translateX(0);
+    }
+
+    .cta-button span {
+      position: relative;
+      z-index: 1;
+      transition: color 0.3s ease;
+    }
+
+    .cta-button:hover span {
+      color: var(--fg);
+    }
+
+    .cta-button svg {
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover svg {
+      transform: translateX(4px);
+      stroke: var(--fg);
+    }
+
+    .cta-button.outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--fg);
+    }
+
+    .cta-button.outline::before {
+      background: var(--fg);
+    }
+
+    .cta-button.outline:hover span {
+      color: var(--bg);
+    }
+
+    .cta-button.outline:hover svg {
+      stroke: var(--bg);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 60px 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-icon {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .footer-brand:hover .footer-icon {
+      opacity: 1;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer-link {
+      color: var(--muted);
+      font-size: 0.875rem;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--fg);
+    }
+
+    /* Scroll animations */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(60px);
+      transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+
+      .feature-grid,
+      .split-section {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .themes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .theme-card.large {
+        grid-column: span 1;
+        aspect-ratio: 16/9;
+      }
+
+      .developer-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+      }
+
+      .dev-role {
+        justify-content: center;
+      }
+
+      .dev-bio {
+        margin: 0 auto 48px;
+      }
+
+      .dev-links {
+        justify-content: center;
+      }
+
+      .nav,
+      .section,
+      .themes-section,
+      .developer-section {
+        padding: 80px 24px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .cursor,
+      .cursor-dot {
+        display: none;
+      }
+
+      body {
+        cursor: auto;
+      }
+
+      .glitch::before,
+      .glitch::after {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Noise overlay -->
+  <div class="noise"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-dot"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo hover-target">
+      <!-- Icon from prompt: pasted_image_1771943164741.png -->
+      <img
+        src="https://z-cdn-media.chatglm.cn/files/d4ec7db1-85f5-4aa7-a234-ac68016cc8a5.png?auth_key=1871943196-41a810dfddbb41b2a66705d1368c8a2a-0-feea5db33218dbb167ccc0b66c4ffcf6"
+        alt="Study Stream Icon" class="nav-icon">
+      <span class="nav-logo-text">Study Stream</span>
+    </a>
+    <div class="nav-links">
+      <a href="#features" class="nav-link hover-target">Features</a>
+      <a href="#themes" class="nav-link hover-target">Themes</a>
+      <a href="#developer" class="nav-link hover-target">Developer</a>
+      <a href="#download" class="nav-link hover-target">Download</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="line-container" id="lines-container"></div>
+
+    <div class="float-element" style="top: 20%; left: 10%; width: 100px; height: 100px;"></div>
+    <div class="float-element" style="top: 60%; right: 15%; width: 60px; height: 60px; animation-delay: 2s;"></div>
+
+    <div class="text-center relative z-10 px-6">
+      <div class="hero-icon-container reveal-text">
+        <span class="stagger-1">
+          <div style="position: relative; display: inline-block;">
+            <div class="icon-ring"></div>
+            <div class="icon-ring"></div>
+            <div class="icon-ring"></div>
+            <img
+              src="https://z-cdn-media.chatglm.cn/files/d4ec7db1-85f5-4aa7-a234-ac68016cc8a5.png?auth_key=1871943196-41a810dfddbb41b2a66705d1368c8a2a-0-feea5db33218dbb167ccc0b66c4ffcf6"
+              alt="Study Stream" class="hero-icon hover-target">
+          </div>
+        </span>
+      </div>
+
+      <div class="reveal-text mb-6">
+        <span class="stagger-2 text-sm tracking-[0.3em] uppercase text-[var(--muted)]">Electron App for Focus</span>
+      </div>
+
+      <h1 class="font-display text-[clamp(3rem,12vw,10rem)] font-800 leading-[0.9] tracking-[-0.04em] mb-8">
+        <div class="reveal-text"><span class="stagger-3">Study</span></div>
+        <div class="reveal-text"><span class="stagger-4" style="color: var(--muted);">Stream</span></div>
+      </h1>
+
+      <div class="reveal-text mt-12">
+        <a href="#download" class="cta-button hover-target">
+          <span>Download Now</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span class="text-xs tracking-[0.2em] uppercase text-[var(--muted)]">Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-container">
+    <div class="marquee">
+      <span class="marquee-item hover-target">Focus</span>
+      <span class="marquee-item hover-target">Themes</span>
+      <span class="marquee-item hover-target">Anime</span>
+      <span class="marquee-item hover-target">Course</span>
+      <span class="marquee-item hover-target">Dark</span>
+      <span class="marquee-item hover-target">Ambient</span>
+      <span class="marquee-item hover-target">Focus</span>
+      <span class="marquee-item hover-target">Themes</span>
+      <span class="marquee-item hover-target">Anime</span>
+      <span class="marquee-item hover-target">Course</span>
+      <span class="marquee-item hover-target">Dark</span>
+      <span class="marquee-item hover-target">Ambient</span>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section id="features" class="section">
+    <div class="max-w-7xl mx-auto">
+      <div class="scroll-reveal mb-20">
+        <span class="text-sm tracking-[0.3em] uppercase text-[var(--muted)] block mb-4">Core Features</span>
+        <h2 class="font-display text-[clamp(2rem,5vw,4rem)] font-700 tracking-[-0.02em]">
+          Your personal<br><span style="color: var(--muted)">learning dashboard</span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="feature-grid scroll-reveal">
+      <!-- Feature 1: Course Library -->
+      <div class="feature-card hover-target">
+        <div class="feature-number">01</div>
+        <h3 class="feature-title">Course Library</h3>
+        <p class="feature-desc">
+          Organize all your learning materials in one place. Track progress, manage sections, and never lose your place.
+        </p>
+        <div class="feature-image">
+          <img src="study-stream-site/ads/course_card.jpg" alt="Course Library Interface">
+        </div>
+      </div>
+
+      <!-- Feature 2: Video Player -->
+      <div class="feature-card hover-target">
+        <div class="feature-number">02</div>
+        <h3 class="feature-title">Immersive Player</h3>
+        <p class="feature-desc">
+          A distraction-free video experience. Chapter markers, progress tracking, and picture-in-picture support.
+        </p>
+        <div class="feature-image">
+          <!-- Replaced with video_course_example.png placeholder -->
+          <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop"
+            alt="Video Course Player">
+        </div>
+      </div>
+
+      <!-- Feature 3: Theme Store -->
+      <div class="feature-card hover-target">
+        <div class="feature-number">03</div>
+        <h3 class="feature-title">Theme Store</h3>
+        <p class="feature-desc">
+          Customize your workspace. Choose from minimalist dark modes or anime-inspired visual themes.
+        </p>
+        <div class="feature-image">
+          <!-- Replaced with themes_store.png placeholder -->
+          <img src="https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=800&auto=format&fit=crop"
+            alt="Themes Store Interface">
+        </div>
+      </div>
+
+      <!-- Feature 4: Focus Mode -->
+      <div class="feature-card hover-target">
+        <div class="feature-number">04</div>
+        <h3 class="feature-title">Focus Mode</h3>
+        <p class="feature-desc">
+          Eliminate distractions. Integrated ambient sounds and a minimalist interface help you stay in the zone.
+        </p>
+        <div class="feature-image">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop"
+            alt="Dark Focus Mode">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEMES SECTION -->
+  <section id="themes" class="themes-section">
+    <div class="max-w-7xl mx-auto px-6 relative z-10" style="padding-left: 48px; padding-right: 48px;">
+      <div class="scroll-reveal">
+        <span class="text-sm tracking-[0.3em] uppercase text-[var(--muted)] block mb-4">Personalization</span>
+        <h2 class="font-display text-[clamp(2rem,5vw,4rem)] font-700 tracking-[-0.02em]">
+          Anime &<br><span style="color: var(--muted)">Aesthetic Themes</span>
+        </h2>
+      </div>
+    </div>
+
+    <!-- The Skewed Accordion Backdrop -->
+    <div class="themes-accordion-wrapper scroll-reveal" style="transition-delay: 0.2s;">
+      <div class="themes-accordion">
+
+        <!-- Theme 1: Naruto -->
+        <div class="theme-slice hover-target">
+          <div class="theme-slice-inner bg-naruto"></div>
+          <div class="theme-slice-content">
+            <h3 class="theme-text-naruto">Naruto</h3>
+          </div>
+        </div>
+
+        <!-- Theme 2: Light -->
+        <div class="theme-slice hover-target">
+          <div class="theme-slice-inner bg-light"></div>
+          <div class="theme-slice-content">
+            <h3 class="theme-text-light">Light</h3>
+          </div>
+        </div>
+
+        <!-- Theme 3: Roronoa -->
+        <div class="theme-slice hover-target">
+          <div class="theme-slice-inner bg-roronoa"></div>
+          <div class="theme-slice-content">
+            <h3 class="theme-text-roronoa">Roronoa</h3>
+          </div>
+        </div>
+
+        <!-- Theme 4: Midnight Pro -->
+        <div class="theme-slice hover-target">
+          <div class="theme-slice-inner bg-midnight"></div>
+          <div class="theme-slice-content">
+            <h3 class="theme-text-midnight">Midnight Pro</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Showcase Section (Course Library Screenshot) -->
+  <section class="showcase-section scroll-reveal">
+    <div class="showcase-image-container">
+      <img src="study-stream-site/ads/course_card.jpg" alt="Course Library Overview" class="showcase-image">
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="scroll-reveal">
+    <div class="stats-grid">
+      <div class="stat-item hover-target">
+        <div class="stat-number" data-count="6">0</div>
+        <div class="stat-label">Unique Themes</div>
+      </div>
+      <div class="stat-item hover-target">
+        <div class="stat-number" data-count="4">0</div>
+        <div class="stat-label">Core Modules</div>
+      </div>
+      <div class="stat-item hover-target">
+        <div class="stat-number" data-count="100">0</div>
+        <div class="stat-label">Percent Free</div>
+      </div>
+      <div class="stat-item hover-target">
+        <div class="stat-number" data-count="1">0</div>
+        <div class="stat-label">Click Download</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVELOPER SECTION -->
+  <section id="developer" class="developer-section">
+    <div class="developer-bg-grid"></div>
+
+    <div class="developer-container">
+      <div class="scroll-reveal">
+        <div class="avatar-wrapper">
+          <div class="avatar-border"></div>
+          <div class="floating-dot"></div>
+          <div class="floating-dot"></div>
+          <div class="floating-dot"></div>
+          <div class="floating-dot"></div>
+          <div class="avatar-circle hover-target">
+            <img src="study-stream-site/ads/Rohit_profile_image.png" alt="Rohit Profile"
+              style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+
+      <div class="developer-info scroll-reveal" style="transition-delay: 0.2s;">
+        <span class="dev-label">The Developer</span>
+        <h2 class="dev-name glitch hover-target" data-text="Rohit">Rohit</h2>
+        <div class="dev-role">Full Stack Developer</div>
+        <p class="dev-bio">
+          Building tools that blend productivity with personality. Study Stream is a testament to the fact that utility
+          apps don't have to be boring.
+          With anime-inspired themes and a focus on the "Flow State", this project aims to make studying an experience,
+          not a chore.
+        </p>
+        <div class="dev-links">
+          <a href="https://github.com/Rohit0072/study-stream-black" target="_blank" class="dev-link hover-target"
+            aria-label="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+            </svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" class="dev-link hover-target" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+          <a href="mailto:hello@example.com" class="dev-link hover-target" aria-label="Email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="download" class="cta-section">
+    <div class="cta-bg"></div>
+
+    <div class="relative z-10 px-6 scroll-reveal">
+      <h2 class="cta-title">Ready to<br>Focus?</h2>
+      <p class="text-[var(--muted)] text-lg max-w-md mx-auto mb-10">
+        Download Study Stream and transform your study sessions into an immersive experience.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="https://github.com/Rohit0072/study-stream-black/releases" target="_blank"
+          class="cta-button hover-target">
+          <span>Download for Free</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+        </a>
+        <a href="https://github.com/Rohit0072/study-stream-black" target="_blank"
+          class="cta-button outline hover-target">
+          <span>Star on GitHub</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-brand hover-target">
+      <img
+        src="https://z-cdn-media.chatglm.cn/files/d4ec7db1-85f5-4aa7-a234-ac68016cc8a5.png?auth_key=1871943196-41a810dfddbb41b2a66705d1368c8a2a-0-feea5db33218dbb167ccc0b66c4ffcf6"
+        alt="Study Stream" class="footer-icon">
+      <span class="text-sm text-[var(--muted)]">2024 Study Stream. Open source under MIT License.</span>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/Rohit0072/study-stream-black" target="_blank"
+        class="footer-link hover-target">GitHub</a>
+      <a href="#" class="footer-link hover-target">Documentation</a>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize variables first
+    const cursor = document.querySelector('.cursor');
+    const cursorDot = document.querySelector('.cursor-dot');
+    const linesContainer = document.getElementById('lines-container');
+    const nav = document.getElementById('nav');
+    let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+
+    // Custom cursor
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function animateCursor() {
+      const ease = 0.15;
+      cursorX += (mouseX - cursorX) * ease;
+      cursorY += (mouseY - cursorY) * ease;
+
+      if (cursor && cursorDot) {
+        cursor.style.left = cursorX - 10 + 'px';
+        cursor.style.top = cursorY - 10 + 'px';
+        cursorDot.style.left = mouseX - 2 + 'px';
+        cursorDot.style.top = mouseY - 2 + 'px';
+      }
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover effect
+    document.querySelectorAll('.hover-target').forEach(el => {
+      el.addEventListener('mouseenter', () => { if (cursor) cursor.classList.add('hover'); });
+      el.addEventListener('mouseleave', () => { if (cursor) cursor.classList.remove('hover'); });
+    });
+
+    // Create animated lines
+    if (linesContainer) {
+      for (let i = 0; i < 8; i++) {
+        const line = document.createElement('div');
+        line.className = 'animated-line';
+        line.style.left = `${10 + i * 12}%`;
+        line.style.animationDelay = `${i * 0.5}s`;
+        linesContainer.appendChild(line);
+      }
+    }
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          if (entry.target.querySelector('.stat-number')) {
+            entry.target.querySelectorAll('.stat-number').forEach(stat => {
+              const target = parseInt(stat.dataset.count) || 0;
+              animateNumber(stat, target);
+            });
+          }
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+    function animateNumber(el, target) {
+      let current = 0;
+      const duration = 2000;
+      const step = target / (duration / 16);
+      const update = () => {
+        current += step;
+        if (current < target) {
+          el.textContent = Math.floor(current);
+          requestAnimationFrame(update);
+        } else el.textContent = target;
+      };
+      update();
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Nav scroll
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    });
+  </script>
+</body>
+
+</html>
