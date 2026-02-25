@@ -1,258 +1,2113 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+﻿<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STUDY STREAM BLACK | THE ELITE OFFLINE HUB</title>
-    <meta name="description" content="Elevated learning. Study Stream Black is the premier offline course environment for students who demand focus and aesthetic perfection.">
-    
-    <!-- Fonts -->
+    <title>Study Stream Black — The Elite Offline Hub</title>
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Study Stream — Focus Without Distraction">
+    <meta name="description"
+        content="A brutalist, distraction-free studying environment blending productivity with personality. Features Anime themes, Smart Notes, and a Netflix-style Course Library.">
+    <meta name="keywords" content="Study, Productivity, Flow State, Anime Themes, Distraction Free, Course Library">
+    <meta name="author" content="Rohit">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://studystream.app/">
+    <meta property="og:title" content="Study Stream — Focus Without Distraction">
+    <meta property="og:description"
+        content="A brutalist, distraction-free studying environment blending productivity with personality. Features Anime themes, Smart Notes, and a Netflix-style Course Library.">
+    <meta property="og:image" content="https://studystream.app/ads/course_card.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://studystream.app/">
+    <meta property="twitter:title" content="Study Stream — Focus Without Distraction">
+    <meta property="twitter:description"
+        content="A brutalist, distraction-free studying environment blending productivity with personality. Features Anime themes, Smart Notes, and a Netflix-style Course Library.">
+    <meta property="twitter:image" content="https://studystream.app/ads/course_card.jpg">
+    <link rel="icon" type="image/png" href="ads/logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-    
-    <!-- Scripts & Styles -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
-            --bg-color: #080808;
-            --accent-red: #ff2e2e;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.08);
+            --bg: #0a0a0a;
+            --bg-elevated: #111111;
+            --fg: #fafafa;
+            --muted: #666666;
+            --accent: #ffffff;
+            --card: #151515;
+            --border: #222222;
+            --icon-blue: #4a9eff;
         }
-        
-        body { 
-            background-color: var(--bg-color); 
-            color: #ffffff; 
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
             font-family: 'Space Grotesk', sans-serif;
+            background: var(--bg);
+            color: var(--fg);
             overflow-x: hidden;
+            cursor: none;
         }
 
-        h1, h2, h3, .oroya-heading {
+        .font-display {
             font-family: 'Syne', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
         }
 
-        .gradient-text {
-            background: linear-gradient(to right, #ffffff, #888888);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Custom Cursor */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--fg);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.15s ease, background 0.15s ease;
+            mix-blend-mode: difference;
         }
 
-        .glass-card {
-            background: var(--glass);
+        .cursor-dot {
+            width: 4px;
+            height: 4px;
+            background: var(--fg);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+        }
+
+        .cursor.hover {
+            transform: scale(2.5);
+            background: var(--fg);
+        }
+
+        /* Noise overlay */
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(40, 40, 40, 0.3) 0%, transparent 60%);
+        }
+
+        /* Animated lines */
+        .line-container {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .animated-line {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: lineMove 8s linear infinite;
+        }
+
+        @keyframes lineMove {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        /* Hero Icon */
+        .hero-icon-container {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .hero-icon {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.1));
+            animation: iconPulse 4s ease-in-out infinite, iconFloat 6s ease-in-out infinite;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        @keyframes iconPulse {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 40px rgba(74, 158, 255, 0.3));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 60px rgba(74, 158, 255, 0.5));
+            }
+        }
+
+        @keyframes iconFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Icon ring decoration */
+        .icon-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(74, 158, 255, 0.2);
+            border-radius: 50%;
+            animation: ringExpand 4s ease-out infinite;
+        }
+
+        .icon-ring:nth-child(2) {
+            animation-delay: 1.3s;
+        }
+
+        .icon-ring:nth-child(3) {
+            animation-delay: 2.6s;
+        }
+
+        @keyframes ringExpand {
+            0% {
+                width: 200px;
+                height: 200px;
+                opacity: 0.6;
+            }
+
+            100% {
+                width: 400px;
+                height: 400px;
+                opacity: 0;
+            }
+        }
+
+        /* Text animations */
+        .reveal-text {
+            overflow: hidden;
+        }
+
+        .reveal-text span {
+            display: inline-block;
+            transform: translateY(100%);
+            opacity: 0;
+            animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes revealUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .stagger-1 {
+            animation-delay: 0.1s;
+        }
+
+        .stagger-2 {
+            animation-delay: 0.2s;
+        }
+
+        .stagger-3 {
+            animation-delay: 0.3s;
+        }
+
+        .stagger-4 {
+            animation-delay: 0.4s;
+        }
+
+        .stagger-5 {
+            animation-delay: 0.5s;
+        }
+
+        .stagger-6 {
+            animation-delay: 0.6s;
+        }
+
+        /* Floating elements */
+        .float-element {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: fadeInUp 1s ease 1.5s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, var(--fg), transparent);
+            animation: scrollPulse 2s ease infinite;
+        }
+
+        @keyframes scrollPulse {
+
+            0%,
+            100% {
+                transform: scaleY(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scaleY(0.5);
+                opacity: 0.5;
+            }
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 24px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .nav.scrolled {
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid var(--border);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .glass-card:hover {
-            border-color: var(--accent-red);
-            background: rgba(255, 46, 46, 0.02);
-            transform: scale(1.02);
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--fg);
         }
 
-        .scribble-arrow {
-            filter: invert(1);
-            opacity: 0.3;
-            transform: rotate(-10deg);
+        .nav-icon {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-logo:hover .nav-icon {
+            transform: rotate(-10deg) scale(1.1);
+        }
+
+        .nav-logo-text {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
         }
 
         .nav-link {
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            color: var(--fg);
+            text-decoration: none;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--fg);
+            transform: translateX(-101%);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            transform: translateX(0);
+        }
+
+        /* Sections */
+        .section {
+            padding: 120px 48px;
+            position: relative;
+        }
+
+        /* Marquee */
+        .marquee-container {
+            overflow: hidden;
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .marquee {
+            display: flex;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-item {
+            flex-shrink: 0;
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(3rem, 8vw, 8rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+            white-space: nowrap;
+            padding: 0 40px;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--muted);
+            transition: all 0.3s ease;
+        }
+
+        .marquee-item:hover {
+            color: var(--fg);
+            -webkit-text-stroke: 1px var(--fg);
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Feature cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            background: var(--border);
+        }
+
+        .feature-card {
+            background: var(--bg);
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: var(--muted);
+            margin-bottom: 40px;
+        }
+
+        .feature-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .feature-desc {
+            color: var(--muted);
+            line-height: 1.7;
+            max-width: 400px;
+        }
+
+        .feature-image {
+            margin-top: 40px;
+            aspect-ratio: 16/10;
+            background: var(--card);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: all 0.5s ease;
+        }
+
+        .feature-card:hover .feature-image img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Large image section */
+        .showcase-section {
+            padding: 0;
+            position: relative;
+        }
+
+        .showcase-image {
+            width: 100%;
+            height: 80vh;
+            object-fit: cover;
+            filter: grayscale(80%);
+            transition: filter 0.5s ease;
+        }
+
+        .showcase-image:hover {
+            filter: grayscale(0%);
+        }
+
+        /* Split section */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 60vh;
+            max-height: 700px;
+        }
+
+        .split-content {
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .split-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .split-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .split-image:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: var(--border);
+        }
+
+        .stat-item {
+            background: var(--bg);
+            padding: 60px 40px;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: var(--bg-elevated);
+        }
+
+        .stat-number {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1;
+        }
+
+        .stat-label {
+            margin-top: 16px;
+            color: var(--muted);
+            font-size: 0.875rem;
             letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* THEMES SECTION STYLES */
+        .themes-section {
+            padding: 150px 0;
+            position: relative;
+            background: var(--bg);
+            overflow: hidden;
+        }
+
+        /* ==========================================
+           THEMES SECTION — FIXED ACCORDION
+           Shows full app UI in each slice, sequential
+           horizontal positions, labels always visible.
+           ========================================== */
+        .themes-accordion-wrapper {
+            width: 100%;
+            height: 82vh;
+            min-height: 520px;
+            margin-top: 60px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .themes-accordion {
+            display: flex;
+            width: 120vw;
+            margin-left: -10vw;
+            height: 100%;
+            transform: skew(-12deg);
+        }
+
+        .theme-slice {
+            flex: 1;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            border-right: 3px solid rgba(255, 255, 255, 0.6);
+            transition: flex 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+            cursor: pointer;
+        }
+
+        .theme-slice:last-child {
+            border-right: none;
+        }
+
+        .theme-slice:hover {
+            flex: 3.5;
+        }
+
+        /* Inner layer — un-skews and holds the screenshot */
+        .theme-slice-inner {
+            position: absolute;
+            top: 0;
+            left: -80px;
+            right: -80px;
+            height: 100%;
+            transform: skew(12deg);
+            /* 150% width: image overflows this element, enabling true horizontal
+               cropping across the 4 slices. 'auto' height keeps aspect ratio. */
+            background-size: 150% auto;
+            background-repeat: no-repeat;
+            background-color: #0a0a0a;
+            transition: all 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+            filter: brightness(0.55) grayscale(20%);
+        }
+
+        .theme-slice:hover .theme-slice-inner {
+            filter: brightness(1) grayscale(0%);
+        }
+
+        /* Each slice reveals a different horizontal portion:
+           Slice 1 → left (sidebar),  Slice 2 → center-left (quote area)
+           Slice 3 → center-right,    Slice 4 → right edge */
+        .theme-slice:nth-child(1) .theme-slice-inner {
+            background-position: 5% center;
+        }
+
+        .theme-slice:nth-child(2) .theme-slice-inner {
+            background-position: 38% center;
+        }
+
+        .theme-slice:nth-child(3) .theme-slice-inner {
+            background-position: 62% center;
+        }
+
+        .theme-slice:nth-child(4) .theme-slice-inner {
+            background-position: 95% center;
+        }
+
+        /* Assign Local Full Backgrounds */
+        .bg-naruto {
+            background-image: url('ads/theme/theme_image_ (1).png');
+        }
+
+        .bg-light {
+            background-image: url('ads/theme/theme_image_ (2).png');
+        }
+
+        .bg-roronoa {
+            background-image: url('ads/theme/theme_image_ (3).png');
+        }
+
+        .bg-midnight {
+            background-image: url('ads/theme/theme_image_ (4).png');
+        }
+
+        /* Label — always shown at the bottom, fades in fully on hover */
+        .theme-slice-content {
+            position: absolute;
+            bottom: 0;
+            left: -80px;
+            right: -80px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 36px;
+            /* gradient footer so label is always readable */
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
+            transform: skew(12deg);
+            transition: all 0.5s ease;
+            pointer-events: none;
+        }
+
+        .theme-slice-content h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(0.85rem, 1.4vw, 1.4rem);
+            font-weight: 800;
+            color: var(--fg);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+            margin: 0;
+            opacity: 0.6;
+            transition: all 0.4s ease;
+        }
+
+        .theme-slice:hover .theme-slice-content h3 {
+            opacity: 1;
+            font-size: clamp(1.1rem, 2vw, 2rem);
+            letter-spacing: 0.2em;
+        }
+
+        .theme-slice-content h3.theme-text-naruto {
+            color: #e67e22;
+            text-shadow: 0 0 16px rgba(230, 126, 34, 0.8);
+        }
+
+        .theme-slice-content h3.theme-text-light {
+            color: #f0f0f0;
+            text-shadow: 0 0 16px rgba(255, 255, 255, 0.8);
+        }
+
+        .theme-slice-content h3.theme-text-roronoa {
+            color: #2ecc71;
+            text-shadow: 0 0 16px rgba(46, 204, 113, 0.8);
+        }
+
+        .theme-slice-content h3.theme-text-midnight {
+            color: var(--icon-blue);
+            text-shadow: 0 0 16px rgba(74, 158, 255, 0.8);
+        }
+
+        /* ==========================================
+       DEVELOPER SECTION STYLES
+       ========================================== */
+        .developer-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 48px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .developer-bg-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.3;
+            mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+        }
+
+        .developer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 100px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Avatar Side */
+        .developer-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .avatar-wrapper {
+            position: relative;
+            width: 350px;
+            height: 350px;
+        }
+
+        .avatar-border {
+            position: absolute;
+            inset: -20px;
+            border: 1px solid var(--border);
+            animation: borderRotate 10s linear infinite;
+        }
+
+        .avatar-border::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            width: 20px;
+            height: 2px;
+            background: var(--fg);
+            transform: translateX(-50%);
+        }
+
+        @keyframes borderRotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .avatar-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            background: var(--card);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Syne', sans-serif;
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--fg);
+            transition: transform 0.5s ease;
+        }
+
+        .avatar-circle:hover {
+            transform: scale(1.05);
+        }
+
+        /* Floating dots around avatar */
+        .floating-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: var(--fg);
+            border-radius: 50%;
+            animation: dotFloat 4s ease-in-out infinite;
+        }
+
+        .floating-dot:nth-child(1) {
+            top: 10%;
+            left: 0;
+            animation-delay: 0s;
+        }
+
+        .floating-dot:nth-child(2) {
+            top: 0;
+            right: 20%;
+            animation-delay: 1s;
+        }
+
+        .floating-dot:nth-child(3) {
+            bottom: 20%;
+            right: 0;
+            animation-delay: 2s;
+        }
+
+        .floating-dot:nth-child(4) {
+            bottom: 0;
+            left: 20%;
+            animation-delay: 3s;
+        }
+
+        @keyframes dotFloat {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 1;
+            }
+        }
+
+        /* Text Side */
+        .developer-info {
+            position: relative;
+        }
+
+        .dev-label {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .dev-name {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: -0.04em;
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Glitch effect */
+        .glitch {
+            position: relative;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg);
+        }
+
+        .glitch::before {
+            left: 2px;
+            text-shadow: -2px 0 var(--icon-blue);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            left: -2px;
+            text-shadow: -2px 0 var(--muted);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                clip: rect(31px, 9999px, 94px, 0);
+            }
+
+            5% {
+                clip: rect(70px, 9999px, 32px, 0);
+            }
+
+            10% {
+                clip: rect(95px, 9999px, 24px, 0);
+            }
+
+            15% {
+                clip: rect(22px, 9999px, 69px, 0);
+            }
+
+            20% {
+                clip: rect(82px, 9999px, 37px, 0);
+            }
+
+            25% {
+                clip: rect(51px, 9999px, 10px, 0);
+            }
+
+            30% {
+                clip: rect(12px, 9999px, 48px, 0);
+            }
+
+            35% {
+                clip: rect(63px, 9999px, 85px, 0);
+            }
+
+            40% {
+                clip: rect(90px, 9999px, 33px, 0);
+            }
+
+            45% {
+                clip: rect(41px, 9999px, 71px, 0);
+            }
+
+            50% {
+                clip: rect(13px, 9999px, 60px, 0);
+            }
+
+            55% {
+                clip: rect(88px, 9999px, 42px, 0);
+            }
+
+            60% {
+                clip: rect(29px, 9999px, 57px, 0);
+            }
+
+            65% {
+                clip: rect(78px, 9999px, 19px, 0);
+            }
+
+            70% {
+                clip: rect(45px, 9999px, 93px, 0);
+            }
+
+            75% {
+                clip: rect(32px, 9999px, 11px, 0);
+            }
+
+            80% {
+                clip: rect(67px, 9999px, 74px, 0);
+            }
+
+            85% {
+                clip: rect(84px, 9999px, 50px, 0);
+            }
+
+            90% {
+                clip: rect(16px, 9999px, 88px, 0);
+            }
+
+            95% {
+                clip: rect(52px, 9999px, 31px, 0);
+            }
+
+            100% {
+                clip: rect(79px, 9999px, 65px, 0);
+            }
+        }
+
+        @keyframes glitch-anim2 {
+            0% {
+                clip: rect(65px, 9999px, 100px, 0);
+            }
+
+            5% {
+                clip: rect(52px, 9999px, 74px, 0);
+            }
+
+            10% {
+                clip: rect(79px, 9999px, 85px, 0);
+            }
+
+            15% {
+                clip: rect(75px, 9999px, 5px, 0);
+            }
+
+            20% {
+                clip: rect(67px, 9999px, 61px, 0);
+            }
+
+            25% {
+                clip: rect(14px, 9999px, 79px, 0);
+            }
+
+            30% {
+                clip: rect(1px, 9999px, 66px, 0);
+            }
+
+            35% {
+                clip: rect(86px, 9999px, 30px, 0);
+            }
+
+            40% {
+                clip: rect(23px, 9999px, 98px, 0);
+            }
+
+            45% {
+                clip: rect(85px, 9999px, 72px, 0);
+            }
+
+            50% {
+                clip: rect(71px, 9999px, 75px, 0);
+            }
+
+            55% {
+                clip: rect(2px, 9999px, 48px, 0);
+            }
+
+            60% {
+                clip: rect(30px, 9999px, 16px, 0);
+            }
+
+            65% {
+                clip: rect(59px, 9999px, 50px, 0);
+            }
+
+            70% {
+                clip: rect(41px, 9999px, 62px, 0);
+            }
+
+            75% {
+                clip: rect(2px, 9999px, 82px, 0);
+            }
+
+            80% {
+                clip: rect(47px, 9999px, 73px, 0);
+            }
+
+            85% {
+                clip: rect(3px, 9999px, 27px, 0);
+            }
+
+            90% {
+                clip: rect(26px, 9999px, 55px, 0);
+            }
+
+            95% {
+                clip: rect(42px, 9999px, 89px, 0);
+            }
+
+            100% {
+                clip: rect(38px, 9999px, 91px, 0);
+            }
+        }
+
+        .dev-role {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--muted);
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .dev-role::before {
+            content: '';
+            width: 40px;
+            height: 1px;
+            background: var(--muted);
+        }
+
+        .dev-bio {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--muted);
+            max-width: 500px;
+            margin-bottom: 48px;
+        }
+
+        /* Social Links */
+        .dev-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .dev-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .dev-link::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--fg);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .dev-link:hover::before {
+            transform: translateY(0);
+        }
+
+        .dev-link svg {
+            position: relative;
+            z-index: 2;
+            stroke: var(--fg);
+            transition: stroke 0.3s ease;
+        }
+
+        .dev-link:hover svg {
+            stroke: var(--bg);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, rgba(30, 30, 30, 0.5) 0%, transparent 70%);
+        }
+
+        .cta-title {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 7rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 48px;
+            background: var(--fg);
+            color: var(--bg);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--bg);
+            transform: translateX(-101%);
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover::before {
+            transform: translateX(0);
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
             transition: color 0.3s ease;
         }
 
-        .hero-video-bg {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            opacity: 0.15;
-            filter: grayscale(1) contrast(1.2);
+        .cta-button:hover span {
+            color: var(--fg);
+        }
+
+        .cta-button svg {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease, stroke 0.3s ease;
+        }
+
+        .cta-button:hover svg {
+            transform: translateX(4px);
+            stroke: var(--fg);
+        }
+
+        .cta-button.outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--fg);
+        }
+
+        .cta-button.outline::before {
+            background: var(--fg);
+        }
+
+        .cta-button.outline:hover span {
+            color: var(--bg);
+        }
+
+        .cta-button.outline:hover svg {
+            stroke: var(--bg);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 48px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-icon {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-brand:hover .footer-icon {
+            opacity: 1;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .footer-link {
+            color: var(--muted);
+            font-size: 0.875rem;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--fg);
+        }
+
+        /* Download section with icon */
+        .download-icon-section {
+            padding: 100px 48px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-icon-large {
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 0 60px rgba(74, 158, 255, 0.4));
+            animation: iconGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes iconGlow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 60px rgba(74, 158, 255, 0.4));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 80px rgba(74, 158, 255, 0.6));
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Image placeholder */
+        .img-placeholder {
+            background: linear-gradient(135deg, var(--card) 0%, var(--bg-elevated) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 1024px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .split-section {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .themes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .theme-card.large {
+                grid-column: span 1;
+                aspect-ratio: 16/12;
+            }
+
+            .developer-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                text-align: center;
+            }
+
+            .dev-role {
+                justify-content: center;
+            }
+
+            .dev-bio {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .dev-links {
+                justify-content: center;
+            }
+
+            .nav {
+                padding: 20px 24px;
+            }
+
+            .section {
+                padding: 80px 24px;
+            }
+
+            .split-content {
+                padding: 60px 24px;
+            }
+
+            .themes-section,
+            .developer-section {
+                padding: 80px 24px;
+            }
+
+            .avatar-wrapper {
+                width: 250px;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .feature-card {
+                padding: 40px 24px;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .cursor,
+            .cursor-dot {
+                display: none;
+            }
+
+            body {
+                cursor: auto;
+            }
+
+            .hero-icon {
+                width: 80px;
+                height: 80px;
+            }
+
+            .download-icon-large {
+                width: 120px;
+                height: 120px;
+            }
+
+            .glitch::before,
+            .glitch::after {
+                display: none;
+            }
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .marquee {
+                animation: none;
+            }
         }
     </style>
 </head>
-<body class="antialiased">
+
+<body>
+    <!-- Noise overlay -->
+    <div class="noise"></div>
+
+    <!-- Custom cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 mix-blend-difference px-8 py-8 flex justify-between items-center">
-        <div class="flex items-center space-x-2">
-            <img src="ads/logo.png" alt="Logo" class="w-8 h-8 grayscale contrast-125">
-            <span class="oroya-heading text-sm font-extrabold tracking-[0.3em]">STUDY STREAM</span>
-        </div>
-        <div class="hidden md:flex space-x-12">
-            <a href="#features" class="nav-link text-[10px] uppercase font-bold hover:text-red-500">Expertise</a>
-            <a href="#themes" class="nav-link text-[10px] uppercase font-bold hover:text-red-500">Universe</a>
-            <a href="#contact" class="nav-link text-[10px] uppercase font-bold hover:text-red-500">Inquiry</a>
+    <nav class="nav" id="nav">
+        <a href="#" class="nav-logo hover-target">
+            <img src="ads/logo.png" alt="Study Stream Icon" class="nav-icon">
+            <span class="nav-logo-text">Study Stream</span>
+        </a>
+        <div class="nav-links">
+            <a href="#features" class="nav-link hover-target">Features</a>
+            <a href="#themes" class="nav-link hover-target">Themes</a>
+            <a href="#developer" class="nav-link hover-target">Developer</a>
+            <a href="#download" class="nav-link hover-target">Download</a>
+            <a href="https://github.com/Rohit0072/study-stream-black" class="nav-link hover-target"
+                target="_blank">GitHub</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden border-b border-white/5">
-        <!-- Abstract Background Placeholder (Grainy feel) -->
-        <div class="hero-video-bg bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-        
-        <div data-aos="fade-up" data-aos-duration="1500">
-            <p class="oroya-heading text-[10px] mb-8 opacity-50 tracking-[0.5em]">BEYOND THE INTERNET</p>
-            <h1 class="text-6xl md:text-9xl font-extrabold leading-none mb-8 tracking-tighter">
-                ELEVATED <br> <span class="gradient-text">LEARNING.</span>
+    <section class="hero">
+        <div class="hero-bg"></div>
+
+        <!-- Animated lines -->
+        <div class="line-container" id="lines-container"></div>
+
+        <!-- Floating elements -->
+        <div class="float-element" style="top: 20%; left: 10%; width: 100px; height: 100px; animation-delay: 0s;"></div>
+        <div class="float-element" style="top: 60%; right: 15%; width: 60px; height: 60px; animation-delay: 2s;"></div>
+        <div class="float-element" style="bottom: 20%; left: 20%; width: 80px; height: 80px; animation-delay: 4s;">
+        </div>
+
+        <div class="text-center relative z-10 px-6">
+            <!-- Hero Icon with animated rings -->
+            <div class="hero-icon-container reveal-text">
+                <span class="stagger-1">
+                    <div style="position: relative; display: inline-block;">
+                        <div class="icon-ring"></div>
+                        <div class="icon-ring"></div>
+                        <div class="icon-ring"></div>
+                        <img src="ads/logo.png" alt="Study Stream" class="hero-icon hover-target">
+                    </div>
+                </span>
+            </div>
+
+            <div class="reveal-text mb-6">
+                <span class="stagger-2 text-sm tracking-[0.3em] uppercase text-[var(--muted)]">Electron App for
+                    Focus</span>
+            </div>
+
+            <h1 class="font-display text-[clamp(3rem,12vw,10rem)] font-800 leading-[0.9] tracking-[-0.04em] mb-8">
+                <div class="reveal-text"><span class="stagger-3">Study</span></div>
+                <div class="reveal-text"><span class="stagger-4" style="color: var(--muted);">Stream</span></div>
             </h1>
+
+            <div class="reveal-text">
+                <span class="stagger-5 text-lg md:text-xl text-[var(--muted)] max-w-xl mx-auto leading-relaxed">
+                    A minimalist productivity app designed to help you focus.
+                    No distractions, just pure flow.
+                </span>
+            </div>
+
+            <div class="reveal-text mt-12">
+                <a href="#download" class="cta-button hover-target">
+                    <span>Download Now</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
         </div>
 
-        <div class="max-w-xl mx-auto" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1500">
-            <p class="text-gray-500 font-light leading-relaxed mb-12 italic text-lg">
-                "Where focus meets aesthetic perfection."
-            </p>
-            <a href="https://github.com/Rohit0072/study-stream-black" class="border border-white/20 px-12 py-5 rounded-full text-[10px] uppercase font-bold tracking-[0.2em] hover:bg-white hover:text-black transition duration-500">
-                Enter the Hub
-            </a>
-        </div>
-
-        <!-- Floating Scroll Indicator -->
-        <div class="absolute bottom-10 animate-bounce opacity-20">
-            <i class="fas fa-chevron-down"></i>
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <span class="text-xs tracking-[0.2em] uppercase text-[var(--muted)]">Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- Expertise (Features) -->
-    <section id="features" class="py-32 px-8 max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
-            <div data-aos="fade-right">
-                <h2 class="text-5xl md:text-7xl font-bold leading-none mb-4">CORE<br><span class="text-red-600">STRENGTHS</span></h2>
-                <p class="text-gray-600 uppercase text-[10px] tracking-[0.3em]">The Architecture of Productivity</p>
+    <!-- Marquee -->
+    <div class="marquee-container">
+        <div class="marquee">
+            <span class="marquee-item hover-target">Focus</span>
+            <span class="marquee-item hover-target">Achieve</span>
+            <span class="marquee-item hover-target">Learn</span>
+            <span class="marquee-item hover-target">Study</span>
+            <span class="marquee-item hover-target">Notes</span>
+            <span class="marquee-item hover-target">Ambient</span>
+            <span class="marquee-item hover-target">Focus</span>
+            <span class="marquee-item hover-target">Achieve</span>
+            <span class="marquee-item hover-target">Learn</span>
+            <span class="marquee-item hover-target">Study</span>
+            <span class="marquee-item hover-target">Notes</span>
+            <span class="marquee-item hover-target">Ambient</span>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="max-w-7xl mx-auto">
+            <div class="scroll-reveal mb-20">
+                <span class="text-sm tracking-[0.3em] uppercase text-[var(--muted)] block mb-4">Features</span>
+                <h2 class="font-display text-[clamp(2rem,5vw,4rem)] font-700 tracking-[-0.02em]">
+                    Everything you need to<br>
+                    <span style="color: var(--muted)">stay in the zone</span>
+                </h2>
             </div>
-            <div class="md:max-w-md text-right" data-aos="fade-left">
-                <p class="text-gray-400 font-light leading-relaxed">
-                    We’ve stripped away the noise of the modern web to create a brutalist, distraction-free environment for serious students.
+        </div>
+
+        <div class="feature-grid scroll-reveal">
+            <div class="feature-card hover-target">
+                <div class="feature-number">01</div>
+                <h3 class="feature-title">The Netflix Grid</h3>
+                <p class="feature-desc">
+                    Organize a lifetime of learning into a single, beautiful dashboard. Offline-first, always available.
                 </p>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5 overflow-hidden rounded-3xl">
-            <div class="glass-card p-16 flex flex-col justify-between h-[500px]" data-aos="fade-up">
-                <div>
-                    <span class="text-xs opacity-30 font-bold mb-8 block">01 / LIBRARY</span>
-                    <h3 class="text-3xl mb-4">The Netflix Grid</h3>
-                    <p class="text-gray-500 font-light max-w-xs">Organize a lifetime of learning into a single, beautiful dashboard. Offline-first, always available.</p>
+                <div class="feature-image">
+                    <img src="ads/course_card.jpg" alt="Course Library Screenshot" loading="lazy">
                 </div>
-                <img src="ads/course_library.png" class="rounded-xl grayscale hover:grayscale-0 transition duration-700 w-2/3 ml-auto" alt="Library">
-            </div>
-            <div class="glass-card p-16 flex flex-col justify-between h-[500px]" data-aos="fade-up" data-aos-delay="200">
-                <div>
-                    <span class="text-xs opacity-30 font-bold mb-8 block">02 / REVISION</span>
-                    <h3 class="text-3xl mb-4">Smart Notes</h3>
-                    <p class="text-gray-500 font-light max-w-xs">Tied to the exact millisecond of your course. Revision is no longer a chore, it's a click away.</p>
-                </div>
-                <img src="ads/notes.png" class="rounded-xl grayscale hover:grayscale-0 transition duration-700 w-2/3 ml-auto" alt="Notes">
-            </div>
-        </div>
-    </section>
-
-    <!-- Universe (Themes) -->
-    <section id="themes" class="bg-white/[0.02] py-32 border-y border-white/5 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="text-center mb-24" data-aos="zoom-in">
-                <h2 class="text-6xl md:text-8xl font-bold mb-6">THE<br><span class="gradient-text">UNIVERSE.</span></h2>
-                <p class="text-gray-600 uppercase text-[10px] tracking-[0.4em]">Choose your aesthetic destiny</p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="group relative overflow-hidden rounded-2xl aspect-[3/4]" data-aos="fade-up" data-aos-delay="100">
-                    <img src="ads/theme_zoro.png" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-1000" alt="Zoro">
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-                        <span class="oroya-heading text-xs tracking-widest">ZORO ⚔️</span>
-                    </div>
+            <div class="feature-card hover-target">
+                <div class="feature-number">02</div>
+                <h3 class="feature-title">Smart Notes</h3>
+                <p class="feature-desc">
+                    Tied to the exact millisecond of your course. Revision is no longer a chore, it's a click away.
+                </p>
+                <div class="feature-image">
+                    <img src="ads/notes.png" alt="Smart Notes Screenshot" loading="lazy">
                 </div>
-                <div class="group relative overflow-hidden rounded-2xl aspect-[3/4]" data-aos="fade-up" data-aos-delay="200">
-                    <img src="ads/theme_natuto.png" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-1000" alt="Naruto">
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-                        <span class="oroya-heading text-xs tracking-widest">NARUTO 🍥</span>
-                    </div>
+            </div>
+
+            <div class="feature-card hover-target">
+                <div class="feature-number">03</div>
+                <h3 class="feature-title">AI Study Assistant</h3>
+                <p class="feature-desc">
+                    Get instant clarification on complex topics with a deeply integrated AI tutor that understands your
+                    course context.
+                </p>
+                <div class="feature-image">
+                    <img src="ads/chatbot.png" alt="AI Agent Interface" loading="lazy">
                 </div>
-                <div class="group relative overflow-hidden rounded-2xl aspect-[3/4]" data-aos="fade-up" data-aos-delay="300">
-                    <img src="ads/theme_midnight.png" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-1000" alt="Midnight">
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-                        <span class="oroya-heading text-xs tracking-widest">MIDNIGHT 🌙</span>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-2xl aspect-[3/4]" data-aos="fade-up" data-aos-delay="400">
-                    <img src="ads/theme_white.png" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-1000" alt="White">
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-                        <span class="oroya-heading text-xs tracking-widest">PURE 🤍</span>
-                    </div>
+            </div>
+
+            <div class="feature-card hover-target">
+                <div class="feature-number">04</div>
+                <h3 class="feature-title">All-in-One Hub</h3>
+                <p class="feature-desc">
+                    A brutalist, distraction-free environment replacing scattered media players and generic note-taking
+                    apps.
+                </p>
+                <div class="feature-image">
+                    <img src="ads/video_course_exmple.png" alt="Video Player Hub Interface" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Comparison (Better than VLC) -->
-    <section class="py-32 px-8 max-w-5xl mx-auto">
-        <div class="text-center mb-24" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-4">STUDY STREAM > VLC</h2>
-            <div class="w-24 h-px bg-red-600 mx-auto"></div>
+    <!-- THEMES SECTION -->
+    <section id="themes" class="themes-section">
+        <div class="max-w-7xl mx-auto px-6 relative z-10" style="padding-left: 48px; padding-right: 48px;">
+            <div class="scroll-reveal">
+                <span class="text-sm tracking-[0.3em] uppercase text-[var(--muted)] block mb-4">Personalization</span>
+                <h2 class="font-display text-[clamp(2rem,5vw,4rem)] font-700 tracking-[-0.02em]">
+                    Anime &<br><span style="color: var(--muted)">Aesthetic Themes</span>
+                </h2>
+            </div>
         </div>
 
-        <div class="space-y-4">
-            <div class="flex justify-between items-center p-10 border-b border-white/5 hover:bg-white/5 transition group" data-aos="fade-left">
-                <span class="oroya-heading text-lg group-hover:translate-x-4 transition">All-in-One Hub</span>
-                <span class="text-xs text-gray-600 uppercase font-bold">Standard Players: NO</span>
-            </div>
-            <div class="flex justify-between items-center p-10 border-b border-white/5 hover:bg-white/5 transition group" data-aos="fade-left" data-aos-delay="100">
-                <span class="oroya-heading text-lg group-hover:translate-x-4 transition">Timestamped Notes</span>
-                <span class="text-xs text-gray-600 uppercase font-bold">Standard Players: NO</span>
-            </div>
-            <div class="flex justify-between items-center p-10 border-b border-white/5 hover:bg-white/5 transition group" data-aos="fade-left" data-aos-delay="200">
-                <span class="oroya-heading text-lg group-hover:translate-x-4 transition">AI Study Assistant</span>
-                <span class="text-xs text-gray-600 uppercase font-bold">Standard Players: NO</span>
+        <!-- The Skewed Accordion Backdrop -->
+        <div class="themes-accordion-wrapper scroll-reveal" style="transition-delay: 0.2s;">
+            <div class="themes-accordion">
+
+                <!-- Theme 1: Naruto -->
+                <div class="theme-slice hover-target">
+                    <div class="theme-slice-inner bg-naruto"></div>
+                    <div class="theme-slice-content">
+                        <h3 class="theme-text-naruto">Naruto</h3>
+                    </div>
+                </div>
+
+                <!-- Theme 2: Light -->
+                <div class="theme-slice hover-target">
+                    <div class="theme-slice-inner bg-light"></div>
+                    <div class="theme-slice-content">
+                        <h3 class="theme-text-light">Light</h3>
+                    </div>
+                </div>
+
+                <!-- Theme 3: Roronoa -->
+                <div class="theme-slice hover-target">
+                    <div class="theme-slice-inner bg-roronoa"></div>
+                    <div class="theme-slice-content">
+                        <h3 class="theme-text-roronoa">Roronoa</h3>
+                    </div>
+                </div>
+
+                <!-- Theme 4: Midnight Pro -->
+                <div class="theme-slice hover-target">
+                    <div class="theme-slice-inner bg-midnight"></div>
+                    <div class="theme-slice-content">
+                        <h3 class="theme-text-midnight">Midnight Pro</h3>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Inquiry (Contact) -->
-    <section id="contact" class="py-32 px-8 bg-white text-black">
-        <div class="max-w-3xl mx-auto">
-            <div class="mb-20" data-aos="fade-right">
-                <h2 class="text-6xl font-extrabold mb-4 leading-none">MAKE AN<br>INQUIRY.</h2>
-                <p class="text-[10px] uppercase tracking-[0.4em] font-bold opacity-40">Let's build the future of education</p>
+    <!-- Large Showcase Image -->
+    <section class="showcase-section scroll-reveal">
+        <img src="ads/banner.jpg" alt="Full Application Interface" class="showcase-image hover-target" loading="lazy">
+    </section>
+
+    <!-- Stats Section -->
+    <section class="scroll-reveal">
+        <div class="stats-grid">
+            <div class="stat-item hover-target">
+                <div class="stat-number" data-count="50">0</div>
+                <div class="stat-label">Stars on GitHub</div>
+            </div>
+            <div class="stat-item hover-target">
+                <div class="stat-number" data-count="4">0</div>
+                <div class="stat-label">Core Features</div>
+            </div>
+            <div class="stat-item hover-target">
+                <div class="stat-number" data-count="100">0</div>
+                <div class="stat-label">Percent Free</div>
+            </div>
+            <div class="stat-item hover-target">
+                <div class="stat-number" data-count="24">0</div>
+                <div class="stat-label">Hour Support</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Section (About Project) -->
+    <section id="about" class="split-section">
+        <div class="split-image scroll-reveal">
+            <img src="ads/student.jpg" alt="App Interface" loading="lazy">
+        </div>
+        <div class="split-content scroll-reveal">
+            <span class="text-sm tracking-[0.3em] uppercase text-[var(--muted)] block mb-6">About Project</span>
+            <h2 class="font-display text-[clamp(2rem,4vw,3.5rem)] font-700 tracking-[-0.02em] mb-6">
+                Built for students,<br>
+                <span style="color: var(--muted)">by student</span>
+            </h2>
+            <p class="text-[var(--muted)] text-lg leading-relaxed mb-8 max-w-lg">
+                Study Stream was born from the frustration of cluttered productivity apps.
+                We stripped away everything that doesn't serve your focus, leaving you with
+                a clean, powerful tool that just works.
+            </p>
+            <p class="text-[var(--muted)] leading-relaxed max-w-lg">
+                Built with Electron, it runs natively on your desktop with minimal resource usage.
+                No browser tabs, no notifications, no excuses.
+            </p>
+        </div>
+    </section>
+
+    <!-- ==========================================
+       DEVELOPER SECTION
+       ========================================== -->
+    <section id="developer" class="developer-section">
+        <div class="developer-bg-grid"></div>
+
+        <div class="developer-container">
+            <!-- Avatar Side -->
+            <div class="developer-visual scroll-reveal">
+                <div class="avatar-wrapper">
+                    <div class="avatar-border"></div>
+                    <div class="floating-dot"></div>
+                    <div class="floating-dot"></div>
+                    <div class="floating-dot"></div>
+                    <div class="floating-dot"></div>
+                    <div class="avatar-circle hover-target">
+                        <img src="ads/Rohit_profile_image.png" alt="Rohit Profile"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                </div>
             </div>
 
-            <form action="https://formspree.io/f/xoqogndp" method="POST" class="space-y-12">
-                <div class="border-b border-black/10 py-4">
-                    <input type="text" name="name" placeholder="YOUR NAME" required class="w-full bg-transparent outline-none oroya-heading text-sm placeholder:opacity-20">
+            <!-- Info Side -->
+            <div class="developer-info scroll-reveal" style="transition-delay: 0.2s;">
+                <span class="dev-label">The Developer</span>
+
+                <h2 class="dev-name glitch hover-target" data-text="Rohit">
+                    Rohit
+                </h2>
+
+                <div class="dev-role">
+                    Full Stack Developer
                 </div>
-                <div class="border-b border-black/10 py-4">
-                    <input type="email" name="email" placeholder="YOUR EMAIL" required class="w-full bg-transparent outline-none oroya-heading text-sm placeholder:opacity-20">
+
+                <p class="dev-bio">
+                    A passionate developer who believes in building tools that solve real problems.
+                    When I'm not coding, you'll find me exploring new technologies, contributing to
+                    open source, or optimizing my workflow to achieve peak productivity.
+                </p>
+
+                <p class="dev-bio" style="margin-bottom: 32px;">
+                    Study Stream is my answer to the constant distractions we face in the digital age.
+                    It's not just an app—it's a philosophy of focused work.
+                </p>
+
+                <div class="dev-links">
+                    <a href="https://github.com/Rohit0072" target="_blank" class="dev-link hover-target"
+                        aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="dev-link hover-target" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                            <rect x="2" y="9" width="4" height="12" />
+                            <circle cx="4" cy="4" r="2" />
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="dev-link hover-target" aria-label="Twitter">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                        </svg>
+                    </a>
+                    <a href="mailto:hello@example.com" class="dev-link hover-target" aria-label="Email">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                    </a>
                 </div>
-                <div class="border-b border-black/10 py-4">
-                    <textarea name="message" placeholder="MESSAGE" rows="4" required class="w-full bg-transparent outline-none oroya-heading text-sm placeholder:opacity-20"></textarea>
-                </div>
-                <button type="submit" class="bg-black text-white px-16 py-6 rounded-full oroya-heading text-[10px] hover:bg-red-600 transition duration-500">
-                    Send Proposal
-                </button>
-            </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Removed for brevity -->
+
+    <!-- Download Section with Large Icon -->
+    <section class="download-icon-section scroll-reveal flex justify-center w-full mt-24">
+        <img src="ads/logo.png" alt="Study Stream" class="download-icon-large hover-target">
+    </section>
+
+    <!-- CTA Section -->
+    <section id="download" class="cta-section">
+        <div class="cta-bg"></div>
+
+        <!-- Animated circles -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-[var(--border)] rounded-full opacity-20"
+                style="animation: float 10s ease-in-out infinite;"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-[var(--border)] rounded-full opacity-10"
+                style="animation: float 12s ease-in-out infinite reverse;"></div>
+        </div>
+
+        <div class="relative z-10 px-6 scroll-reveal">
+            <h2 class="cta-title">
+                Ready to<br>
+                Focus?
+            </h2>
+            <p class="text-[var(--muted)] text-lg max-w-md mx-auto mb-10">
+                Download Study Stream and transform your study sessions.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://github.com/Rohit0072/study-stream-black/releases" target="_blank"
+                    class="cta-button hover-target">
+                    <span>Download for Free</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                </a>
+                <a href="https://github.com/Rohit0072/study-stream-black" target="_blank"
+                    class="cta-button outline hover-target">
+                    <span>Star on GitHub</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-20 px-8 text-center border-t border-white/5">
-        <div class="flex flex-col items-center">
-            <img src="ads/logo.png" class="w-12 h-12 grayscale opacity-20 mb-8" alt="Logo">
-            <p class="oroya-heading text-[10px] opacity-20 tracking-[1em]">STUDY STREAM BLACK</p>
-            <p class="mt-12 text-[10px] text-gray-600 uppercase tracking-widest">&copy; 2024 DESIGNED BY ROHIT0072 & OPENCLAW</p>
+    <footer class="footer">
+        <div class="footer-brand hover-target">
+            <img src="ads/logo.png" alt="Study Stream" class="footer-icon">
+            <span class="text-sm text-[var(--muted)]">2024 Study Stream. Open source under MIT License.</span>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/Rohit0072/study-stream-black" target="_blank"
+                class="footer-link hover-target">GitHub</a>
+            <a href="#" class="footer-link hover-target">Documentation</a>
+            <a href="#" class="footer-link hover-target">Support</a>
         </div>
     </footer>
 
     <script>
-        // Initialize Animations
-        AOS.init({
-            once: true
+        // Initialize variables first
+        const cursor = document.querySelector('.cursor');
+        const cursorDot = document.querySelector('.cursor-dot');
+        const linesContainer = document.getElementById('lines-container');
+        const nav = document.getElementById('nav');
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+
+        // Custom cursor
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
         });
+
+        // Smooth cursor animation
+        function animateCursor() {
+            const ease = 0.15;
+            cursorX += (mouseX - cursorX) * ease;
+            cursorY += (mouseY - cursorY) * ease;
+
+            if (cursor && cursorDot) {
+                cursor.style.left = cursorX - 10 + 'px';
+                cursor.style.top = cursorY - 10 + 'px';
+                cursorDot.style.left = mouseX - 2 + 'px';
+                cursorDot.style.top = mouseY - 2 + 'px';
+            }
+
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Hover effect on targets
+        document.querySelectorAll('.hover-target').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                if (cursor) cursor.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                if (cursor) cursor.classList.remove('hover');
+            });
+        });
+
+        // Create animated lines
+        if (linesContainer) {
+            for (let i = 0; i < 8; i++) {
+                const line = document.createElement('div');
+                line.className = 'animated-line';
+                line.style.left = `${10 + i * 12}%`;
+                line.style.animationDelay = `${i * 0.5}s`;
+                line.style.opacity = 0.05 + Math.random() * 0.1;
+                linesContainer.appendChild(line);
+            }
+        }
+
+        // Scroll reveal animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+
+                    // Animate stat numbers
+                    if (entry.target.querySelector('.stat-number')) {
+                        entry.target.querySelectorAll('.stat-number').forEach(stat => {
+                            const target = parseInt(stat.dataset.count) || 0;
+                            animateNumber(stat, target);
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Number animation
+        function animateNumber(el, target) {
+            let current = 0;
+            const duration = 2000;
+            const step = target / (duration / 16);
+
+            function update() {
+                current += step;
+                if (current < target) {
+                    el.textContent = Math.floor(current);
+                    requestAnimationFrame(update);
+                } else {
+                    el.textContent = target;
+                }
+            }
+            update();
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect on scroll
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    const scrollY = window.scrollY;
+                    document.querySelectorAll('.float-element').forEach((el, i) => {
+                        const speed = 0.1 + i * 0.05;
+                        el.style.transform = `translateY(${scrollY * speed}px)`;
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Navigation background on scroll
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+
+            if (currentScroll > 100) {
+                if (nav) nav.classList.add('scrolled');
+            } else {
+                if (nav) nav.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Marquee pause on hover
+        const marquee = document.querySelector('.marquee');
+        if (marquee) {
+            marquee.addEventListener('mouseenter', () => {
+                marquee.style.animationPlayState = 'paused';
+            });
+            marquee.addEventListener('mouseleave', () => {
+                marquee.style.animationPlayState = 'running';
+            });
+        }
     </script>
 </body>
+
 </html>
