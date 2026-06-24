@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rohit0072.github.io/study-stream-site/sitemap.xml
