@@ -3,44 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Stream Black — The Elite Offline Hub</title>
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="Study Stream Black — The Elite Offline Hub">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Study Stream — Turn Downloaded Courses Into a Learning Library</title>
+    <meta name="title" content="Study Stream — Turn Downloaded Courses Into a Learning Library">
     <meta name="description"
-        content="The ultimate offline learning environment for students. Organize your courses, take smart timestamped notes, and stay focused with beautiful aesthetic themes like Zoro and Naruto.">
+        content="A desktop app for offline courses. Import a folder, auto-organize lessons, resume where you left off, take timestamped notes, and ask AI that reads the current lesson’s subtitles.">
     <meta name="keywords"
-        content="Study Stream Black, Offline Learning, Course Player, Student Productivity, Aesthetic Themes, Zoro Theme, Naruto Theme, Deep Work, Study Hub">
+        content="Study Stream, offline course player, downloaded courses, timestamped notes, course library, desktop learning app, Electron, Study Stream Lite">
     <meta name="author" content="Rohit0072">
     <meta name="theme-color" content="#0a0a0a">
-
-    <!-- Canonical -->
     <link rel="canonical" href="https://rohit0072.github.io/study-stream-site/">
-
-    <!-- Open Graph / Facebook / WhatsApp / Telegram / Reddit -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Study Stream Black">
+    <meta property="og:site_name" content="Study Stream">
     <meta property="og:url" content="https://rohit0072.github.io/study-stream-site/">
-    <meta property="og:title" content="Study Stream Black — The Elite Offline Hub">
+    <meta property="og:title" content="Study Stream — Turn Downloaded Courses Into a Learning Library">
     <meta property="og:description"
-        content="The ultimate offline learning environment for students. Organize your courses, take smart timestamped notes, and stay focused with aesthetic themes.">
-    <meta property="og:image" content="https://rohit0072.github.io/study-stream-site/ads/Main_banner.jpeg">
-    <meta property="og:image:alt" content="Study Stream Black Dashboard Preview">
-
-    <!-- Twitter / X -->
+        content="Organize offline courses, resume exactly where you left off, take timestamped notes, and learn with AI that understands the current lesson.">
+    <meta property="og:image" content="https://rohit0072.github.io/study-stream-site/ads/ui-home.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://rohit0072.github.io/study-stream-site/">
-    <meta name="twitter:title" content="Study Stream Black — The Elite Offline Hub">
+    <meta name="twitter:title" content="Study Stream — Turn Downloaded Courses Into a Learning Library">
     <meta name="twitter:description"
-        content="The ultimate offline learning environment for students. Organize your courses, take smart timestamped notes, and stay focused with aesthetic themes.">
-    <meta name="twitter:image" content="https://rohit0072.github.io/study-stream-site/ads/Main_banner.jpeg">
-    <meta name="twitter:image:alt" content="Study Stream Black Dashboard Preview">
-
-    <!-- Schema.org (Google/Generic) -->
-    <meta itemprop="name" content="Study Stream Black — The Elite Offline Hub">
-    <meta itemprop="description"
-        content="The ultimate offline learning environment for students. Organize your courses, take smart timestamped notes, and stay focused with aesthetic themes.">
-    <meta itemprop="image" content="https://rohit0072.github.io/study-stream-site/ads/Main_banner.jpeg">
+        content="Organize offline courses, resume exactly where you left off, take timestamped notes, and learn with AI that understands the current lesson.">
+    <meta name="twitter:image" content="https://rohit0072.github.io/study-stream-site/ads/ui-home.png">
     <link rel="icon" type="image/png" href="ads/logo.png">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <meta name="robots" content="index, follow">
@@ -48,20 +32,19 @@
     <meta property="og:locale" content="en_US">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "Study Stream Black",
-        "description": "The ultimate offline learning environment for students. Organize courses, take smart timestamped notes, and stay focused with aesthetic themes.",
+        "name": "Study Stream",
+        "description": "A desktop app for offline courses. Import a folder, auto-organize lessons, resume where you left off, take timestamped notes, and ask AI that reads the current lesson's subtitles.",
         "url": "https://rohit0072.github.io/study-stream-site/",
         "applicationCategory": "EducationalApplication",
-        "operatingSystem": "Windows, macOS, Linux",
+        "operatingSystem": "Windows",
         "author": {
             "@type": "Person",
             "name": "Rohit Singh",
-            "url": "https://github.com/Rohit0072"
+            "url": "https://rohitsinghworks.vercel.app/"
         },
         "offers": {
             "@type": "Offer",
@@ -70,30 +53,30 @@
         }
     }
     </script>
-
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
         rel="stylesheet">
-
     <style>
         :root {
-            --bg: #0a0a0a;
-            --bg-elevated: #111111;
-            --fg: #fafafa;
-            --muted: #666666;
-            --accent: #ffffff;
-            --card: #151515;
-            --border: #222222;
-            --icon-blue: #4a9eff;
+            --bg: #080808;
+            --bg-elev: #101010;
+            --card: #141414;
+            --fg: #f4f4f4;
+            --muted: #8a8a8a;
+            --dim: #5c5c5c;
+            --line: #222;
+            --blue: #4a9eff;
+            --green: #2ecc71;
+            --lite: #9b87f5;
+            --lite-dim: #6d5bd0;
         }
 
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         html {
@@ -101,378 +84,586 @@
         }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: "Space Grotesk", sans-serif;
             background: var(--bg);
             color: var(--fg);
-            overflow-x: hidden;
+            line-height: 1.55;
+            overflow-x: clip;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0.08);
+        }
+
+        body.has-cursor,
+        body.has-cursor a,
+        body.has-cursor button,
+        body.has-cursor .lightbox,
+        body.has-cursor .lightbox * {
             cursor: none;
         }
 
-        .font-display {
-            font-family: 'Syne', sans-serif;
+        img {
+            max-width: 100%;
+            display: block;
         }
 
-        /* Custom Cursor */
-        .cursor {
-            width: 20px;
-            height: 20px;
-            border: 1px solid var(--fg);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.15s ease, background 0.15s ease;
-            mix-blend-mode: difference;
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
-        .cursor-dot {
-            width: 4px;
-            height: 4px;
-            background: var(--fg);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
+        button,
+        .btn {
+            font-family: inherit;
         }
 
-        .cursor.hover {
-            transform: scale(2.5);
-            background: var(--fg);
+        .wrap {
+            width: min(1180px, calc(100% - 40px));
+            margin: 0 auto;
         }
 
-        /* Noise overlay */
-        .noise {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1000;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at 50% 0%, rgba(40, 40, 40, 0.3) 0%, transparent 60%);
-        }
-
-        /* Animated lines */
-        .line-container {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-        }
-
-        .animated-line {
-            position: absolute;
-            width: 1px;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1), transparent);
-            animation: lineMove 8s linear infinite;
-        }
-
-        @keyframes lineMove {
-            0% {
-                transform: translateY(-100%);
-            }
-
-            100% {
-                transform: translateY(100%);
-            }
-        }
-
-        /* Hero Icon */
-        .hero-icon-container {
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        .hero-icon {
-            width: 200px;
-            height: 200px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.1));
-            animation: iconPulse 4s ease-in-out infinite, iconFloat 6s ease-in-out infinite;
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .hero-icon:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        @keyframes iconPulse {
-
-            0%,
-            100% {
-                filter: drop-shadow(0 0 40px rgba(74, 158, 255, 0.3));
-            }
-
-            50% {
-                filter: drop-shadow(0 0 60px rgba(74, 158, 255, 0.5));
-            }
-        }
-
-        @keyframes iconFloat {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        /* Icon ring decoration */
-        .icon-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 1px solid rgba(74, 158, 255, 0.2);
-            border-radius: 50%;
-            animation: ringExpand 4s ease-out infinite;
-        }
-
-        .icon-ring:nth-child(2) {
-            animation-delay: 1.3s;
-        }
-
-        .icon-ring:nth-child(3) {
-            animation-delay: 2.6s;
-        }
-
-        @keyframes ringExpand {
-            0% {
-                width: 200px;
-                height: 200px;
-                opacity: 0.6;
-            }
-
-            100% {
-                width: 400px;
-                height: 400px;
-                opacity: 0;
-            }
-        }
-
-        /* Text animations */
-        .reveal-text {
-            overflow: hidden;
-        }
-
-        .reveal-text span {
-            display: inline-block;
-            transform: translateY(100%);
-            opacity: 0;
-            animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @keyframes revealUp {
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .stagger-1 {
-            animation-delay: 0.1s;
-        }
-
-        .stagger-2 {
-            animation-delay: 0.2s;
-        }
-
-        .stagger-3 {
-            animation-delay: 0.3s;
-        }
-
-        .stagger-4 {
-            animation-delay: 0.4s;
-        }
-
-        .stagger-5 {
-            animation-delay: 0.5s;
-        }
-
-        .stagger-6 {
-            animation-delay: 0.6s;
-        }
-
-        /* Floating elements */
-        .float-element {
-            position: absolute;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-20px) rotate(5deg);
-            }
-        }
-
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
+        .eyebrow {
+            display: inline-flex;
             align-items: center;
             gap: 8px;
-            animation: fadeInUp 1s ease 1.5s forwards;
-            opacity: 0;
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 16px;
         }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-            }
+        h1,
+        h2,
+        h3,
+        .display {
+            font-family: "Syne", sans-serif;
+            letter-spacing: -0.035em;
+            line-height: 1.08;
         }
 
-        .scroll-line {
-            width: 1px;
-            height: 60px;
-            background: linear-gradient(to bottom, var(--fg), transparent);
-            animation: scrollPulse 2s ease infinite;
+        h2 {
+            font-size: clamp(2rem, 4.4vw, 3.35rem);
+            font-weight: 800;
+            margin-bottom: 16px;
         }
 
-        @keyframes scrollPulse {
-
-            0%,
-            100% {
-                transform: scaleY(1);
-                opacity: 1;
-            }
-
-            50% {
-                transform: scaleY(0.5);
-                opacity: 0.5;
-            }
+        .lede {
+            color: var(--muted);
+            font-size: 1.08rem;
+            max-width: 640px;
+            line-height: 1.7;
         }
 
-        /* Navigation */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 24px 48px;
-            display: flex;
-            justify-content: space-between;
+        .btn {
+            display: inline-flex;
             align-items: center;
-            transition: background 0.3s ease;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 22px;
+            border-radius: 4px;
+            font-size: 0.86rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            border: 1px solid transparent;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            isolation: isolate;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, background 0.3s ease, color 0.3s ease;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--fg);
+            transform: translateY(101%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: -1;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--fg);
+            color: var(--bg);
+        }
+
+        .btn-primary:hover {
+            color: var(--fg);
+        }
+
+        .btn-primary:hover::before {
+            background: #1a1a1a;
+            transform: translateY(0);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--fg);
+            border-color: var(--line);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--fg);
+            color: var(--bg);
+        }
+
+        .btn-ghost:hover::before {
+            transform: translateY(0);
+        }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            padding: 16px 28px;
+            border-bottom: 1px solid transparent;
+            background: rgba(8, 8, 8, 0.78);
+            backdrop-filter: blur(16px);
         }
 
         .nav.scrolled {
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
+            border-bottom-color: var(--line);
         }
 
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: var(--fg);
-        }
-
-        .nav-icon {
-            width: 36px;
-            height: 36px;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-logo:hover .nav-icon {
-            transform: rotate(-10deg) scale(1.1);
-        }
-
-        .nav-logo-text {
-            font-family: 'Syne', sans-serif;
+            gap: 10px;
+            font-family: "Syne", sans-serif;
             font-weight: 700;
-            font-size: 1.25rem;
-            letter-spacing: -0.02em;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .nav-logo img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            background: transparent;
+            border: 1px solid var(--line);
+            color: var(--fg);
+            padding: 0;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 16px;
+            height: 1.5px;
+            background: var(--fg);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav.open .nav-toggle span:nth-child(1) {
+            transform: translateY(6.5px) rotate(45deg);
+        }
+
+        .nav.open .nav-toggle span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav.open .nav-toggle span:nth-child(3) {
+            transform: translateY(-6.5px) rotate(-45deg);
         }
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            align-items: center;
+            gap: 22px;
+            font-size: 0.88rem;
+            color: var(--muted);
         }
 
-        .nav-link {
-            font-size: 0.875rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
+        .nav-links a {
             position: relative;
-            overflow: hidden;
-            color: var(--fg);
-            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .nav-link::after {
-            content: '';
+        .nav-links a:hover {
+            color: var(--fg);
+        }
+
+        .nav-links a:not(.btn)::after {
+            content: "";
             position: absolute;
-            bottom: -2px;
             left: 0;
+            bottom: -4px;
             width: 100%;
             height: 1px;
             background: var(--fg);
-            transform: translateX(-101%);
-            transition: transform 0.3s ease;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .nav-link:hover::after {
-            transform: translateX(0);
+        .nav-links a:not(.btn):hover::after {
+            transform: scaleX(1);
         }
 
-        /* Sections */
-        .section {
-            padding: 120px 48px;
+        .nav-docs {
+            color: var(--green) !important;
+            border: 1px solid rgba(46, 204, 113, 0.45);
+            padding: 5px 12px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .hero {
+            min-height: 100vh;
+            padding: 120px 0 80px;
             position: relative;
+            display: flex;
+            align-items: center;
+            overflow: visible;
         }
 
-        /* Marquee */
-        .marquee-container {
+        .hero-copy {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-copy > * {
+            animation: rise 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .hero-copy > *:nth-child(1) { animation-delay: 0.05s; }
+        .hero-copy > *:nth-child(2) { animation-delay: 0.14s; }
+        .hero-copy > *:nth-child(3) { animation-delay: 0.24s; }
+        .hero-copy > *:nth-child(4) { animation-delay: 0.34s; }
+        .hero-copy > *:nth-child(5) { animation-delay: 0.44s; }
+        .hero-copy > *:nth-child(6) { animation-delay: 0.54s; }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+                filter: blur(8px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                filter: blur(0);
+            }
+        }
+
+        .hero-brand {
+            font-size: clamp(3.4rem, 12vw, 9.5rem);
+            font-weight: 800;
+            line-height: 0.88;
+            margin: 8px 0 28px;
+        }
+
+        .hero-brand em {
+            font-style: normal;
+            color: var(--muted);
+        }
+
+        .hero h1 {
+            font-size: clamp(1.35rem, 3.2vw, 2.1rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.25;
+            max-width: 18em;
+            margin: 0 auto 16px;
+        }
+
+        .hero .lede {
+            margin: 0 auto 28px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .hero-signal {
+            position: relative;
+            width: 168px;
+            height: 168px;
+            margin: 0 auto 28px;
+        }
+
+        .hero-icon {
+            width: 168px;
+            height: 168px;
+            object-fit: contain;
+            position: relative;
+            z-index: 2;
+            animation: iconPulse 4s ease-in-out infinite, iconFloat 6s ease-in-out infinite;
+            filter: drop-shadow(0 0 40px rgba(74, 158, 255, 0.28));
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hero-icon:hover {
+            transform: scale(1.08) rotate(6deg);
+        }
+
+        .icon-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 168px;
+            height: 168px;
+            margin: -84px 0 0 -84px;
+            border: 1px solid rgba(74, 158, 255, 0.28);
+            border-radius: 50%;
+            animation: ringExpand 4s ease-out infinite;
+            pointer-events: none;
+        }
+
+        .icon-ring:nth-child(2) { animation-delay: 1.3s; }
+        .icon-ring:nth-child(3) { animation-delay: 2.6s; }
+
+        @keyframes iconPulse {
+            0%, 100% { filter: drop-shadow(0 0 36px rgba(74, 158, 255, 0.28)); }
+            50% { filter: drop-shadow(0 0 64px rgba(74, 158, 255, 0.55)); }
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        @keyframes ringExpand {
+            0% {
+                transform: scale(1);
+                opacity: 0.55;
+            }
+            100% {
+                transform: scale(2.35);
+                opacity: 0;
+            }
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: var(--dim);
+            font-size: 0.68rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+
+        .scroll-hint i {
+            width: 1px;
+            height: 42px;
+            background: linear-gradient(to bottom, var(--muted), transparent);
+            animation: scrollLine 1.8s ease-in-out infinite;
+        }
+
+        @keyframes scrollLine {
+            0%, 100% { opacity: 0.2; transform: scaleY(0.6); }
+            50% { opacity: 1; transform: scaleY(1); }
+        }
+
+        .product-stage {
+            display: grid;
+            grid-template-columns: 180px minmax(0, 1fr) 180px;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .callout-col {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .callout {
+            border: 1px solid var(--line);
+            background: var(--card);
+            padding: 12px 14px;
+            font-size: 0.82rem;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, background 0.4s ease;
+        }
+
+        .callout:hover {
+            transform: translateX(4px);
+            border-color: #3a3a3a;
+            background: #181818;
+        }
+
+        .callout-col:last-of-type .callout:hover {
+            transform: translateX(-4px);
+        }
+
+        .callout b {
+            display: block;
+            font-size: 0.68rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 4px;
+        }
+
+        .callout span {
+            color: var(--muted);
+            font-size: 0.78rem;
+        }
+
+        .app-window {
+            border: 1px solid var(--line);
+            background: #0c0c0c;
             overflow: hidden;
-            padding: 40px 0;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
+            transform: perspective(1200px) rotateX(0) rotateY(0);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.4s ease;
+            cursor: zoom-in;
+        }
+
+        .app-window:hover {
+            box-shadow: 0 50px 110px rgba(0, 0, 0, 0.6);
+            border-color: #333;
+        }
+
+        .app-window img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .app-window:hover img {
+            transform: scale(1.03);
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 20000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 28px;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(10px);
+        }
+
+        .lightbox.is-open {
+            display: flex;
+        }
+
+        .lightbox-shot {
+            max-width: min(1240px, 94vw);
+            max-height: 88vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border: 1px solid #2a2a2a;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+            transform-origin: center center;
+        }
+
+        .lightbox.is-open .lightbox-shot {
+            animation: shotFlip 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        @keyframes shotFlip {
+            from {
+                transform: perspective(1400px) rotateY(0deg) scale(0.9);
+                opacity: 0.35;
+            }
+            to {
+                transform: perspective(1400px) rotateY(360deg) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 44px;
+            height: 44px;
+            border: 1px solid #333;
+            background: #111;
+            color: var(--fg);
+            font-size: 1.6rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .lightbox-close:hover {
+            border-color: #666;
+        }
+
+        body.lightbox-open {
+            overflow: hidden;
+        }
+
+        .app-chrome {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--line);
+            color: var(--dim);
+            font-size: 0.75rem;
+        }
+
+        .app-chrome i {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #2a2a2a;
+            display: inline-block;
+        }
+
+        .section {
+            padding: 96px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .section-head {
+            margin-bottom: 40px;
+        }
+
+        .marquee-wrap {
+            overflow: hidden;
+            padding: 36px 0;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            background: var(--bg);
         }
 
         .marquee {
             display: flex;
-            animation: marquee 30s linear infinite;
+            width: max-content;
+            animation: marquee 32s linear infinite;
         }
 
         .marquee-item {
             flex-shrink: 0;
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(3rem, 8vw, 8rem);
+            font-family: "Syne", sans-serif;
+            font-size: clamp(3rem, 8vw, 7.5rem);
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: -0.04em;
@@ -480,7 +671,7 @@
             padding: 0 40px;
             color: transparent;
             -webkit-text-stroke: 1px var(--muted);
-            transition: all 0.3s ease;
+            transition: color 0.3s ease, -webkit-text-stroke 0.3s ease;
         }
 
         .marquee-item:hover {
@@ -489,1748 +680,1986 @@
         }
 
         @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
         }
 
-        /* Feature cards */
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2px;
-            background: var(--border);
-        }
-
-        .feature-card {
-            background: var(--bg);
-            padding: 60px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .feature-card:hover::before {
-            opacity: 1;
-        }
-
-        .feature-number {
-            font-family: 'Syne', sans-serif;
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            color: var(--muted);
-            margin-bottom: 40px;
-        }
-
-        .feature-title {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            font-weight: 600;
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-        }
-
-        .feature-desc {
-            color: var(--muted);
-            line-height: 1.7;
-            max-width: 400px;
-        }
-
-        .feature-image {
-            margin-top: 40px;
-            aspect-ratio: 16/10;
-            background: var(--card);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%);
-            transition: all 0.5s ease;
-        }
-
-        .feature-card:hover .feature-image img {
-            filter: grayscale(0%);
-            transform: scale(1.05);
-        }
-
-        /* Large image section */
-        .showcase-section {
-            padding: 0;
-            position: relative;
-        }
-
-        .showcase-image {
-            width: 100%;
-            height: 80vh;
-            object-fit: cover;
-            filter: grayscale(80%);
-            transition: filter 0.5s ease;
-        }
-
-        .showcase-image:hover {
-            filter: grayscale(0%);
-        }
-
-        /* Split section */
-        .split-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 60vh;
-            max-height: 700px;
-        }
-
-        .split-content {
-            padding: 80px;
+        .signal-break {
+            padding: 120px 20px;
             display: flex;
             flex-direction: column;
+            align-items: center;
             justify-content: center;
-        }
-
-        .split-image {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .split-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .split-image:hover img {
-            filter: grayscale(0%);
-            transform: scale(1.05);
-        }
-
-        /* Stats */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2px;
-            background: var(--border);
-        }
-
-        .stat-item {
-            background: var(--bg);
-            padding: 60px 40px;
             text-align: center;
-            transition: background 0.3s ease;
+            border-top: 1px solid var(--line);
+            position: relative;
+            overflow: visible;
         }
 
-        .stat-item:hover {
-            background: var(--bg-elevated);
+        .signal-break .hero-signal {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 36px;
         }
 
-        .stat-number {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(3rem, 6vw, 5rem);
-            font-weight: 800;
-            letter-spacing: -0.04em;
-            line-height: 1;
+        .signal-break .hero-icon {
+            width: 200px;
+            height: 200px;
         }
 
-        .stat-label {
-            margin-top: 16px;
+        .signal-break .icon-ring {
+            width: 200px;
+            height: 200px;
+            margin: -100px 0 0 -100px;
+        }
+
+        .signal-break p {
             color: var(--muted);
-            font-size: 0.875rem;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.22em;
             text-transform: uppercase;
+            font-size: 0.72rem;
         }
 
-        /* THEMES SECTION STYLES */
-        .themes-section {
-            padding: 150px 0;
-            position: relative;
-            background: var(--bg);
-            overflow: hidden;
-        }
-
-        /* ==========================================
-           THEMES SECTION — FIXED ACCORDION
-           Shows full app UI in each slice, sequential
-           horizontal positions, labels always visible.
-           ========================================== */
-        .themes-accordion-wrapper {
-            width: 100%;
-            height: 82vh;
-            min-height: 520px;
-            margin-top: 60px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .themes-accordion {
-            display: flex;
-            width: 120vw;
-            margin-left: -10vw;
-            height: 100%;
-            transform: skew(-12deg);
-        }
-
-        .theme-slice {
-            flex: 1;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-            border-right: 3px solid rgba(255, 255, 255, 0.6);
-            transition: flex 0.65s cubic-bezier(0.25, 1, 0.5, 1);
-            cursor: pointer;
-        }
-
-        .theme-slice:last-child {
-            border-right: none;
-        }
-
-        .theme-slice:hover {
-            flex: 3.5;
-        }
-
-        /* Inner layer — un-skews and holds the screenshot */
-        .theme-slice-inner {
-            position: absolute;
-            top: 0;
-            left: -80px;
-            right: -80px;
-            height: 100%;
-            transform: skew(12deg);
-            /* 150% width: image overflows this element, enabling true horizontal
-               cropping across the 4 slices. 'auto' height keeps aspect ratio. */
-            background-size: 150% auto;
-            background-repeat: no-repeat;
-            background-color: #0a0a0a;
-            transition: all 0.65s cubic-bezier(0.25, 1, 0.5, 1);
-            filter: brightness(0.55) grayscale(20%);
-        }
-
-        .theme-slice:hover .theme-slice-inner {
-            filter: brightness(1) grayscale(0%);
-        }
-
-        /* Each slice reveals a different horizontal portion:
-           Slice 1 → left (sidebar),  Slice 2 → center-left (quote area)
-           Slice 3 → center-right,    Slice 4 → right edge */
-        .theme-slice:nth-child(1) .theme-slice-inner {
-            background-position: 5% center;
-        }
-
-        .theme-slice:nth-child(2) .theme-slice-inner {
-            background-position: 38% center;
-        }
-
-        .theme-slice:nth-child(3) .theme-slice-inner {
-            background-position: 62% center;
-        }
-
-        .theme-slice:nth-child(4) .theme-slice-inner {
-            background-position: 95% center;
-        }
-
-        /* Assign Local Full Backgrounds */
-        .bg-naruto {
-            background-image: url('ads/theme/theme_image_ (1).png');
-        }
-
-        .bg-light {
-            background-image: url('ads/theme/theme_image_ (2).png');
-        }
-
-        .bg-roronoa {
-            background-image: url('ads/theme/theme_image_ (3).png');
-        }
-
-        .bg-midnight {
-            background-image: url('ads/theme/theme_image_ (4).png');
-        }
-
-        /* Label — always shown at the bottom, fades in fully on hover */
-        .theme-slice-content {
-            position: absolute;
-            bottom: 0;
-            left: -80px;
-            right: -80px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding-bottom: 36px;
-            /* gradient footer so label is always readable */
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 100%);
-            transform: skew(12deg);
-            transition: all 0.5s ease;
-            pointer-events: none;
-        }
-
-        .theme-slice-content h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(0.85rem, 1.4vw, 1.4rem);
-            font-weight: 800;
-            color: var(--fg);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
-            margin: 0;
-            opacity: 0.6;
-            transition: all 0.4s ease;
-        }
-
-        .theme-slice:hover .theme-slice-content h3 {
-            opacity: 1;
-            font-size: clamp(1.1rem, 2vw, 2rem);
-            letter-spacing: 0.2em;
-        }
-
-        .theme-slice-content h3.theme-text-naruto {
-            color: #e67e22;
-            text-shadow: 0 0 16px rgba(230, 126, 34, 0.8);
-        }
-
-        .theme-slice-content h3.theme-text-light {
-            color: #f0f0f0;
-            text-shadow: 0 0 16px rgba(255, 255, 255, 0.8);
-        }
-
-        .theme-slice-content h3.theme-text-roronoa {
-            color: #2ecc71;
-            text-shadow: 0 0 16px rgba(46, 204, 113, 0.8);
-        }
-
-        .theme-slice-content h3.theme-text-midnight {
-            color: var(--icon-blue);
-            text-shadow: 0 0 16px rgba(74, 158, 255, 0.8);
-        }
-
-        /* ==========================================
-       DEVELOPER SECTION STYLES
-       ========================================== */
-        .developer-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 48px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .developer-bg-grid {
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(var(--border) 1px, transparent 1px),
-                linear-gradient(90deg, var(--border) 1px, transparent 1px);
-            background-size: 60px 60px;
-            opacity: 0.3;
-            mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
-        }
-
-        .developer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
+        .split {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 100px;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Avatar Side */
-        .developer-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+            gap: 48px;
             align-items: center;
         }
 
-        .avatar-wrapper {
+        .split.reverse {
+            grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        }
+
+        .split.reverse .copy {
+            order: 2;
+        }
+
+        .facts {
+            margin-top: 24px;
+            display: grid;
+            gap: 12px;
+        }
+
+        .facts li {
+            list-style: none;
+            padding-left: 18px;
             position: relative;
-            width: 350px;
-            height: 350px;
+            color: var(--muted);
         }
 
-        .avatar-border {
-            position: absolute;
-            inset: -20px;
-            border: 1px solid var(--border);
-            animation: borderRotate 10s linear infinite;
-        }
-
-        .avatar-border::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: 50%;
-            width: 20px;
-            height: 2px;
+        .facts li::before {
+            content: "";
+            width: 7px;
+            height: 7px;
             background: var(--fg);
-            transform: translateX(-50%);
-        }
-
-        @keyframes borderRotate {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .avatar-circle {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            overflow: hidden;
-            position: relative;
-            background: var(--card);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Syne', sans-serif;
-            font-size: 8rem;
-            font-weight: 800;
-            color: var(--fg);
-            transition: transform 0.5s ease;
-        }
-
-        .avatar-circle:hover {
-            transform: scale(1.05);
-        }
-
-        /* Floating dots around avatar */
-        .floating-dot {
             position: absolute;
-            width: 8px;
-            height: 8px;
-            background: var(--fg);
-            border-radius: 50%;
-            animation: dotFloat 4s ease-in-out infinite;
-        }
-
-        .floating-dot:nth-child(1) {
-            top: 10%;
             left: 0;
-            animation-delay: 0s;
+            top: 9px;
         }
 
-        .floating-dot:nth-child(2) {
-            top: 0;
-            right: 20%;
-            animation-delay: 1s;
+        .course-org {
+            margin-top: 56px;
+            border: 1px solid var(--line);
+            background: #0b0b0b;
+            padding: 36px 28px 40px;
+            border-radius: 16px;
         }
 
-        .floating-dot:nth-child(3) {
-            bottom: 20%;
-            right: 0;
-            animation-delay: 2s;
+        .org-head {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 36px;
         }
 
-        .floating-dot:nth-child(4) {
-            bottom: 0;
-            left: 20%;
-            animation-delay: 3s;
+        .org-head .cap {
+            width: 44px;
+            height: 44px;
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
         }
 
-        @keyframes dotFloat {
-
-            0%,
-            100% {
-                transform: scale(1);
-                opacity: 0.5;
-            }
-
-            50% {
-                transform: scale(1.5);
-                opacity: 1;
-            }
+        .org-head h3 {
+            font-size: 1.35rem;
+            margin-bottom: 4px;
         }
 
-        /* Text Side */
-        .developer-info {
+        .org-head p {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .org-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .org-course {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            background: #161616;
+            border: 1px solid #262626;
+            border-radius: 12px;
+            padding: 16px 28px;
+            min-width: 140px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .org-course svg,
+        .org-row svg,
+        .org-vid svg {
+            flex-shrink: 0;
+            opacity: 0.9;
+        }
+
+        .org-stem {
+            width: 1px;
+            height: 22px;
+            background: #3a3a3a;
+        }
+
+        .org-branch {
+            width: min(100%, 780px);
+            height: 1px;
+            background: #3a3a3a;
             position: relative;
         }
 
-        .dev-label {
-            font-size: 0.75rem;
-            letter-spacing: 0.3em;
+        .org-cols {
+            width: min(100%, 780px);
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .org-col {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            position: relative;
+        }
+
+        .org-col::before {
+            content: "";
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            width: 1px;
+            height: 18px;
+            background: #3a3a3a;
+        }
+
+        .org-row,
+        .org-vid,
+        .org-add {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #161616;
+            border: 1px solid #262626;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        .org-row {
+            margin-top: 18px;
+            justify-content: space-between;
+        }
+
+        .org-row span,
+        .org-vid span {
+            flex: 1;
+        }
+
+        .org-dots {
+            color: var(--dim);
+            letter-spacing: 1px;
+        }
+
+        .org-list {
+            margin: 8px 0 0 16px;
+            padding-left: 14px;
+            border-left: 1px solid #3a3a3a;
+            display: grid;
+            gap: 8px;
+        }
+
+        .org-add {
+            background: transparent;
+            border-style: dashed;
+            color: var(--muted);
+            justify-content: center;
+        }
+
+        .study-shell {
+            border: 1px solid var(--line);
+            background: var(--bg-elev);
+            overflow: hidden;
+        }
+
+        .study-tabs {
+            display: flex;
+            gap: 0;
+            border-bottom: 1px solid var(--line);
+            overflow-x: auto;
+        }
+
+        .study-tabs button {
+            background: transparent;
+            color: var(--muted);
+            border: 0;
+            border-bottom: 2px solid transparent;
+            padding: 14px 22px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .study-tabs button:hover {
+            color: var(--fg);
+        }
+
+        .study-tabs button[aria-selected="true"] {
+            color: var(--fg);
+            border-bottom-color: var(--blue);
+        }
+
+        .study-panel {
+            display: none;
+            padding: 20px;
+        }
+
+        .study-panel.active {
+            display: block;
+            animation: panelIn 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes panelIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .study-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+            gap: 20px;
+            align-items: start;
+        }
+
+        .note-list,
+        .quiz-card,
+        .chat-card {
+            border: 1px solid var(--line);
+            background: var(--card);
+            padding: 18px;
+        }
+
+        .note-list h4,
+        .quiz-card h4,
+        .chat-card .chat-meta {
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--muted);
-            margin-bottom: 24px;
+            margin-bottom: 14px;
+        }
+
+        .note-item {
+            display: grid;
+            grid-template-columns: 64px 1fr;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--line);
+            font-size: 0.92rem;
+        }
+
+        .note-item:last-child {
+            border-bottom: 0;
+        }
+
+        .ts {
+            color: var(--blue);
+            font-variant-numeric: tabular-nums;
+            font-weight: 600;
+        }
+
+        .chat-bubble {
+            padding: 12px 14px;
+            margin-bottom: 10px;
+            font-size: 0.92rem;
+            line-height: 1.55;
+        }
+
+        .chat-bubble.user {
+            background: #1a1a1a;
+            border: 1px solid var(--line);
+        }
+
+        .chat-bubble.ai {
+            background: rgba(74, 158, 255, 0.08);
+            border: 1px solid rgba(74, 158, 255, 0.22);
+        }
+
+        .chat-bubble small {
             display: block;
+            color: var(--dim);
+            font-size: 0.72rem;
+            margin-bottom: 6px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .source-chip {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--blue);
+            font-size: 0.75rem;
+        }
+
+        .quiz-option {
+            border: 1px solid var(--line);
+            padding: 10px 12px;
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+
+        .quiz-option.correct {
+            border-color: rgba(46, 204, 113, 0.55);
+            background: rgba(46, 204, 113, 0.08);
+        }
+
+        .flow {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr auto 1fr;
+            gap: 12px;
+            align-items: stretch;
+            margin-top: 36px;
+        }
+
+        .flow-card {
+            border: 1px solid var(--line);
+            background: var(--card);
+            padding: 22px;
+            text-align: center;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+        }
+
+        .flow-card:hover {
+            transform: translateY(-6px);
+            border-color: #3a3a3a;
+        }
+
+        .flow-card strong {
+            display: block;
+            font-family: "Syne", sans-serif;
+            font-size: 1.1rem;
+            margin: 8px 0 6px;
+        }
+
+        .flow-card p {
+            color: var(--muted);
+            font-size: 0.88rem;
+        }
+
+        .flow-arrow {
+            display: flex;
+            align-items: center;
+            color: var(--dim);
+            font-size: 1.4rem;
+        }
+
+        .offline-points {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .offline-points article {
+            border-top: 1px solid var(--line);
+            padding-top: 16px;
+        }
+
+        .offline-points h3 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .offline-points p {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .stat {
+            border: 1px solid var(--line);
+            background: var(--card);
+            padding: 22px;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-6px);
+            border-color: #3a3a3a;
+        }
+
+        .stat b {
+            display: block;
+            font-family: "Syne", sans-serif;
+            font-size: 1.85rem;
+            margin-bottom: 6px;
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .loop {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 8px;
+            margin: 36px 0 28px;
+        }
+
+        .loop li {
+            list-style: none;
+            border: 1px solid var(--line);
+            padding: 16px 12px;
+            text-align: center;
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, background 0.35s ease;
+        }
+
+        .loop li:hover {
+            transform: translateY(-5px);
+            border-color: var(--blue);
+            background: rgba(74, 158, 255, 0.06);
+        }
+
+        .loop li em {
+            display: block;
+            font-style: normal;
+            color: var(--blue);
+            font-size: 0.68rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 6px;
+        }
+
+        table.compare {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+        }
+
+        .compare-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .compare th,
+        .compare td {
+            text-align: left;
+            padding: 14px 12px;
+            border-bottom: 1px solid var(--line);
+            vertical-align: top;
+        }
+
+        .compare th {
+            color: var(--muted);
+            font-weight: 600;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .compare td:last-child {
+            color: var(--fg);
+        }
+
+        .compare td:nth-child(2) {
+            color: var(--muted);
+        }
+
+        .lite {
+            display: grid;
+            grid-template-columns: 160px minmax(0, 1fr);
+            gap: 36px;
+            align-items: center;
+            border: 1px solid rgba(155, 135, 245, 0.28);
+            background: linear-gradient(180deg, rgba(155, 135, 245, 0.08), transparent 55%);
+            padding: 36px;
+        }
+
+        .lite img {
+            width: 140px;
+            height: 140px;
+            border-radius: 28px;
+        }
+
+        .lite-badge {
+            display: inline-block;
+            color: var(--lite);
+            border: 1px solid rgba(155, 135, 245, 0.45);
+            padding: 4px 10px;
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .lite h2 {
+            font-size: clamp(1.7rem, 3vw, 2.4rem);
+        }
+
+        .lite-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 24px;
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding: 110px 0;
+        }
+
+        .final-cta h2 {
+            max-width: 16ch;
+            margin: 0 auto 16px;
+        }
+
+        .final-cta .lede {
+            margin: 0 auto 28px;
+        }
+
+        .dev {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .dev img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: grayscale(1);
+        }
+
+        .dev p {
+            color: var(--muted);
+            max-width: 560px;
         }
 
         .dev-name {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(3rem, 7vw, 6rem);
-            font-weight: 800;
-            line-height: 1;
-            letter-spacing: -0.04em;
-            margin-bottom: 16px;
-            position: relative;
-            display: inline-block;
-        }
-
-        /* Glitch effect */
-        .glitch {
-            position: relative;
-        }
-
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg);
-        }
-
-        .glitch::before {
-            left: 2px;
-            text-shadow: -2px 0 var(--icon-blue);
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim 5s infinite linear alternate-reverse;
-        }
-
-        .glitch::after {
-            left: -2px;
-            text-shadow: -2px 0 var(--muted);
-            clip: rect(44px, 450px, 56px, 0);
-            animation: glitch-anim2 5s infinite linear alternate-reverse;
-        }
-
-        @keyframes glitch-anim {
-            0% {
-                clip: rect(31px, 9999px, 94px, 0);
-            }
-
-            5% {
-                clip: rect(70px, 9999px, 32px, 0);
-            }
-
-            10% {
-                clip: rect(95px, 9999px, 24px, 0);
-            }
-
-            15% {
-                clip: rect(22px, 9999px, 69px, 0);
-            }
-
-            20% {
-                clip: rect(82px, 9999px, 37px, 0);
-            }
-
-            25% {
-                clip: rect(51px, 9999px, 10px, 0);
-            }
-
-            30% {
-                clip: rect(12px, 9999px, 48px, 0);
-            }
-
-            35% {
-                clip: rect(63px, 9999px, 85px, 0);
-            }
-
-            40% {
-                clip: rect(90px, 9999px, 33px, 0);
-            }
-
-            45% {
-                clip: rect(41px, 9999px, 71px, 0);
-            }
-
-            50% {
-                clip: rect(13px, 9999px, 60px, 0);
-            }
-
-            55% {
-                clip: rect(88px, 9999px, 42px, 0);
-            }
-
-            60% {
-                clip: rect(29px, 9999px, 57px, 0);
-            }
-
-            65% {
-                clip: rect(78px, 9999px, 19px, 0);
-            }
-
-            70% {
-                clip: rect(45px, 9999px, 93px, 0);
-            }
-
-            75% {
-                clip: rect(32px, 9999px, 11px, 0);
-            }
-
-            80% {
-                clip: rect(67px, 9999px, 74px, 0);
-            }
-
-            85% {
-                clip: rect(84px, 9999px, 50px, 0);
-            }
-
-            90% {
-                clip: rect(16px, 9999px, 88px, 0);
-            }
-
-            95% {
-                clip: rect(52px, 9999px, 31px, 0);
-            }
-
-            100% {
-                clip: rect(79px, 9999px, 65px, 0);
-            }
-        }
-
-        @keyframes glitch-anim2 {
-            0% {
-                clip: rect(65px, 9999px, 100px, 0);
-            }
-
-            5% {
-                clip: rect(52px, 9999px, 74px, 0);
-            }
-
-            10% {
-                clip: rect(79px, 9999px, 85px, 0);
-            }
-
-            15% {
-                clip: rect(75px, 9999px, 5px, 0);
-            }
-
-            20% {
-                clip: rect(67px, 9999px, 61px, 0);
-            }
-
-            25% {
-                clip: rect(14px, 9999px, 79px, 0);
-            }
-
-            30% {
-                clip: rect(1px, 9999px, 66px, 0);
-            }
-
-            35% {
-                clip: rect(86px, 9999px, 30px, 0);
-            }
-
-            40% {
-                clip: rect(23px, 9999px, 98px, 0);
-            }
-
-            45% {
-                clip: rect(85px, 9999px, 72px, 0);
-            }
-
-            50% {
-                clip: rect(71px, 9999px, 75px, 0);
-            }
-
-            55% {
-                clip: rect(2px, 9999px, 48px, 0);
-            }
-
-            60% {
-                clip: rect(30px, 9999px, 16px, 0);
-            }
-
-            65% {
-                clip: rect(59px, 9999px, 50px, 0);
-            }
-
-            70% {
-                clip: rect(41px, 9999px, 62px, 0);
-            }
-
-            75% {
-                clip: rect(2px, 9999px, 82px, 0);
-            }
-
-            80% {
-                clip: rect(47px, 9999px, 73px, 0);
-            }
-
-            85% {
-                clip: rect(3px, 9999px, 27px, 0);
-            }
-
-            90% {
-                clip: rect(26px, 9999px, 55px, 0);
-            }
-
-            95% {
-                clip: rect(42px, 9999px, 89px, 0);
-            }
-
-            100% {
-                clip: rect(38px, 9999px, 91px, 0);
-            }
+            font-size: 1.6rem;
+            margin-bottom: 4px;
         }
 
         .dev-role {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: var(--muted);
-            margin-bottom: 32px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .dev-role::before {
-            content: '';
-            width: 40px;
-            height: 1px;
-            background: var(--muted);
-        }
-
-        .dev-bio {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            color: var(--muted);
-            max-width: 500px;
-            margin-bottom: 48px;
-        }
-
-        /* Social Links */
-        .dev-links {
-            display: flex;
-            gap: 16px;
-        }
-
-        .dev-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 56px;
-            height: 56px;
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .dev-link::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--fg);
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .dev-link:hover::before {
-            transform: translateY(0);
-        }
-
-        .dev-link svg {
-            position: relative;
-            z-index: 2;
-            stroke: var(--fg);
-            transition: stroke 0.3s ease;
-        }
-
-        .dev-link:hover svg {
-            stroke: var(--bg);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-bg {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at center, rgba(30, 30, 30, 0.5) 0%, transparent 70%);
-        }
-
-        .cta-title {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(2.5rem, 8vw, 7rem);
-            font-weight: 800;
-            letter-spacing: -0.04em;
-            line-height: 1.1;
-            margin-bottom: 40px;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 20px 48px;
-            background: var(--fg);
-            color: var(--bg);
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.875rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            text-decoration: none;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            border: none;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--bg);
-            transform: translateX(-101%);
-            transition: transform 0.3s ease;
-        }
-
-        .cta-button:hover::before {
-            transform: translateX(0);
-        }
-
-        .cta-button span {
-            position: relative;
-            z-index: 1;
-            transition: color 0.3s ease;
-        }
-
-        .cta-button:hover span {
             color: var(--fg);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
         }
 
-        .cta-button svg {
-            position: relative;
-            z-index: 1;
-            transition: transform 0.3s ease, stroke 0.3s ease;
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 18px 0 22px;
         }
 
-        .cta-button:hover svg {
-            transform: translateX(4px);
-            stroke: var(--fg);
+        .chips span {
+            border: 1px solid var(--line);
+            padding: 6px 10px;
+            font-size: 0.78rem;
+            color: var(--muted);
         }
 
-        .cta-button.outline {
-            background: transparent;
-            border: 1px solid var(--border);
-            color: var(--fg);
+        .connect-stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin: 22px 0 24px;
+            max-width: 520px;
         }
 
-        .cta-button.outline::before {
-            background: var(--fg);
+        .connect-stats b {
+            display: block;
+            font-family: "Syne", sans-serif;
+            font-size: 1.4rem;
         }
 
-        .cta-button.outline:hover span {
-            color: var(--bg);
+        .connect-stats span {
+            color: var(--muted);
+            font-size: 0.8rem;
         }
 
-        .cta-button.outline:hover svg {
-            stroke: var(--bg);
+        .connect-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        /* Footer */
-        .footer {
-            padding: 60px 48px;
-            border-top: 1px solid var(--border);
+        footer {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .footer-icon {
-            width: 28px;
-            height: 28px;
-            object-fit: contain;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-
-        .footer-brand:hover .footer-icon {
-            opacity: 1;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 28px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.85rem;
         }
 
         .footer-links {
             display: flex;
-            gap: 32px;
+            gap: 20px;
         }
 
-        .footer-link {
-            color: var(--muted);
-            font-size: 0.875rem;
-            letter-spacing: 0.05em;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link:hover {
-            color: var(--fg);
-        }
-
-        /* Download section with icon */
-        .download-icon-section {
-            padding: 100px 48px;
+        .docs-banner {
             text-align: center;
-            position: relative;
-            overflow: hidden;
+            padding: 64px 20px;
+            border-top: 1px solid var(--line);
         }
 
-        .download-icon-large {
-            width: 180px;
-            height: 180px;
-            object-fit: contain;
-            margin-bottom: 40px;
-            filter: drop-shadow(0 0 60px rgba(74, 158, 255, 0.4));
-            animation: iconGlow 3s ease-in-out infinite;
-        }
-
-        @keyframes iconGlow {
-
-            0%,
-            100% {
-                filter: drop-shadow(0 0 60px rgba(74, 158, 255, 0.4));
-            }
-
-            50% {
-                filter: drop-shadow(0 0 80px rgba(74, 158, 255, 0.6));
-            }
-        }
-
-        /* Scroll animations */
-        .scroll-reveal {
+        .cursor,
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 40000;
             opacity: 0;
-            transform: translateY(60px);
-            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .scroll-reveal.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Image placeholder */
-        .img-placeholder {
-            background: linear-gradient(135deg, var(--card) 0%, var(--bg-elevated) 100%);
+        .cursor {
+            width: 40px;
+            height: 40px;
+            margin: -20px 0 0 -20px;
+            border: 1px solid rgba(255, 255, 255, 0.75);
+            border-radius: 50%;
+            mix-blend-mode: difference;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--muted);
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                margin 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                background 0.35s ease,
+                border-color 0.35s ease,
+                mix-blend-mode 0.2s ease;
         }
 
-        /* Mobile responsive */
-        @media (max-width: 1024px) {
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
+        .cursor-dot {
+            width: 5px;
+            height: 5px;
+            margin: -2.5px 0 0 -2.5px;
+            background: #fff;
+            border-radius: 50%;
+            mix-blend-mode: difference;
+        }
 
-            .split-section {
-                grid-template-columns: 1fr;
-            }
+        .cursor.is-hover {
+            width: 64px;
+            height: 64px;
+            margin: -32px 0 0 -32px;
+            background: #fff;
+            border-color: #fff;
+        }
 
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .cursor.is-media {
+            width: 92px;
+            height: 92px;
+            margin: -46px 0 0 -46px;
+            mix-blend-mode: normal;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(10px);
+        }
 
-            .themes-grid {
-                grid-template-columns: 1fr;
-            }
+        .cursor.is-action {
+            width: 78px;
+            height: 78px;
+            margin: -39px 0 0 -39px;
+            background: var(--fg);
+            border-color: var(--fg);
+        }
 
-            .theme-card.large {
-                grid-column: span 1;
-                aspect-ratio: 16/12;
-            }
+        .cursor-label {
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #fff;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
 
-            .developer-container {
-                grid-template-columns: 1fr;
-                gap: 60px;
-                text-align: center;
-            }
+        .cursor.is-media .cursor-label,
+        .cursor.is-action .cursor-label {
+            opacity: 1;
+            transform: scale(1);
+            mix-blend-mode: difference;
+        }
 
-            .dev-role {
-                justify-content: center;
-            }
+        .cursor.is-action .cursor-label {
+            color: var(--bg);
+            mix-blend-mode: normal;
+        }
 
-            .dev-bio {
-                margin-left: auto;
-                margin-right: auto;
-            }
+        .grain,
+        .spotlight {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
 
-            .dev-links {
-                justify-content: center;
+        .grain {
+            opacity: 0.045;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+            z-index: 2;
+        }
+
+        .spotlight {
+            background: radial-gradient(540px circle at var(--mx, 50%) var(--my, 20%), rgba(74, 158, 255, 0.08), transparent 42%);
+            z-index: 0;
+            transition: background 0.05s linear;
+        }
+
+        nav,
+        header,
+        section,
+        footer {
+            position: relative;
+            z-index: 3;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            filter: blur(6px);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        .lite {
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .lite:hover {
+            border-color: rgba(155, 135, 245, 0.5);
+            box-shadow: 0 24px 80px rgba(109, 91, 208, 0.12);
+        }
+
+        .lite img {
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .lite:hover img {
+            transform: rotate(-6deg) scale(1.04);
+        }
+
+        .compare tbody tr {
+            transition: background 0.3s ease;
+        }
+
+        .compare tbody tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .chat-bubble {
+            transition: transform 0.35s ease;
+        }
+
+        .chat-card:hover .chat-bubble.user {
+            transform: translateX(4px);
+        }
+
+        .chat-card:hover .chat-bubble.ai {
+            transform: translateX(-4px);
+        }
+
+        .quiz-option {
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .quiz-option:hover {
+            transform: translateX(4px);
+            border-color: #444;
+        }
+
+        .dev img {
+            transition: filter 0.5s ease, transform 0.5s ease;
+        }
+
+        .dev:hover img {
+            filter: grayscale(0);
+            transform: scale(1.04);
+        }
+
+        @media (max-width: 960px) {
+            .wrap {
+                width: min(1180px, calc(100% - 32px));
             }
 
             .nav {
-                padding: 20px 24px;
+                flex-wrap: wrap;
+                padding: 10px 16px;
+                gap: 10px;
             }
 
-            .section {
-                padding: 80px 24px;
+            .nav-toggle {
+                display: flex;
+                margin-left: auto;
             }
 
-            .split-content {
-                padding: 60px 24px;
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: 8px 0 12px;
+                border-top: 1px solid var(--line);
             }
 
-            .themes-section,
-            .developer-section {
-                padding: 80px 24px;
+            .nav.open .nav-links {
+                display: flex;
             }
 
-            .avatar-wrapper {
-                width: 250px;
-                height: 250px;
+            .nav-links a {
+                display: flex;
+                padding: 14px 4px;
+                min-height: 44px;
+                align-items: center;
+            }
+
+            .nav-links a:not(.btn)::after {
+                display: none;
+            }
+
+            .nav-cta {
+                justify-content: center;
+                margin-top: 8px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 88px 0 56px;
+            }
+
+            .scroll-hint {
+                display: none;
+            }
+
+            .section,
+            .final-cta {
+                padding: 64px 0;
+            }
+
+            .signal-break {
+                padding: 72px 16px;
+            }
+
+            .product-stage,
+            .split,
+            .split.reverse,
+            .study-grid,
+            .flow,
+            .offline-points,
+            .lite,
+            .dev {
+                grid-template-columns: 1fr;
+            }
+
+            .org-cols {
+                width: 100%;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .loop {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .split.reverse .copy {
+                order: 0;
+            }
+
+            .product-stage .app-window {
+                order: -1;
+            }
+
+            .callout-col {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .callout-col:last-of-type .callout:hover,
+            .callout:hover {
+                transform: none;
+            }
+
+            .flow-arrow {
+                justify-content: center;
+                transform: rotate(90deg);
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-ctas .btn {
+                width: 100%;
+            }
+
+            .connect-ctas {
+                flex-direction: column;
+            }
+
+            .connect-ctas .btn {
+                width: 100%;
+            }
+
+            .lite {
+                justify-items: center;
+                text-align: center;
+                padding: 24px;
+            }
+
+            .lite-points {
+                text-align: left;
+            }
+
+            .dev {
+                justify-items: center;
+                text-align: center;
+            }
+
+            .marquee-item {
+                font-size: clamp(2.2rem, 14vw, 4rem);
+                padding: 0 20px;
             }
         }
 
         @media (max-width: 640px) {
-            .nav-links {
-                display: none;
+            .wrap {
+                width: min(1180px, calc(100% - 24px));
             }
 
-            /* DOCS link always visible on mobile — shown as a pill in the nav */
-            .nav-docs-mobile {
-                display: flex !important;
-            }
-
-            /* hide the desktop docs link when nav-links is hidden */
-            .nav-docs-link {
-                display: none;
-            }
-
-            .stats-grid {
+            .callout-col {
                 grid-template-columns: 1fr;
             }
 
-            .feature-card {
-                padding: 40px 24px;
+            .stats,
+            .loop {
+                grid-template-columns: 1fr 1fr;
             }
 
-            .footer {
-                flex-direction: column;
-                gap: 24px;
-                text-align: center;
+            .hero {
+                padding: 80px 0 48px;
+            }
+
+            .hero-brand {
+                font-size: clamp(2.8rem, 18vw, 4.5rem);
+            }
+
+            .hero h1 {
+                font-size: 1.25rem;
+            }
+
+            .lede {
+                font-size: 0.98rem;
+            }
+
+            h2 {
+                font-size: clamp(1.7rem, 8vw, 2.4rem);
+            }
+
+            .hero-icon,
+            .hero-signal {
+                width: 96px;
+                height: 96px;
+            }
+
+            .icon-ring {
+                width: 96px;
+                height: 96px;
+                margin: -48px 0 0 -48px;
+            }
+
+            .signal-break .hero-signal,
+            .signal-break .hero-icon {
+                width: 132px;
+                height: 132px;
+            }
+
+            .signal-break .icon-ring {
+                width: 132px;
+                height: 132px;
+                margin: -66px 0 0 -66px;
+            }
+
+            .marquee-wrap {
+                padding: 22px 0;
+            }
+
+            .marquee {
+                animation-duration: 22s;
+            }
+
+            .lite-points {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-logo span,
+            .nav-logo {
+                font-size: 0.88rem;
+            }
+
+            .study-tabs button {
+                padding: 12px 14px;
+                font-size: 0.82rem;
+            }
+
+            .study-panel {
+                padding: 12px;
+            }
+
+            .org-cols {
+                grid-template-columns: 1fr;
+                width: 100%;
+            }
+
+            .org-branch {
+                display: none;
+            }
+
+            .org-col::before {
+                display: none;
+            }
+
+            .org-list {
+                margin-left: 8px;
+            }
+
+            .course-org {
+                padding: 22px 16px 28px;
+            }
+
+            .btn {
+                min-height: 44px;
+            }
+
+            .compare thead {
+                display: none;
+            }
+
+            .compare tr {
+                display: block;
+                border: 1px solid var(--line);
+                background: var(--card);
+                margin-bottom: 12px;
+                padding: 8px 0;
+            }
+
+            .compare td {
+                display: grid;
+                grid-template-columns: 110px 1fr;
+                gap: 10px;
+                border-bottom: 0;
+                padding: 8px 14px;
+            }
+
+            .compare td::before {
+                content: attr(data-label);
+                color: var(--muted);
+                font-size: 0.68rem;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                font-weight: 600;
+                padding-top: 3px;
+            }
+
+            .compare td:nth-child(2),
+            .compare td:last-child {
+                color: var(--fg);
             }
 
             .footer-links {
-                flex-direction: column;
-                gap: 16px;
+                flex-wrap: wrap;
             }
 
             .cursor,
-            .cursor-dot {
-                display: none;
+            .cursor-dot,
+            .spotlight {
+                display: none !important;
             }
 
-            body {
+            body.has-cursor,
+            body.has-cursor a,
+            body.has-cursor button {
                 cursor: auto;
-            }
-
-            .hero-icon {
-                width: 80px;
-                height: 80px;
-            }
-
-            .download-icon-large {
-                width: 120px;
-                height: 120px;
-            }
-
-            .glitch::before,
-            .glitch::after {
-                display: none;
             }
         }
 
-        /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
 
             *,
             *::before,
             *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+                animation: none !important;
+                transition: none !important;
+                filter: none !important;
             }
 
             .marquee {
                 animation: none;
             }
-        }
 
-        /* Glowing Docs Nav Link */
-        .nav-docs-link {
-            color: #2ecc71 !important;
-            border: 1px solid rgba(46, 204, 113, 0.4);
-            padding: 4px 14px !important;
-            border-radius: 2px;
-            animation: docsGlow 2.5s ease-in-out infinite;
-            position: relative;
-        }
-
-        .nav-docs-link:hover {
-            color: #fff !important;
-            background: rgba(46, 204, 113, 0.15);
-            border-color: rgba(46, 204, 113, 0.9);
-            box-shadow: 0 0 18px rgba(46, 204, 113, 0.6), 0 0 40px rgba(46, 204, 113, 0.2);
-            animation: none;
-        }
-
-        @keyframes docsGlow {
-
-            0%,
-            100% {
-                box-shadow: 0 0 6px rgba(46, 204, 113, 0.3);
-                border-color: rgba(46, 204, 113, 0.3);
+            .hero-icon {
+                animation: none;
             }
 
-            50% {
-                box-shadow: 0 0 16px rgba(46, 204, 113, 0.7), 0 0 32px rgba(46, 204, 113, 0.25);
-                border-color: rgba(46, 204, 113, 0.8);
+            .cursor,
+            .cursor-dot,
+            .spotlight,
+            .grain {
+                display: none !important;
+            }
+
+            .lightbox.is-open .lightbox-shot {
+                animation: none;
+            }
+
+            body.has-cursor {
+                cursor: auto;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+                filter: none;
+            }
+        }
+
+        @media (hover: none) {
+            .cursor,
+            .cursor-dot {
+                display: none !important;
+            }
+
+            body.has-cursor,
+            body.has-cursor a,
+            body.has-cursor button {
+                cursor: auto;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Noise overlay -->
-    <div class="noise"></div>
+    <div class="spotlight" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor-label"></span></div>
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+    <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Screenshot">
+        <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close fullscreen image">&times;</button>
+        <img class="lightbox-shot" id="lightbox-shot" alt="">
+    </div>
 
-    <!-- Custom cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-dot"></div>
-
-    <!-- Navigation -->
     <nav class="nav" id="nav">
-        <a href="#" class="nav-logo hover-target">
-            <img src="ads/logo.png" alt="Study Stream Icon" class="nav-icon">
-            <span class="nav-logo-text">Study Stream</span>
+        <a class="nav-logo" href="#">
+            <img src="ads/logo.png" alt="Study Stream">
+            Study Stream
         </a>
-        <div class="nav-links">
-            <a href="#features" class="nav-link hover-target">Features</a>
-            <a href="#themes" class="nav-link hover-target">Themes</a>
-            <a href="#developer" class="nav-link hover-target">Developer</a>
-            <a href="#download" class="nav-link hover-target">Download</a>
-            <a href="https://github.com/Rohit0072/study-stream-black" class="nav-link hover-target"
-                target="_blank">GitHub</a>
-            <a href="documentaion.html" class="nav-link nav-docs-link hover-target">Docs</a>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+            <a href="#how-it-works">How it works</a>
+            <a href="#study">Notes &amp; AI</a>
+            <a href="#offline">Offline</a>
+            <a href="#lite">Lite</a>
+            <a href="#connect">Connect</a>
+            <a href="https://github.com/Rohit0072/study-stream-black" target="_blank" rel="noopener">GitHub</a>
+            <a class="nav-docs" href="documentaion.html">Docs</a>
+            <a class="btn btn-primary nav-cta" href="https://github.com/Rohit0072/study-stream-black/releases/download/v1.0.4/StudyStream-Setup-1.0.4.exe">Download</a>
         </div>
-        <!-- Mobile-only DOCS pill: always visible when nav-links hides -->
-        <a href="documentaion.html" class="nav-docs-mobile"
-            style="display:none; align-items:center; gap:6px; color:#2ecc71; border:1px solid rgba(46,204,113,0.6); padding:5px 14px; font-size:0.8rem; font-weight:700; letter-spacing:0.08em; text-decoration:none; border-radius:2px; animation:docsGlow 2.5s ease-in-out infinite; text-transform:uppercase;">
-            📖 Docs
-        </a>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg"></div>
-
-        <!-- Animated lines -->
-        <div class="line-container" id="lines-container"></div>
-
-        <!-- Floating elements -->
-        <div class="float-element" style="top: 20%; left: 10%; width: 100px; height: 100px; animation-delay: 0s;"></div>
-        <div class="float-element" style="top: 60%; right: 15%; width: 60px; height: 60px; animation-delay: 2s;"></div>
-        <div class="float-element" style="bottom: 20%; left: 20%; width: 80px; height: 80px; animation-delay: 4s;">
-        </div>
-
-        <div class="text-center relative z-10 px-6">
-            <!-- Hero Icon with animated rings -->
-            <div class="hero-icon-container reveal-text">
-                <span class="stagger-1">
-                    <div style="position: relative; display: inline-block;">
-                        <div class="icon-ring"></div>
-                        <div class="icon-ring"></div>
-                        <div class="icon-ring"></div>
-                        <img src="ads/logo.png" alt="Study Stream" class="hero-icon hover-target">
-                    </div>
-                </span>
-            </div>
-
-            <div class="reveal-text mb-6">
-                <span class="stagger-2 text-sm tracking-[0.3em] uppercase text-[var(--muted)]">Electron App for
-                    Focus</span>
-            </div>
-
-            <h1 class="font-display text-[clamp(3rem,12vw,10rem)] font-800 leading-[0.9] tracking-[-0.04em] mb-8">
-                <div class="reveal-text"><span class="stagger-3">Study</span></div>
-                <div class="reveal-text"><span class="stagger-4" style="color: var(--muted);">Stream</span></div>
-            </h1>
-
-            <div class="reveal-text">
-                <span class="stagger-5 text-lg md:text-xl text-[var(--muted)] max-w-xl mx-auto leading-relaxed">
-                    A minimalist productivity app designed to help you focus.
-                    No distractions, just pure flow.
-                </span>
-            </div>
-
-            <div class="reveal-text mt-12">
-                <a href="#download" class="cta-button hover-target">
-                    <span>Download Now</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                </a>
+    <header class="hero">
+        <div class="wrap">
+            <div class="hero-copy">
+                <div class="hero-signal">
+                    <span class="icon-ring"></span>
+                    <span class="icon-ring"></span>
+                    <span class="icon-ring"></span>
+                    <img src="ads/logo.png" alt="Study Stream" class="hero-icon">
+                </div>
+                <p class="eyebrow">Desktop app · Offline courses · Windows</p>
+                <p class="hero-brand">Study<br><em>Stream</em></p>
+                <h1>Turn Your Downloaded Courses Into Your Personal Learning Library</h1>
+                <p class="lede">Organize your offline courses, pick up exactly where you left off, take timestamped notes, and learn with AI — all from one desktop app.</p>
+                <div class="hero-ctas">
+                    <a class="btn btn-primary" href="https://github.com/Rohit0072/study-stream-black/releases/download/v1.0.4/StudyStream-Setup-1.0.4.exe">Download Study Stream</a>
+                    <a class="btn btn-ghost" href="#how-it-works">See How It Works</a>
+                </div>
             </div>
         </div>
+        <div class="scroll-hint">Scroll<i></i></div>
+    </header>
 
-        <!-- Scroll indicator -->
-        <div class="scroll-indicator">
-            <span class="text-xs tracking-[0.2em] uppercase text-[var(--muted)]">Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
-
-    <!-- Marquee -->
-    <div class="marquee-container">
+    <div class="marquee-wrap" aria-hidden="true">
         <div class="marquee">
-            <span class="marquee-item hover-target">Focus</span>
-            <span class="marquee-item hover-target">Achieve</span>
-            <span class="marquee-item hover-target">Learn</span>
-            <span class="marquee-item hover-target">Study</span>
-            <span class="marquee-item hover-target">Notes</span>
-            <span class="marquee-item hover-target">Ambient</span>
-            <span class="marquee-item hover-target">Focus</span>
-            <span class="marquee-item hover-target">Achieve</span>
-            <span class="marquee-item hover-target">Learn</span>
-            <span class="marquee-item hover-target">Study</span>
-            <span class="marquee-item hover-target">Notes</span>
-            <span class="marquee-item hover-target">Ambient</span>
+            <span class="marquee-item">Focus</span>
+            <span class="marquee-item">Learn</span>
+            <span class="marquee-item">Achieve</span>
+            <span class="marquee-item">Study</span>
+            <span class="marquee-item">Notes</span>
+            <span class="marquee-item">Offline</span>
+            <span class="marquee-item">Focus</span>
+            <span class="marquee-item">Learn</span>
+            <span class="marquee-item">Achieve</span>
+            <span class="marquee-item">Study</span>
+            <span class="marquee-item">Notes</span>
+            <span class="marquee-item">Offline</span>
         </div>
     </div>
 
-    <!-- Features Section -->
-    <section id="features" class="section">
-        <div class="max-w-7xl mx-auto">
-            <div class="scroll-reveal mb-20">
-                <span class="text-sm tracking-[0.3em] uppercase text-[var(--muted)] block mb-4">Features</span>
-                <h2 class="font-display text-[clamp(2rem,5vw,4rem)] font-700 tracking-[-0.02em]">
-                    Everything you need to<br>
-                    <span style="color: var(--muted)">stay in the zone</span>
-                </h2>
+    <section class="section" id="product">
+        <div class="wrap">
+            <div class="section-head" style="text-align:center;">
+                <p class="eyebrow" style="justify-content:center;">Inside the app</p>
+                <h2>One screen. The whole loop.</h2>
+                <p class="lede" style="margin:0 auto;">Continue Learning, progress, lessons, notes, AI, and quizzes — not six different apps.</p>
             </div>
-        </div>
-
-        <div class="feature-grid scroll-reveal">
-            <div class="feature-card hover-target">
-                <div class="feature-number">01</div>
-                <h3 class="feature-title">The Netflix Grid</h3>
-                <p class="feature-desc">
-                    Organize a lifetime of learning into a single, beautiful dashboard. Offline-first, always available.
-                </p>
-                <div class="feature-image">
-                    <img src="ads/course_card.jpg" alt="Course Library Screenshot" loading="lazy">
+            <div class="product-stage">
+                <div class="callout-col">
+                    <div class="callout"><b>01 Continue Learning</b><span>Resume Session jumps back to the last lesson and timestamp.</span></div>
+                    <div class="callout"><b>02 Course progress</b><span>Each course shows percent complete and videos remaining.</span></div>
+                    <div class="callout"><b>03 Lesson navigation</b><span>Sections and lessons from your folders, in order.</span></div>
                 </div>
-            </div>
-
-            <div class="feature-card hover-target">
-                <div class="feature-number">02</div>
-                <h3 class="feature-title">Smart Notes</h3>
-                <p class="feature-desc">
-                    Tied to the exact millisecond of your course. Revision is no longer a chore, it's a click away.
-                </p>
-                <div class="feature-image">
-                    <img src="ads/notes.png" alt="Smart Notes Screenshot" loading="lazy">
-                </div>
-            </div>
-
-            <div class="feature-card hover-target">
-                <div class="feature-number">03</div>
-                <h3 class="feature-title">AI Study Assistant</h3>
-                <p class="feature-desc">
-                    Get instant clarification on complex topics with a deeply integrated AI tutor that understands your
-                    course context.
-                </p>
-                <div class="feature-image">
-                    <img src="ads/chatbot.png" alt="AI Agent Interface" loading="lazy">
-                </div>
-            </div>
-
-            <div class="feature-card hover-target">
-                <div class="feature-number">04</div>
-                <h3 class="feature-title">All-in-One Hub</h3>
-                <p class="feature-desc">
-                    A brutalist, distraction-free environment replacing scattered media players and generic note-taking
-                    apps.
-                </p>
-                <div class="feature-image">
-                    <img src="ads/video_course_exmple.png" alt="Video Player Hub Interface" loading="lazy">
+                <figure class="app-window">
+                    <div class="app-chrome"><i></i><i></i><i></i> Home — Study Stream</div>
+                    <img src="ads/ui-home.png" alt="Study Stream Lite dashboard with Home selected, daily quote, 5-day streak, and Continue Watching">
+                </figure>
+                <div class="callout-col">
+                    <div class="callout"><b>04 Notes</b><span>Timestamped notes sit next to the lesson, not in another app.</span></div>
+                    <div class="callout"><b>05 AI</b><span>Chat uses the current lesson’s subtitles as context.</span></div>
+                    <div class="callout"><b>06 Quiz</b><span>Active-recall questions generated from what you just watched.</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- THEMES SECTION -->
-    <section id="themes" class="themes-section">
-        <div class="max-w-7xl mx-auto px-6 relative z-10" style="padding-left: 48px; padding-right: 48px;">
-            <div class="scroll-reveal">
-                <span class="text-sm tracking-[0.3em] uppercase text-[var(--muted)] block mb-4">Personalization</span>
-                <h2 class="font-display text-[clamp(2rem,5vw,4rem)] font-700 tracking-[-0.02em]">
-                    Anime &<br><span style="color: var(--muted)">Aesthetic Themes</span>
-                </h2>
+    <section class="section" id="how-it-works">
+        <div class="wrap split">
+            <div class="copy">
+                <p class="eyebrow">Library</p>
+                <h2>Your courses, finally organized</h2>
+                <p class="lede">Study Stream does not host your videos. You already downloaded them. Point the app at the folder — it scans the disk and builds a library of courses, sections, and lessons.</p>
+                <ul class="facts">
+                    <li>Import a downloaded course folder with Scan Files — one click, no upload.</li>
+                    <li>Automatic structure: Course → Sections → Lessons, including video counts.</li>
+                    <li>Search the library instead of hunting through File Explorer.</li>
+                    <li>Progress lives on each course card: 3% complete, 3/110 videos, last watched.</li>
+                </ul>
+                <p class="lede" style="margin-top:20px;font-size:0.88rem;">Match the subtitle filename to the video so AI can read that lesson. Then Scan Files.</p>
+            </div>
+            <div>
+                <figure class="app-window" style="margin-bottom:16px;">
+                    <div class="app-chrome"><i></i><i></i><i></i> Course Library</div>
+                    <img src="ads/ui-library.png" alt="Study Stream Lite Course Library with course cards, section and video counts, progress bars, search, and Add Course" loading="lazy">
+                </figure>
+                <figure class="app-window">
+                    <div class="app-chrome"><i></i><i></i><i></i> Scanner — Review &amp; Import</div>
+                    <img src="ads/ui-scanner.png" alt="Scanner reviewing detected courses and an Import 89 Videos button" loading="lazy">
+                </figure>
             </div>
         </div>
 
-        <!-- The Skewed Accordion Backdrop -->
-        <div class="themes-accordion-wrapper scroll-reveal" style="transition-delay: 0.2s;">
-            <div class="themes-accordion">
-
-                <!-- Theme 1: Naruto -->
-                <div class="theme-slice hover-target">
-                    <div class="theme-slice-inner bg-naruto"></div>
-                    <div class="theme-slice-content">
-                        <h3 class="theme-text-naruto">Naruto</h3>
-                    </div>
-                </div>
-
-                <!-- Theme 2: Light -->
-                <div class="theme-slice hover-target">
-                    <div class="theme-slice-inner bg-light"></div>
-                    <div class="theme-slice-content">
-                        <h3 class="theme-text-light">Light</h3>
-                    </div>
-                </div>
-
-                <!-- Theme 3: Roronoa -->
-                <div class="theme-slice hover-target">
-                    <div class="theme-slice-inner bg-roronoa"></div>
-                    <div class="theme-slice-content">
-                        <h3 class="theme-text-roronoa">Roronoa</h3>
-                    </div>
-                </div>
-
-                <!-- Theme 4: Midnight Pro -->
-                <div class="theme-slice hover-target">
-                    <div class="theme-slice-inner bg-midnight"></div>
-                    <div class="theme-slice-content">
-                        <h3 class="theme-text-midnight">Midnight Pro</h3>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Large Showcase Image -->
-    <section class="showcase-section scroll-reveal">
-        <img src="ads/banner.jpg" alt="Full Application Interface" class="showcase-image hover-target" loading="lazy">
-    </section>
-
-    <!-- Stats Section -->
-    <section class="scroll-reveal">
-        <div class="stats-grid">
-            <div class="stat-item hover-target">
-                <div class="stat-number" data-count="50">0</div>
-                <div class="stat-label">Stars on GitHub</div>
-            </div>
-            <div class="stat-item hover-target">
-                <div class="stat-number" data-count="4">0</div>
-                <div class="stat-label">Core Features</div>
-            </div>
-            <div class="stat-item hover-target">
-                <div class="stat-number" data-count="100">0</div>
-                <div class="stat-label">Percent Free</div>
-            </div>
-            <div class="stat-item hover-target">
-                <div class="stat-number" data-count="24">0</div>
-                <div class="stat-label">Hour Support</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Split Section (About Project) -->
-    <section id="about" class="split-section">
-        <div class="split-image scroll-reveal">
-            <img src="ads/student.jpg" alt="App Interface" loading="lazy">
-        </div>
-        <div class="split-content scroll-reveal">
-            <span class="text-sm tracking-[0.3em] uppercase text-[var(--muted)] block mb-6">About Project</span>
-            <h2 class="font-display text-[clamp(2rem,4vw,3.5rem)] font-700 tracking-[-0.02em] mb-6">
-                Built for students,<br>
-                <span style="color: var(--muted)">by student</span>
-            </h2>
-            <p class="text-[var(--muted)] text-lg leading-relaxed mb-8 max-w-lg">
-                Study Stream was born from the frustration of cluttered productivity apps.
-                We stripped away everything that doesn't serve your focus, leaving you with
-                a clean, powerful tool that just works.
-            </p>
-            <p class="text-[var(--muted)] leading-relaxed max-w-lg">
-                Built with Electron, it runs natively on your desktop with minimal resource usage.
-                No browser tabs, no notifications, no excuses.
-            </p>
-        </div>
-    </section>
-
-    <!-- ==========================================
-       DEVELOPER SECTION
-       ========================================== -->
-    <section id="developer" class="developer-section">
-        <div class="developer-bg-grid"></div>
-
-        <div class="developer-container">
-            <!-- Avatar Side -->
-            <div class="developer-visual scroll-reveal">
-                <div class="avatar-wrapper">
-                    <div class="avatar-border"></div>
-                    <div class="floating-dot"></div>
-                    <div class="floating-dot"></div>
-                    <div class="floating-dot"></div>
-                    <div class="floating-dot"></div>
-                    <div class="avatar-circle hover-target">
-                        <img src="ads/Rohit_profile_image.png" alt="Rohit Singh - Developer" loading="lazy"
-                            style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Info Side -->
-            <div class="developer-info scroll-reveal" style="transition-delay: 0.2s;">
-                <span class="dev-label">The Developer</span>
-
-                <h2 class="dev-name glitch hover-target" data-text="Rohit">
-                    Rohit
-                </h2>
-
-                <div class="dev-role">
-                    Full Stack Developer
-                </div>
-
-                <p class="dev-bio">
-                    A passionate developer who believes in building tools that solve real problems.
-                    When I'm not coding, you'll find me exploring new technologies, contributing to
-                    open source, or optimizing my workflow to achieve peak productivity.
-                </p>
-
-                <p class="dev-bio" style="margin-bottom: 32px;">
-                    Study Stream is my answer to the constant distractions we face in the digital age.
-                    It's not just an app—it's a philosophy of focused work.
-                </p>
-
-                <div class="dev-links">
-                    <a href="https://github.com/Rohit0072" target="_blank" class="dev-link hover-target"
-                        aria-label="GitHub">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+        <div class="wrap">
+            <div class="course-org">
+                <div class="org-head">
+                    <div class="cap" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <path d="M22 10L12 5 2 10l10 5 10-5z" />
+                            <path d="M6 12v5c3 2 9 2 12 0v-5" />
                         </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/rohit-singh-b74377239" target="_blank"
-                        class="dev-link hover-target" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                            <rect x="2" y="9" width="4" height="12" />
-                            <circle cx="4" cy="4" r="2" />
+                    </div>
+                    <div>
+                        <h3>Organize your course</h3>
+                        <p>Structure your course with sections and videos.</p>
+                    </div>
+                </div>
+                <div class="org-tree">
+                    <div class="org-course">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                            <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                         </svg>
-                    </a>
-                    <!-- X (Twitter) placeholder — no account yet -->
-                    <a href="#" class="dev-link hover-target" aria-label="X (Twitter)"
-                        style="opacity:0.4; cursor:not-allowed;" onclick="return false;">
-                        <!-- X logo -->
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-                            <path
-                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                        </svg>
-                    </a>
-                    <a href="mailto:rs3274357@gmail.com" class="dev-link hover-target" aria-label="Email">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <polyline points="22,6 12,13 2,6" />
-                        </svg>
-                    </a>
+                        Course
+                    </div>
+                    <div class="org-stem"></div>
+                    <div class="org-branch"></div>
+                    <div class="org-cols">
+                        <div class="org-col">
+                            <div class="org-row">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                                    <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                </svg>
+                                <span>Section 1</span>
+                                <span class="org-dots">···</span>
+                            </div>
+                            <div class="org-list">
+                                <div class="org-vid"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 6v12l10-6z"/></svg><span>Video 1</span><span class="org-dots">···</span></div>
+                                <div class="org-vid"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 6v12l10-6z"/></svg><span>Video 2</span><span class="org-dots">···</span></div>
+                                <div class="org-vid"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 6v12l10-6z"/></svg><span>Video 3</span><span class="org-dots">···</span></div>
+                                <div class="org-add">+ Add video</div>
+                            </div>
+                        </div>
+                        <div class="org-col">
+                            <div class="org-row">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                                    <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                </svg>
+                                <span>Section 2</span>
+                                <span class="org-dots">···</span>
+                            </div>
+                            <div class="org-list">
+                                <div class="org-vid"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 6v12l10-6z"/></svg><span>Video 1</span><span class="org-dots">···</span></div>
+                                <div class="org-vid"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 6v12l10-6z"/></svg><span>Video 2</span><span class="org-dots">···</span></div>
+                                <div class="org-vid"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 6v12l10-6z"/></svg><span>Video 3</span><span class="org-dots">···</span></div>
+                                <div class="org-add">+ Add video</div>
+                            </div>
+                        </div>
+                        <div class="org-col">
+                            <div class="org-row">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                                    <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                </svg>
+                                <span>Section 3</span>
+                                <span class="org-dots">···</span>
+                            </div>
+                            <div class="org-list">
+                                <div class="org-vid"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 6v12l10-6z"/></svg><span>Video 1</span><span class="org-dots">···</span></div>
+                                <div class="org-vid"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 6v12l10-6z"/></svg><span>Video 2</span><span class="org-dots">···</span></div>
+                                <div class="org-vid"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 6v12l10-6z"/></svg><span>Video 3</span><span class="org-dots">···</span></div>
+                                <div class="org-add">+ Add video</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Showcase Removed for brevity -->
-
-    <!-- Download Section with Large Icon -->
-    <section class="download-icon-section scroll-reveal flex justify-center w-full mt-24">
-        <img src="ads/logo.png" alt="Study Stream" class="download-icon-large hover-target" loading="lazy">
-    </section>
-
-    <!-- CTA Section -->
-    <section id="download" class="cta-section">
-        <div class="cta-bg"></div>
-
-        <!-- Animated circles -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-[var(--border)] rounded-full opacity-20"
-                style="animation: float 10s ease-in-out infinite;"></div>
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-[var(--border)] rounded-full opacity-10"
-                style="animation: float 12s ease-in-out infinite reverse;"></div>
-        </div>
-
-        <div class="relative z-10 px-6 scroll-reveal">
-            <h2 class="cta-title">
-                Ready to<br>
-                Focus?
-            </h2>
-            <p class="text-[var(--muted)] text-lg max-w-md mx-auto mb-10">
-                Download Study Stream and transform your study sessions.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="https://github.com/Rohit0072/study-stream-black/releases/download/v1.0.4/StudyStream-Setup-1.0.4.exe"
-                    target="_blank" class="cta-button hover-target">
-                    <span>Download for Free</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                        <polyline points="7 10 12 15 17 10" />
-                        <line x1="12" y1="15" x2="12" y2="3" />
-                    </svg>
-                </a>
-                <a href="https://github.com/Rohit0072/study-stream-black" target="_blank"
-                    class="cta-button outline hover-target">
-                    <span>Star on GitHub</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon
-                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                </a>
+    <section class="section">
+        <div class="wrap split reverse">
+            <div class="copy">
+                <p class="eyebrow">Resume</p>
+                <h2>Always pick up where you left off</h2>
+                <p class="lede">Closing the app does not lose your place. Study Stream stores the lesson and the playback position. Continue Learning on the home screen, or hit Continue on a course card.</p>
+                <ul class="facts">
+                    <li>Last watched: lesson name, course, and how long ago.</li>
+                    <li>Video progress bar on the lesson itself — e.g. 1:09 / 6:24.</li>
+                    <li>Incomplete video counts so you know what is still ahead.</li>
+                </ul>
+            </div>
+            <div>
+                <figure class="app-window" style="margin-bottom:16px;">
+                    <div class="app-chrome"><i></i><i></i><i></i> Player — 01. learning-how-to-draw</div>
+                    <img src="ads/video_course_exmple.png" alt="Distraction-free video player with auto-hiding controls, lesson list, and Content Notes Chat Quiz tabs" loading="lazy">
+                </figure>
+                <figure class="app-window">
+                    <div class="app-chrome"><i></i><i></i><i></i> Continue Learning</div>
+                    <img src="ads/notes.png" alt="Continue Learning card for Introduction with a Resume button and last-opened time" loading="lazy">
+                </figure>
             </div>
         </div>
     </section>
 
-    <!-- Docs Banner — visible on all screens, extra prominent on mobile -->
-    <section
-        style="padding: 60px 24px; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); position: relative; overflow: hidden;">
-        <div
-            style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(46,204,113,0.06) 0%, transparent 70%);pointer-events:none;">
+    <section class="signal-break" aria-label="Study Stream">
+        <div class="hero-signal">
+            <span class="icon-ring"></span>
+            <span class="icon-ring"></span>
+            <span class="icon-ring"></span>
+            <img src="ads/logo.png" alt="" class="hero-icon">
         </div>
-        <div class="scroll-reveal" style="position:relative;z-index:1;">
-            <span
-                style="display:inline-block;font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:#2ecc71;border:1px solid rgba(46,204,113,0.4);padding:4px 12px;margin-bottom:20px;">User
-                Guide</span>
-            <h2
-                style="font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3rem);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px;">
-                Not sure where to start?</h2>
-            <p style="color:var(--muted);font-size:1.05rem;max-width:480px;margin:0 auto 32px;line-height:1.7;">Read the
-                full guide — installation, AI setup, folder structure, Hall of Fame, shortcuts and everything in
-                between.</p>
-            <a href="documentaion.html"
-                style="display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border:1px solid rgba(46,204,113,0.6);color:#2ecc71;font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;letter-spacing:0.05em;text-decoration:none;text-transform:uppercase;animation:docsGlow 2.5s ease-in-out infinite;transition:all 0.3s ease;"
-                onmouseover="this.style.background='rgba(46,204,113,0.12)';this.style.color='#fff';this.style.borderColor='rgba(46,204,113,0.9)';this.style.animation='none';"
-                onmouseout="this.style.background='';this.style.color='#2ecc71';this.style.borderColor='rgba(46,204,113,0.6)';this.style.animation='docsGlow 2.5s ease-in-out infinite';">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                    <polyline points="14 2 14 8 20 8" />
-                    <line x1="16" y1="13" x2="8" y2="13" />
-                    <line x1="16" y1="17" x2="8" y2="17" />
-                    <polyline points="10 9 9 9 8 9" />
-                </svg>
-                Read the Full Documentation
-            </a>
+        <p>Stay on the lesson. The rest of the internet can wait.</p>
+    </section>
+
+    <section class="section" id="study">
+        <div class="wrap">
+            <div class="section-head">
+                <p class="eyebrow">Player</p>
+                <h2>Don't just watch. Study.</h2>
+                <p class="lede">The same lesson has four tabs: Content, Notes, Chat, and Quiz. Notes and AI stay beside the video. You do not switch to Notion, ChatGPT, or a quiz site.</p>
+            </div>
+            <div class="study-shell">
+                <div class="study-tabs" role="tablist" aria-label="Lesson tools">
+                    <button type="button" role="tab" id="tab-content" aria-selected="true" aria-controls="panel-content" data-tab="content">Content</button>
+                    <button type="button" role="tab" id="tab-notes" aria-selected="false" aria-controls="panel-notes" data-tab="notes">Notes</button>
+                    <button type="button" role="tab" id="tab-chat" aria-selected="false" aria-controls="panel-chat" data-tab="chat">Chat</button>
+                    <button type="button" role="tab" id="tab-quiz" aria-selected="false" aria-controls="panel-quiz" data-tab="quiz">Quiz</button>
+                </div>
+
+                <div class="study-panel active" id="panel-content" role="tabpanel">
+                    <div class="study-grid">
+                        <figure class="app-window">
+                            <img src="ads/video_course_exmple.png" alt="Lesson content tab with sidebar navigation and video controls" loading="lazy">
+                        </figure>
+                        <div class="note-list">
+                            <h4>In this lesson</h4>
+                            <div class="note-item"><span class="ts">Content</span><span>Course outline on the left. Current lesson is highlighted. Next lesson is one control away.</span></div>
+                            <div class="note-item"><span class="ts">Player</span><span>Auto-hiding controls, speed, subtitles, bookmark, next lesson — built for studying, not binge-watching.</span></div>
+                            <div class="note-item"><span class="ts">Offline</span><span>The file is on your disk. Playback does not need an internet connection.</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="study-panel" id="panel-notes" role="tabpanel" hidden>
+                    <div class="study-grid">
+                        <figure class="app-window">
+                            <img src="ads/ui-course.png" alt="Course overview with timestamped notes such as 03:45 List Comprehension" loading="lazy">
+                        </figure>
+                        <div class="note-list">
+                            <h4>Timestamped notes · Ctrl+N</h4>
+                            <div class="note-item"><span class="ts">03:45</span><span>List comprehensions: [x*2 for x in nums]</span></div>
+                            <div class="note-item"><span class="ts">08:12</span><span>Lambdas are for short throwaway functions.</span></div>
+                            <div class="note-item"><span class="ts">14:32</span><span>Decorators wrap a function without editing its body.</span></div>
+                            <p style="color:var(--muted);font-size:0.88rem;margin-top:14px;">Click a note later — the video seeks to that second. Bookmark with B.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="study-panel" id="panel-chat" role="tabpanel" hidden>
+                    <div class="study-grid">
+                        <figure class="app-window">
+                            <img src="ads/study_room_ai.png" alt="Study Room AI with Summarize lecture, Create quiz, and Explain concept actions" loading="lazy">
+                        </figure>
+                        <div class="chat-card">
+                            <p class="chat-meta">Now playing · Python Decorators — 14:32</p>
+                            <div class="chat-bubble user"><small>You</small>Can you explain what the instructor just said?</div>
+                            <div class="chat-bubble ai">
+                                <small>Study Stream AI · from this lesson’s subtitles</small>
+                                At 14:32 the instructor put <code>@my_decorator</code> above a function. A decorator takes a function and returns a wrapped version, so you can add logging or checks without changing <code>say_hello()</code> itself. The inner <code>wrapper(*args, **kwargs)</code> is what actually runs.
+                                <span class="source-chip">Context: current course / current lesson transcript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="study-panel" id="panel-quiz" role="tabpanel" hidden>
+                    <div class="study-grid">
+                        <figure class="app-window">
+                            <img src="ads/chatbot.png" alt="Study Buddy chat used to generate a quiz from the open lesson" loading="lazy">
+                        </figure>
+                        <div class="quiz-card">
+                            <h4>Quiz · from this lesson</h4>
+                            <p style="margin-bottom:8px;">What does a Python decorator return?</p>
+                            <div class="quiz-option">The original function, unchanged</div>
+                            <div class="quiz-option correct">A new function that wraps the original</div>
+                            <div class="quiz-option">A class that replaces the module</div>
+                            <p style="color:var(--muted);font-size:0.85rem;margin-top:14px;">Generated from the same subtitle context as Chat — not a generic trivia bank.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-brand hover-target">
-            <img src="ads/logo.png" alt="Study Stream" class="footer-icon">
-            <span class="text-sm text-[var(--muted)]">2024 Study Stream. Open source under MIT License.</span>
+    <section class="section" id="ai">
+        <div class="wrap split">
+            <div class="copy">
+                <p class="eyebrow">Course-aware AI</p>
+                <h2>Ask about this lesson, not the entire internet</h2>
+                <p class="lede">When Chat is open on a video, the assistant reads that lesson’s <code>.srt</code> / <code>.vtt</code> file. It can explain the last concept, summarize the lecture, or build a quiz from what the instructor actually said.</p>
+                <ul class="facts">
+                    <li>Tied to the current course and lesson — not a blank chatbot.</li>
+                    <li>Works best when the subtitle file shares the video’s name.</li>
+                    <li>You bring your own Gemini key in Settings. Watching the course stays offline.</li>
+                </ul>
+            </div>
+            <div class="chat-card">
+                <p class="chat-meta">Video: Python Decorators — 14:32</p>
+                <div class="chat-bubble user"><small>You</small>Can you explain what the instructor just said?</div>
+                <div class="chat-bubble ai">
+                    <small>AI · using this lesson’s subtitles</small>
+                    The instructor just showed why the decorator sits <em>above</em> the function: Python applies it at definition time. <code>wrapper</code> runs first, then your original function, then any cleanup. That is why logging or timing can wrap homework solutions without copying the function body.
+                    <span class="source-chip">Source: Python Mastery → Functions → Decorators.srt</span>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <section class="section" id="offline">
+        <div class="wrap">
+            <div class="section-head">
+                <p class="eyebrow">Offline by design</p>
+                <h2>Your courses stay on your computer</h2>
+                <p class="lede">No cloud upload. No internet required to watch your courses. Study Stream is a player and a library for files you already have.</p>
+            </div>
+            <div class="flow">
+                <article class="flow-card">
+                    <p class="eyebrow" style="justify-content:center;">01</p>
+                    <strong>Downloaded course</strong>
+                    <p>Udemy zip, torrent, bootcamp dump — a folder of videos on disk.</p>
+                </article>
+                <div class="flow-arrow" aria-hidden="true">→</div>
+                <article class="flow-card">
+                    <p class="eyebrow" style="justify-content:center;">02</p>
+                    <strong>Study Stream</strong>
+                    <p>Scan Files reads the folder. Courses, sections, lessons appear in the library.</p>
+                </article>
+                <div class="flow-arrow" aria-hidden="true">→</div>
+                <article class="flow-card">
+                    <p class="eyebrow" style="justify-content:center;">03</p>
+                    <strong>Learn</strong>
+                    <p>Watch, resume, note, quiz. Playback never waits on a CDN.</p>
+                </article>
+            </div>
+            <div class="offline-points">
+                <article>
+                    <h3>Not a streaming site</h3>
+                    <p>Nothing is uploaded to Study Stream’s servers to watch a lesson. The path is local.</p>
+                </article>
+                <article>
+                    <h3>AI is optional and separate</h3>
+                    <p>Asking the model needs a key and a network. The course itself still plays with Wi‑Fi off.</p>
+                </article>
+                <article>
+                    <h3>Built for desktop</h3>
+                    <p>Electron on Windows today. Your library, notes, and progress live with the app, not a browser tab.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="progress">
+        <div class="wrap">
+            <div class="section-head">
+                <p class="eyebrow">Progress</p>
+                <h2>See what you finished — and what to open next</h2>
+                <p class="lede">Progress is not a vanity dashboard. It answers: which course, which lesson, how far, and whether you studied today.</p>
+            </div>
+            <div class="stats">
+                <div class="stat"><b data-count="28" data-suffix="%">0%</b><span>Course complete — Python Mastery</span></div>
+                <div class="stat"><b><span data-count="3">0</span> / 110</b><span>Lessons watched in a 110-video course</span></div>
+                <div class="stat"><b><span data-count="5">0</span> days</b><span>Learning streak on the home sidebar</span></div>
+                <div class="stat"><b><span data-count="10">0</span>h 42m</b><span>Study time this week, plus today’s clock</span></div>
+            </div>
+            <figure class="app-window">
+                <div class="app-chrome"><i></i><i></i><i></i> Home + course overview</div>
+                <img src="ads/ui-home.png" alt="Study Stream Lite home: sidebar streak, daily goal, scholars online, and Continue Watching" loading="lazy">
+            </figure>
+        </div>
+    </section>
+
+    <section class="section" id="why">
+        <div class="wrap">
+            <div class="section-head">
+                <p class="eyebrow">Why Study Stream</p>
+                <h2>The loop File Explorer and VLC never close</h2>
+                <p class="lede">VLC plays a file. Explorer stores a file. Neither remembers the course, the timestamp, your notes, or whether you understood the last chapter.</p>
+            </div>
+            <ol class="loop">
+                <li><em>01</em>Organize</li>
+                <li><em>02</em>Watch</li>
+                <li><em>03</em>Take notes</li>
+                <li><em>04</em>Ask AI</li>
+                <li><em>05</em>Quiz yourself</li>
+                <li><em>06</em>Continue</li>
+            </ol>
+            <div class="compare-wrap">
+                <table class="compare">
+                    <thead>
+                        <tr>
+                            <th>Job</th>
+                            <th>Folders + VLC</th>
+                            <th>Study Stream</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Job">Start a course</td>
+                            <td data-label="Folders + VLC">Open a nested folder, guess the next MP4</td>
+                            <td data-label="Study Stream">Library card with sections already parsed</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Job">Resume</td>
+                            <td data-label="Folders + VLC">You remember the filename and scrub the timeline</td>
+                            <td data-label="Study Stream">Continue Learning restores lesson + position</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Job">Notes</td>
+                            <td data-label="Folders + VLC">Another window, no link to the second in the video</td>
+                            <td data-label="Study Stream">Ctrl+N at 14:32 — click later to seek there</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Job">Ask a question</td>
+                            <td data-label="Folders + VLC">Paste into a generic chatbot with no lesson context</td>
+                            <td data-label="Study Stream">AI reads this lesson’s subtitles</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Job">Check yourself</td>
+                            <td data-label="Folders + VLC">None</td>
+                            <td data-label="Study Stream">Quiz tab from the same transcript</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Job">Watch offline</td>
+                            <td data-label="Folders + VLC">Yes, if the file is local</td>
+                            <td data-label="Study Stream">Yes — that is the whole product</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="lite">
+        <div class="wrap">
+            <div class="lite">
+                <img src="ads/lite-logo.png" alt="Study Stream Lite app icon">
+                <div>
+                    <span class="lite-badge">Coming soon</span>
+                    <h2>Study Stream Lite</h2>
+                    <p class="lede">A lighter desktop build of the same idea: local courses, a real player, notes, and course-aware AI — without the Electron weight.</p>
+                    <div class="lite-points">
+                        <span>Rebuilt on Tauri 2 + Rust instead of Electron</span>
+                        <span>Smaller installer, less RAM while a lesson is playing</span>
+                        <span>Same loop: scan a folder → watch → note → ask → quiz</span>
+                        <span>Made for machines that should not run a full Chrome runtime</span>
+                    </div>
+                    <p class="lede" style="margin-top:18px;font-size:0.95rem;">Black stays the full studio: themes, Hall of Fame, productivity center. Lite is the compact player for the library you already keep on disk. It is not a download yet — watch this page and GitHub for the first build.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section final-cta" id="download">
+        <div class="wrap">
+            <p class="eyebrow" style="justify-content:center;">Windows · Free · Open source</p>
+            <h2>Your courses are already downloaded. Now actually learn from them.</h2>
+            <p class="lede">Install Study Stream, scan one course folder, and resume tomorrow at the same second.</p>
+            <div class="hero-ctas">
+                <a class="btn btn-primary" href="https://github.com/Rohit0072/study-stream-black/releases/download/v1.0.4/StudyStream-Setup-1.0.4.exe">Download Study Stream</a>
+                <a class="btn btn-ghost" href="documentaion.html">Read the user guide</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="docs-banner">
+        <div class="wrap">
+            <p class="eyebrow" style="justify-content:center;color:var(--green);">User guide</p>
+            <h2 style="font-size:clamp(1.6rem,3vw,2.4rem);">Folder structure, Gemini key, shortcuts</h2>
+            <p class="lede" style="margin:0 auto 24px;">How Scan Files expects Course → Section → Lesson, how subtitles unlock AI, and the player keys (Space, Ctrl+N, B).</p>
+            <a class="btn btn-ghost" href="documentaion.html" style="border-color:rgba(46,204,113,0.5);color:var(--green);">Open documentation</a>
+        </div>
+    </section>
+
+    <section class="section" id="connect">
+        <div class="wrap">
+            <div class="section-head">
+                <p class="eyebrow">Connect with me</p>
+                <h2>Rohit Singh</h2>
+                <p class="lede">Software developer in Jaipur — the person who built Study Stream. Work, writing, and the rest of the stack live on my site.</p>
+            </div>
+            <div class="dev">
+                <img src="ads/Rohit_profile_image.png" alt="Rohit Singh">
+                <div>
+                    <p class="dev-role">Software &amp; web developer · Next.js, MERN, Electron, Tauri</p>
+                    <p>I’m 22, a BCA student at Sri Balaji College of Engineering and Technology, and currently a software developer at Hopdays. About a year shipping full-stack products, desktop apps, and AI features that actually get used — Study Stream is the flagship.</p>
+                    <div class="connect-stats">
+                        <div><b>1+</b><span>Years shipping</span></div>
+                        <div><b>13+</b><span>GitHub projects</span></div>
+                        <div><b>Jaipur</b><span>Rajasthan, India</span></div>
+                    </div>
+                    <div class="chips">
+                        <span>Next.js</span>
+                        <span>TypeScript</span>
+                        <span>MERN</span>
+                        <span>Electron</span>
+                        <span>Tauri</span>
+                        <span>React Native</span>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="connect-ctas">
+                        <a class="btn btn-primary" href="https://rohitsinghworks.vercel.app/" target="_blank" rel="noopener">Visit my website</a>
+                        <a class="btn btn-ghost" href="https://www.linkedin.com/in/rohit-singh-b74377239" target="_blank" rel="noopener">LinkedIn</a>
+                        <a class="btn btn-ghost" href="https://github.com/Rohit0072" target="_blank" rel="noopener">GitHub</a>
+                        <a class="btn btn-ghost" href="mailto:rs3274357@gmail.com">Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>© 2026 Study Stream. Open source under MIT.</span>
         <div class="footer-links">
-            <a href="https://github.com/Rohit0072/study-stream-black" target="_blank"
-                class="footer-link hover-target">GitHub</a>
-            <a href="documentaion.html" class="footer-link hover-target">Documentation</a>
-            <a href="#" class="footer-link hover-target">Support</a>
+            <a href="https://github.com/Rohit0072/study-stream-black" target="_blank" rel="noopener">GitHub</a>
+            <a href="documentaion.html">Docs</a>
+            <a href="#lite">Lite</a>
+            <a href="#connect">Connect</a>
+            <a href="https://rohitsinghworks.vercel.app/" target="_blank" rel="noopener">Rohit Singh</a>
+            <a href="#download">Download</a>
         </div>
     </footer>
 
     <script>
-        // Initialize variables first
-        const cursor = document.querySelector('.cursor');
-        const cursorDot = document.querySelector('.cursor-dot');
-        const linesContainer = document.getElementById('lines-container');
-        const nav = document.getElementById('nav');
-        let mouseX = 0;
-        let mouseY = 0;
-        let cursorX = 0;
-        let cursorY = 0;
+        const nav = document.getElementById("nav");
+        const cursor = document.getElementById("cursor");
+        const cursorDot = document.getElementById("cursor-dot");
+        const cursorLabel = cursor.querySelector(".cursor-label");
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-        // Custom cursor
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
+        window.addEventListener("scroll", () => {
+            nav.classList.toggle("scrolled", window.scrollY > 40);
+        }, { passive: true });
 
-        // Smooth cursor animation
-        function animateCursor() {
-            const ease = 0.15;
-            cursorX += (mouseX - cursorX) * ease;
-            cursorY += (mouseY - cursorY) * ease;
-
-            if (cursor && cursorDot) {
-                cursor.style.left = cursorX - 10 + 'px';
-                cursor.style.top = cursorY - 10 + 'px';
-                cursorDot.style.left = mouseX - 2 + 'px';
-                cursorDot.style.top = mouseY - 2 + 'px';
-            }
-
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-
-        // Hover effect on targets
-        document.querySelectorAll('.hover-target').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                if (cursor) cursor.classList.add('hover');
+        const navToggle = document.getElementById("nav-toggle");
+        const navLinks = document.getElementById("nav-links");
+        if (navToggle) {
+            navToggle.addEventListener("click", () => {
+                const open = nav.classList.toggle("open");
+                navToggle.setAttribute("aria-expanded", String(open));
+                navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
             });
-            el.addEventListener('mouseleave', () => {
-                if (cursor) cursor.classList.remove('hover');
-            });
-        });
-
-        // Create animated lines
-        if (linesContainer) {
-            for (let i = 0; i < 8; i++) {
-                const line = document.createElement('div');
-                line.className = 'animated-line';
-                line.style.left = `${10 + i * 12}%`;
-                line.style.animationDelay = `${i * 0.5}s`;
-                line.style.opacity = 0.05 + Math.random() * 0.1;
-                linesContainer.appendChild(line);
-            }
-        }
-
-        // Scroll reveal animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-
-                    // Animate stat numbers
-                    if (entry.target.querySelector('.stat-number')) {
-                        entry.target.querySelectorAll('.stat-number').forEach(stat => {
-                            const target = parseInt(stat.dataset.count) || 0;
-                            animateNumber(stat, target);
-                        });
-                    }
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-reveal').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Number animation
-        function animateNumber(el, target) {
-            let current = 0;
-            const duration = 2000;
-            const step = target / (duration / 16);
-
-            function update() {
-                current += step;
-                if (current < target) {
-                    el.textContent = Math.floor(current);
-                    requestAnimationFrame(update);
-                } else {
-                    el.textContent = target;
-                }
-            }
-            update();
-        }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Parallax effect on scroll
-        let ticking = false;
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    const scrollY = window.scrollY;
-                    document.querySelectorAll('.float-element').forEach((el, i) => {
-                        const speed = 0.1 + i * 0.05;
-                        el.style.transform = `translateY(${scrollY * speed}px)`;
-                    });
-                    ticking = false;
+            navLinks.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    nav.classList.remove("open");
+                    navToggle.setAttribute("aria-expanded", "false");
+                    navToggle.setAttribute("aria-label", "Open menu");
                 });
-                ticking = true;
-            }
-        });
-
-        // Navigation background on scroll
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.scrollY;
-
-            if (currentScroll > 100) {
-                if (nav) nav.classList.add('scrolled');
-            } else {
-                if (nav) nav.classList.remove('scrolled');
-            }
-
-            lastScroll = currentScroll;
-        });
-
-        // Marquee pause on hover
-        const marquee = document.querySelector('.marquee');
-        if (marquee) {
-            marquee.addEventListener('mouseenter', () => {
-                marquee.style.animationPlayState = 'paused';
-            });
-            marquee.addEventListener('mouseleave', () => {
-                marquee.style.animationPlayState = 'running';
             });
         }
+
+        const marquee = document.querySelector(".marquee");
+        if (marquee) {
+            marquee.addEventListener("mouseenter", () => { marquee.style.animationPlayState = "paused"; });
+            marquee.addEventListener("mouseleave", () => { marquee.style.animationPlayState = "running"; });
+        }
+
+        const tabs = document.querySelectorAll(".study-tabs [role='tab']");
+        const panels = document.querySelectorAll(".study-panel");
+        tabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+                const id = tab.dataset.tab;
+                tabs.forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+                panels.forEach((panel) => {
+                    const on = panel.id === "panel-" + id;
+                    panel.classList.toggle("active", on);
+                    panel.hidden = !on;
+                });
+            });
+        });
+
+        if (finePointer && !reduceMotion) {
+            document.body.classList.add("has-cursor");
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+            let ringX = mouseX;
+            let ringY = mouseY;
+
+            document.addEventListener("mousemove", (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                document.documentElement.style.setProperty("--mx", e.clientX + "px");
+                document.documentElement.style.setProperty("--my", e.clientY + "px");
+                cursor.style.opacity = "1";
+                cursorDot.style.opacity = "1";
+            });
+
+            document.addEventListener("mouseleave", () => {
+                cursor.style.opacity = "0";
+                cursorDot.style.opacity = "0";
+            });
+
+            function tick() {
+                ringX += (mouseX - ringX) * 0.18;
+                ringY += (mouseY - ringY) * 0.18;
+                cursor.style.transform = "translate3d(" + ringX + "px," + ringY + "px,0)";
+                cursorDot.style.transform = "translate3d(" + mouseX + "px," + mouseY + "px,0)";
+                requestAnimationFrame(tick);
+            }
+            tick();
+
+            const setCursor = (mode, label) => {
+                cursor.classList.toggle("is-hover", mode === "hover");
+                cursor.classList.toggle("is-media", mode === "media");
+                cursor.classList.toggle("is-action", mode === "action");
+                cursorLabel.textContent = label || "";
+            };
+
+            document.querySelectorAll("a, button, .callout, .stat, .flow-card, .loop li, .quiz-option, .lite, .dev img").forEach((el) => {
+                el.addEventListener("mouseenter", () => {
+                    const isAction = el.matches(".btn-primary, .nav-cta, a[href*='StudyStream-Setup']");
+                    const isMedia = el.matches(".app-window, .app-window *");
+                    if (isAction) setCursor("action", "Get");
+                    else setCursor("hover");
+                });
+                el.addEventListener("mouseleave", () => setCursor(""));
+            });
+
+            document.querySelectorAll(".app-window").forEach((el) => {
+                el.addEventListener("mouseenter", () => setCursor("media", "View"));
+                el.addEventListener("mouseleave", () => setCursor(""));
+            });
+
+            const heroWindow = document.querySelector(".product-stage .app-window");
+            if (heroWindow) {
+                heroWindow.addEventListener("mousemove", (e) => {
+                    const r = heroWindow.getBoundingClientRect();
+                    const x = (e.clientX - r.left) / r.width - 0.5;
+                    const y = (e.clientY - r.top) / r.height - 0.5;
+                    heroWindow.style.transform = "perspective(1200px) rotateY(" + (x * 8) + "deg) rotateX(" + (-y * 6) + "deg)";
+                });
+                heroWindow.addEventListener("mouseleave", () => {
+                    heroWindow.style.transform = "perspective(1200px) rotateX(0) rotateY(0)";
+                });
+            }
+        }
+
+        document.querySelectorAll(".section-head, .split, .stats, .flow, .offline-points, .loop, .lite, .dev, .study-shell, .compare, .docs-banner .wrap, .final-cta .wrap, .product-stage, .signal-break, .connect-ctas").forEach((el) => {
+            el.classList.add("reveal");
+        });
+
+        if (!reduceMotion && "IntersectionObserver" in window) {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        if (entry.target.classList.contains("stats")) {
+                            entry.target.querySelectorAll("[data-count]").forEach(countUp);
+                        }
+                        io.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.16, rootMargin: "0px 0px -8% 0px" });
+            document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+        } else {
+            document.querySelectorAll(".reveal").forEach((el) => el.classList.add("visible"));
+        }
+
+        function countUp(el) {
+            const target = el.dataset.count;
+            const prefix = el.dataset.prefix || "";
+            const suffix = el.dataset.suffix || "";
+            const isFloat = target.indexOf(".") !== -1;
+            const end = parseFloat(target);
+            const start = performance.now();
+            const dur = 1100;
+            const step = (now) => {
+                const t = Math.min(1, (now - start) / dur);
+                const eased = 1 - Math.pow(1 - t, 3);
+                const val = end * eased;
+                el.textContent = prefix + (isFloat ? val.toFixed(1) : Math.round(val)) + suffix;
+                if (t < 1) requestAnimationFrame(step);
+            };
+            requestAnimationFrame(step);
+        }
+
+        const lightbox = document.getElementById("lightbox");
+        const lightboxShot = document.getElementById("lightbox-shot");
+        const lightboxClose = document.getElementById("lightbox-close");
+
+        function showCustomCursor() {
+            if (cursor && cursorDot) {
+                cursor.style.opacity = "1";
+                cursorDot.style.opacity = "1";
+            }
+        }
+
+        function openLightbox(img) {
+            lightboxShot.src = img.currentSrc || img.src;
+            lightboxShot.alt = img.alt || "Screenshot";
+            lightbox.hidden = false;
+            lightbox.classList.remove("is-open");
+            void lightbox.offsetWidth;
+            lightbox.classList.add("is-open");
+            document.body.classList.add("lightbox-open");
+            showCustomCursor();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove("is-open");
+            lightbox.hidden = true;
+            lightboxShot.removeAttribute("src");
+            document.body.classList.remove("lightbox-open");
+            showCustomCursor();
+        }
+
+        document.querySelectorAll(".app-window").forEach((win) => {
+            win.setAttribute("role", "button");
+            win.setAttribute("tabindex", "0");
+            win.setAttribute("aria-label", "View screenshot fullscreen");
+            const open = () => {
+                const img = win.querySelector("img");
+                if (img) openLightbox(img);
+            };
+            win.addEventListener("click", open);
+            win.addEventListener("keydown", (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    open();
+                }
+            });
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        lightboxClose.addEventListener("click", closeLightbox);
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
+        });
     </script>
 </body>
 
